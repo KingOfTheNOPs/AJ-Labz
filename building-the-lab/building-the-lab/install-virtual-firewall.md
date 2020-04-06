@@ -24,20 +24,14 @@ Network Diagram Overview:
 
 #### 1.A Enable IP Passthrough on modem
 
-Unfortunately the modem does not have a bridged mode feature, but you can enable IP Passthrough on the admin page. 
-
-1. Open a browser on a computer that is directly connected to the BGW210.
-
-2. In the address bar, enter [http://192.168.1.254](http://192.168.1.254). 
-
-3. Select the Firewall tab in the RG GUI page. 
-
-4. Select IP Passthrough below the Firewall tab. 
-
-5. Select Passthrough option from the Allocation Mode drop-down menu. 
-
-6. Select manual from the Passthrough Mode drop-down. 
-
+Unfortunately the modem does not have a bridged mode feature, but you can enable IP Passthrough on the admin page.   
+  
+1. Open a browser on a computer that is directly connected to the BGW210.  
+2. In the address bar, enter [http://192.168.1.254](http://192.168.1.254).   
+3. Select the Firewall tab in the RG GUI page.   
+4. Select IP Passthrough below the Firewall tab.   
+5. Select Passthrough option from the Allocation Mode drop-down menu.   
+6. Select manual from the Passthrough Mode drop-down.   
 7. Manually configure your device to use the WAN IP address, default gateway, and Subnet mask provided to you in Broadband &gt; Status.
 
 #### 1.B Install pfSense with ESXi
