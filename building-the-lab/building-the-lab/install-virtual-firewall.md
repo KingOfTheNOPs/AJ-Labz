@@ -10,7 +10,12 @@ One thing to keep in mind, this guide takes advantage of the BGW210 only having 
 
 #### Resources/Equipment Used
 
-pfSense 2.4.4 Dell R710 Server ESXi 6.7.0 Unmannaged Switch \(3\) Cat5e cables \(3\) TP-Link Deco
+pfSense 2.4.4   
+Dell R710 Server   
+ESXi 6.7.0   
+Unmannaged Switch   
+Cat5e cables \(3\)   
+TP-Link Deco
 
 I have seen several guides for pfSense use ubiquiti access point's instead but the TP Link Deco I found was cheaper and provided similar capabilities.
 
