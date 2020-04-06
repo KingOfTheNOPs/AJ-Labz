@@ -2,7 +2,9 @@
 
 ## Installing pfSense and replacing your AT&T commercial router
 
-I take no credit for this bypass. I used the help of others to implement this bypass and I just want to document the information/share the knowledge \(reference of bypass linked below\). This guide is oriented to those who AT&T fiber and do not have any other services being provided by AT&T \(such as AT&T U-Verse TV\). I wanted to replace my AT&T BGW210 with pfSense to be able to play around with the traffic at home and use it for other labs. This guide will present two options: 1. Place the AT&T BGW210 in "bridged mode" 2. Replace the AT&T BGW210 with pfSense
+I take no credit for this bypass. I used the help of others to implement this bypass and I just want to document the information/share the knowledge \(reference of bypass linked below\). This guide is oriented to those who AT&T fiber and do not have any other services being provided by AT&T \(such as AT&T U-Verse TV\). I wanted to replace my AT&T BGW210 with pfSense to be able to play around with the traffic at home and use it for other labs. This guide will present two options:   
+1. Place the AT&T BGW210 in "bridged mode"   
+2. Replace the AT&T BGW210 with pfSense
 
 {% file src="../../.gitbook/assets/motorolanvg5xxbypass.pdf" caption="Motorola Bypass.pdf" %}
 
