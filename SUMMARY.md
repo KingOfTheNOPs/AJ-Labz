@@ -28,3 +28,7 @@
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
 
+## Cyber Readingz
+
+* [Recommended Readings](cyber-readingz/recommended-readings.md)
+
