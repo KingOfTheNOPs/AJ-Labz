@@ -10,7 +10,7 @@ description: >-
 vSphere ESXI is its own bare metal hypervisor, and can operate without any appliance to orchestrate it. However, adding the vCSA allows additional capabilities: migrating VM's between server hosts, port mirroring to a physical device, and cloning virtual machines, etc.
 
 {% hint style="info" %}
-It is **highly recommend** that you have a FQDN that can be used for VCSA. For example, you may use vcsa.myserver.com and esxi.myserver.com. IOT accomplish that you can setup your own BIND9 DNS server **&lt;insert BIND9 Documentation Here&gt;**
+It is **highly recommend** that you have a FQDN that can be used for VCSA. For example, you may use vcsa.myserver.com and esxi.myserver.com. IOT accomplish that you can setup your own BIND9 DNS server see how we did it here [Building a Local DNS Server](../building-a-local-dns-server.md)
 {% endhint %}
 
 Start by downloading the VCSA 6.7 ISO from the Vmware website and mounting it \(double click in windows\).
