@@ -6,7 +6,7 @@ description: >-
 
 # Physical Hardware
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 ### Physical Server 
 
@@ -14,7 +14,7 @@ The budget friendly solution we both purchased was a dell R710.
 
  
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
  Some good sources to get one cheap
 
@@ -32,7 +32,7 @@ Currently all networking equipment is consumer grade WiFi access points or mesh 
 
 Currently looking into getting a couple L3 managed cisco switches and a decent cisco router. That way we can create the IPSEC tunnel via the hardware and also network more items in different enclaves. If we configure a network switch with a trunk and use explicit fail order on the distributed port group for the trunk you can access all the Vlans and use the pfsense as the router until you can afford a 2nd router. 
 
-![This is the general principle described above \(except the wan stuff\) that will facilitate hardware in the loop.](../../.gitbook/assets/image%20%286%29.png)
+![This is the general principle described above \(except the wan stuff\) that will facilitate hardware in the loop.](../../.gitbook/assets/image%20%287%29.png)
 
 
 
