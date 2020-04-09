@@ -59,7 +59,7 @@ I recommend if you have some time to read [http://guacamole.apache.org/](http://
 
 At this point you should purchase your domain and create an A record for your subdomain; linking the domain to your public IP.  If you're using Google Domains then head on over to the DNS tab and then go to Custom Resource Records. 
 
-![snapshot of DNS record from Google Domain](../.gitbook/assets/image%20%282%29.png)
+![snapshot of DNS record from Google Domain](../.gitbook/assets/image%20%283%29.png)
 
 ### 2.A Installing NGINX
 
@@ -193,7 +193,7 @@ You should now be able to access your guacamole server from your.domain.com
 
 #### Example of Connection
 
-![Guac Connection Snapshot](../.gitbook/assets/image%20%286%29.png)
+![Guac Connection Snapshot](../.gitbook/assets/image%20%288%29.png)
 
 I hope this guide helps you and there are more to come.
 
