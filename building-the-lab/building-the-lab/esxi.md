@@ -33,6 +33,8 @@ You may then modify other settings to your liking. Most are fine however for mos
 Once you insert the ESXi USB and reboot the server.
 
 Using iDRAC or VGA it will display a boot menu with an option to launch “ESXi Installer” as shown below.  
+
+
 ![](https://static.thegeekstuff.com/wp-content/uploads/2010/06/1-vmvisor-boot-menu.png)
 
 #### 3. VMware ESXi Installer Loading
