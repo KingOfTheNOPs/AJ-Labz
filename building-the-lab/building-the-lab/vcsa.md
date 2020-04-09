@@ -17,11 +17,11 @@ Start by downloading the VCSA 6.7 ISO from the Vmware website and mounting it \(
 
 Run the installer 
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](../../.gitbook/assets/image%20%2816%29.png)
 
 Click Install 
 
-![](../../.gitbook/assets/image%20%2811%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 **Stage 1**
 
@@ -29,21 +29,21 @@ Click Install
 
 Enter the details for your ESXI host. Notice the FQDN instead of IP address. This is not required but preferred. 
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 Click yes on the certificate warning. Give the virtual machine a name \(this can be changed later\)
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 Chose the option that best fits your lab \(We both used tiny\)
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 Select the Datastore you want the VM to be stored on.
 
 **This is where the FQDN is important.** If you chose to only use IP address then there is a good chance you will have plenty of trouble getting through Phase 2, as well as, the web interface for VCSA \(specifically VXPD\) not starting due to not being able to preform a reverse lookup among other things. 
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 Click finish and continue to phase 2. If you desire you can have pfsense be your NTP server and configure it in the next step. 
 
