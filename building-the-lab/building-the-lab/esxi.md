@@ -4,7 +4,7 @@
 
 ---
 
-#### **1. Download ESXi and create B**ootable **media**
+#### **Download ESXi and create B**ootable **media**
 
 For this both servers we used ESXI 6.7 since it 
 
