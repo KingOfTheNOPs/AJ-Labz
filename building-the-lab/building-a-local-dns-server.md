@@ -35,7 +35,7 @@ zone "AJ.labz"{
 zone "3.2.1.in-addr.arpa" {
 type master;
 //file "/etc/bind/zones/rev.db.in-addr.arpa";
-file "/etc/bind/zones/db.50.14.10";
+file "/etc/bind/zones/db.50.24.10";
 };
 
 ```
@@ -46,7 +46,7 @@ cd /etc/zones`
   
 create the files as specified above  
 `touch /etc/zones/db.aj.labz  
-touch /etc/zones/db.50.14.10`  
+touch /etc/zones/db.50.24.10`  
   
 edit /etc/zones/db.aj.labz
 
@@ -62,13 +62,13 @@ $TTL 900
  IN NS ns1.aj.labz.
  IN NS ns2.aj.labz.
 ;address to name mapping
-esxi.aj.labz. IN A 10.14.50.100
-vsphere.aj.labz. IN A 10.14.50.101
-ns1.aj.labz. IN A 10.14.50.2
-ns2.aj.labz. IN A 10.14.50.2
+esxi.aj.labz. IN A 10.24.50.100
+vsphere.aj.labz. IN A 10.24.50.101
+ns1.aj.labz. IN A 10.24.50.2
+ns2.aj.labz. IN A 10.24.50.2
 ```
 
-edit /etc/zones/db.50.14.10
+edit /etc/zones/db.50.24.10
 
 ```text
 $TTL 900
@@ -82,8 +82,8 @@ $TTL 900
  IN NS ns1.aj.labz.
  IN NS ns2.aj.labz.
 ; PTR Records
-101.50 IN PTR vsphere.aj.labz. ; 10.14.50.101
-100.50 IN PTR esxi.aj.labz. ; 10.14.50.100
+101.50 IN PTR vsphere.aj.labz. ; 10.24.50.101
+100.50 IN PTR esxi.aj.labz. ; 10.24.50.100
 ```
 
 restart BIND9 to enforce the changes   
@@ -91,5 +91,5 @@ restart BIND9 to enforce the changes
 
 ### Step 3: Test DNS Server
 
-`nslookup 10.14.50.100 10.14.50.2`
+`nslookup 10.24.50.100 10.24.50.2`
 
