@@ -75,7 +75,7 @@ Now during pfSense VM setup make sure to add a Network Adapter for each virtual 
 
 Once pfSense is installed, the WAN connection can be added to the respective physical NIC on the back of the server and the LAN NIC can be connected to the access point. To do this make sure you have connected your WAN connection to the Netgear switch and then to your ATT BGW210 WAN port. Once the device authenticates disconnect from the AT&T BGW210 and plug into the physical NIC assigned as the WAN on the server. pfSense should pull a public IP at this point. If there isn't any networking issues then plug your access point into the physical NIC assigned as the LAN and your network should be good to go. Feel free to start playing with pfSense and some of the additional services that can be installed such as pfBlocker or Suricata.
 
-### Configuring PFSense W/ a LAN and VMnet 
+## Configuring PFSense W/ a LAN and VMnet 
 
 The objective of this is to give controlled access to the lab from the home wifi. Security was lessened because, in theory, an adversary can pwn a box on the home network \(like an IOT device\) and LM to the VMnet. Once on VMNET they can own the bare-metal hypervisor and if you use iDRAC on the same VMNet then they can own your R710 too \(because I know you are too lazy to change that calvin password\).
 
@@ -83,7 +83,7 @@ The objective of this is to give controlled access to the lab from the home wifi
 In order to complete this you will need to know how to add attach port groups to this VM. If you need help doing this please see the [Install Virtual Machine](install-virtual-machine.md) and [Virtual Networking](virtual-networking.md) pages for the requisite knowledge
 {% endhint %}
 
-#### Interface Configuration
+### Interface Configuration
 
 After attaching your `wan` `LAN` and `VMnet` port groups to your virtual machine you should be able to verify their status via the virtual console of PFsense. If DHCP is enabled, the LAN interface should draw a DHCP lease from your VMnetwork or the MGMT interface. If it does not you may need to statically configure one using option 2 of the pfsense cli.
 
@@ -93,7 +93,7 @@ After attaching your `wan` `LAN` and `VMnet` port groups to your virtual machine
  Most issues are due to improper porgroups tied to the wrong interface on the VM. Verify the interface by checking the MAC address in Vsphere and from the terminal \(option 8 and ifconfig \|less \).
 {% endhint %}
 
-#### Verifying the MAC address and port groups
+### Verifying the MAC address and port groups
 
 Add the interfaces and verify the mac address and port groups are what you want them to be. The interface mac address are in vSphere where you added the interfaces. 
 
@@ -107,7 +107,7 @@ _Your MAC addresses will be different. This is where a lot of troubleshooting wi
 On VSphere you may have many port groups that will tag packets with the specific VLANs. Also, do to interface restrictions on PFsense it is recommended to create a Trunk port group and use`VLAN` interfaces \(can be thought of as sub-interfaces\) in pfsense.
 {% endhint %}
 
-#### Assigning IP Addresses to Interfaces
+### Assigning IP Addresses to Interfaces
 
 Configure the interfaces to have an IP address on its desired subnet. Set the configuration type to none **on Trunk Interface**. We need sub interfaces for each enclave south of the firewall. Interface -&gt; Assignments Click “LAN”
 
@@ -119,7 +119,7 @@ Configure the interfaces to have an IP address on its desired subnet. Set the co
 If you are unable to access this page you will need to use the CLI \(see above\) to configure the interface IP and ensure you are in the same network. Pro Tip: Configure the VMNET interface and put your laptop in vmnet.
 {% endhint %}
 
-#### Create sub-interfaces
+### Create sub-interfaces
 
 You will need to determine your trunking interface. It will be the mac address of the interface connected to your trunk port group. 
 
@@ -135,7 +135,7 @@ Go back to the interfaces page and add the VLAN \(Sub\) interfaces as a network 
 
 Change the name, configuration type, and IP address the say way we did before. Keep in mind this will be the default gateway for each specific enclave when assigning the IP address.
 
-####  Create Firewall rules
+###  Create Firewall rules
 
 You will not need to configure any rules on the trunk link, all rules should be configured on the specific VLAN interface.
 
@@ -154,7 +154,7 @@ Some standard practice rules you can use, though by no means exhaustive:
 * Don't allow your DC to talk to internet \(except for DNS, or to Microsoft update services for DC updates\)
 {% endhint %}
 
-#### Troubleshoot Firewall rules
+### Troubleshoot Firewall rules
 
 If you are having issues in the domain, you can try a couple quick steps to try to fix them.
 
