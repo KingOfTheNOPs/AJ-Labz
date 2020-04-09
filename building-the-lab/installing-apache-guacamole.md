@@ -193,7 +193,7 @@ You should now be able to access your guacamole server from your.domain.com
 
 #### Example of Connection
 
-![Guac Connection Snapshot](../.gitbook/assets/image%20%2813%29.png)
+![Guac Connection Snapshot](../.gitbook/assets/image%20%2814%29.png)
 
 I hope this guide helps you and there are more to come.
 
