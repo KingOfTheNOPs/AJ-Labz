@@ -1,7 +1,7 @@
 # Building a Local DNS Server
 
 In this guide we will be covering building a BIND9 DNS server on Ubuntu 19.10 Server. For more information about Berkeley Internet Named Domain visit: [https://en.wikipedia.org/wiki/BIND](https://en.wikipedia.org/wiki/BIND)  
-We utilized this DNS Server for the installation of VCSA since it requires DNS.   
+We utilized this DNS Server for the installation of VCSA since it requires DNS \(if you want less headaches\).   
 
 
 ### Step 1: Install BIND9 
