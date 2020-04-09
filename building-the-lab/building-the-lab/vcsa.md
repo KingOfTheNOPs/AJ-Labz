@@ -55,5 +55,5 @@ Here you can create a new single sign on. If you already have one you can join t
 
 After that next, next, finish.. 
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2841%29.png)
 
