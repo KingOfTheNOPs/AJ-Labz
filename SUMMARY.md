@@ -7,7 +7,7 @@
 * [Building the lab](building-the-lab/building-the-lab/README.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
   * [ESXi](building-the-lab/building-the-lab/esxi.md)
-  * [VCSA](building-the-lab/building-the-lab/vcsa.md)
+  * [vCenter Server Installation](building-the-lab/building-the-lab/vcsa.md)
   * [Virtual Networking](building-the-lab/building-the-lab/virtual-networking.md)
   * [Install Virtual Firewall](building-the-lab/building-the-lab/install-virtual-firewall.md)
   * [Install Virtual Machine](building-the-lab/building-the-lab/install-virtual-machine.md)
