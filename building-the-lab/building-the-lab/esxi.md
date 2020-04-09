@@ -2,6 +2,8 @@
 
 ### Installing ESXi Hyper-visor on top of dell R710 
 
+---
+
 #### **1. Download ESXi and create B**ootable **media**
 
 For this both servers we used ESXI 6.7 since it 
@@ -74,7 +76,15 @@ You will get the following installation completed message that will prompt you t
 
 After the ESXi is installed, you’ll get the following screen where you can configure the system by pressing F2.  
 ![](https://static.thegeekstuff.com/wp-content/uploads/2010/06/10-vmware-esxi-launched1.png)  
-In the next article, let us review how to perform the initial ESXi configuration.
+
+
+#### 10. Setting ESXi IP Address
+
+in progress
+
+#### 11. Determining VMNetwork Physical Adapter
+
+in progress
 
 
 
