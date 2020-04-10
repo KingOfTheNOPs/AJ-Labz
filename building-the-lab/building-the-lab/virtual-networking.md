@@ -1,6 +1,6 @@
 # Virtual Networking
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
 ## Design
 
@@ -44,11 +44,11 @@ From the Networking tab, right click on your datacenter and select -&gt; Distrib
 
 Chose a good name for the switch 
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
-![](../../.gitbook/assets/image%20%2820%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
-![](../../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image%20%2841%29.png)
 
 Finish
 
