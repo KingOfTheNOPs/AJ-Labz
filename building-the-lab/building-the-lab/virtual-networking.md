@@ -1,6 +1,6 @@
 # Virtual Networking
 
-![](../../.gitbook/assets/image%20%2854%29.png)
+![](../../.gitbook/assets/image%20%2855%29.png)
 
 ## Design
 
@@ -48,7 +48,7 @@ Chose a good name for the switch
 
 ![](../../.gitbook/assets/image%20%2827%29.png)
 
-![](../../.gitbook/assets/image%20%2852%29.png)
+![](../../.gitbook/assets/image%20%2853%29.png)
 
 Finish
 
@@ -80,7 +80,7 @@ Apply Configure the port group settings based on the above table
 
 Click Finish
 
-![](../../.gitbook/assets/image%20%2868%29.png)
+![](../../.gitbook/assets/image%20%2869%29.png)
 
 ### Add the new D-Switch to each ESXi Host
 
@@ -112,7 +112,7 @@ Click on the DSwitch you created and Then Topology and you can see all the NICS.
 Due to VCSA only managing 1 ESXi host I created "Uplink 4" as a "null"  which has no physical NIC and I configured explicit fail order for all port groups to start to use Uplink 4
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2858%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 Now right click on the DSwitch and "Manage Distribute Port Groups"
 
@@ -128,7 +128,7 @@ Select all Port Groups
 This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group**
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2866%29.png)
 
 Change to "Use explicit failover order"
 

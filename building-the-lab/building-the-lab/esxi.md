@@ -4,7 +4,7 @@ description: Installing ESXi Hyper-visor on top of dell R710
 
 # ESXi
 
-![](../../.gitbook/assets/image%20%2846%29.png)
+![](../../.gitbook/assets/image%20%2847%29.png)
 
 ## Installing ESXi Hyper-visor on top of dell R710
 
@@ -16,7 +16,7 @@ For this both servers we used ESXI 6.7 since it
 >
 > Once Registered Visit: [https://www.vmware.com/products/vsphere-hypervisor.html](https://www.vmware.com/products/vsphere-hypervisor.html)
 
-![](../../.gitbook/assets/image%20%2866%29.png)
+![](../../.gitbook/assets/image%20%2867%29.png)
 
 Click "Download Now." 
 

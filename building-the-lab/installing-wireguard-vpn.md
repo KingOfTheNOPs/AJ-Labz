@@ -7,6 +7,8 @@ description: >-
 
 # Installing WireGuard VPN
 
+![](../.gitbook/assets/image%20%2845%29.png)
+
 Want to watch YouTube TV but your local channels aren't available? Try WireGuard VPN to bypass their location services. They noticed my VPN when using OpenVPN :-\(
 
 Or use WireGuard as an alternative way to connect to your home lab with a VPN
@@ -55,7 +57,7 @@ The Address field is the range of IPs you will be assigning to the clients. When
 
 Make sure to port forward 51820 UDP on pfSense under Firewall -&gt; NAT 
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 Allow the server/clients access to the internet  
 Firewall -&gt; Rules
@@ -80,11 +82,11 @@ On Windows: Open the application, Click the dropdown next to add tunnel and sele
 Add the following contents  
 
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2851%29.png)
 
 You should be able to connect to your home network now.   
 To verify if the connection was successful run `wg show` on the wireguard server and you should see the peer information.   
 
 
-![](../.gitbook/assets/image%20%2845%29.png)
+![](../.gitbook/assets/image%20%2846%29.png)
 
