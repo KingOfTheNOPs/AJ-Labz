@@ -9,6 +9,8 @@ description: >-
 
 ![](../../.gitbook/assets/image%20%2813%29.png)
 
+## Header
+
 vSphere ESXI is its own bare metal hypervisor, and can operate without any appliance to orchestrate it. However, adding the vCSA allows additional capabilities: migrating VM's between server hosts, port mirroring to a physical device, and cloning virtual machines, etc.
 
 {% hint style="info" %}
@@ -25,7 +27,7 @@ Click Install
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
 
-**Stage 1**
+### **Stage 1**
 
 ![](../../.gitbook/assets/image%20%2811%29.png)
 
