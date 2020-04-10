@@ -1,10 +1,12 @@
 # Configure vCenter Datacenter
 
+![](../../.gitbook/assets/image.png)
+
 ## Create Datacenter
 
 Right click on the IP or URL of the VCSA and choose new datacenter
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2866%29.png)
 
 Give your new datacenter a name
 
@@ -12,7 +14,7 @@ Give your new datacenter a name
 
 Right click on the new datacenter and "Add Host"
 
-![](../../.gitbook/assets/image%20%2864%29.png)
+![](../../.gitbook/assets/image%20%2865%29.png)
 
 Enter your ESXI username and password.
 
