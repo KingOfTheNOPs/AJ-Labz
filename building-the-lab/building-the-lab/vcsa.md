@@ -9,7 +9,7 @@ description: >-
 
 ![](../../.gitbook/assets/image%20%2813%29.png)
 
-## Header
+## vCenter install as a virtual machine
 
 vSphere ESXI is its own bare metal hypervisor, and can operate without any appliance to orchestrate it. However, adding the vCSA allows additional capabilities: migrating VM's between server hosts, port mirroring to a physical device, and cloning virtual machines, etc.
 
@@ -48,6 +48,8 @@ Select the Datastore you want the VM to be stored on.
 **This is where the FQDN is important.** If you chose to only use IP address then there is a good chance you will have plenty of trouble getting through Phase 2, as well as, the web interface for VCSA \(specifically VXPD\) not starting due to not being able to preform a reverse lookup among other things. 
 
 ![](../../.gitbook/assets/image%20%2832%29.png)
+
+### Stage 2
 
 Click finish and continue to phase 2. If you desire you can have pfsense be your NTP server and configure it in the next step. 
 
