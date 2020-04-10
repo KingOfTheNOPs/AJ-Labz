@@ -35,17 +35,17 @@ Enter the details for your ESXI host. Notice the FQDN instead of IP address. Thi
 
 Click yes on the certificate warning. Give the virtual machine a name \(this can be changed later\)
 
-![](../../.gitbook/assets/image%20%2836%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 Chose the option that best fits your lab \(We both used tiny\)
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 Select the Datastore you want the VM to be stored on.
 
 **This is where the FQDN is important.** If you chose to only use IP address then there is a good chance you will have plenty of trouble getting through Phase 2, as well as, the web interface for VCSA \(specifically VXPD\) not starting due to not being able to preform a reverse lookup among other things. 
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image%20%2832%29.png)
 
 Click finish and continue to phase 2. If you desire you can have pfsense be your NTP server and configure it in the next step. 
 
@@ -55,5 +55,5 @@ Here you can create a new single sign on. If you already have one you can join t
 
 After that next, next, finish.. 
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2842%29.png)
 
