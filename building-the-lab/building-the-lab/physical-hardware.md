@@ -34,6 +34,14 @@ Currently looking into getting a couple L3 managed cisco switches and a decent c
 
 ![This is the general principle described above \(except the wan stuff\) that will facilitate hardware in the loop.](../../.gitbook/assets/image%20%287%29.png)
 
+####  replacing your AT&T Hardware with you own \(we used pfsense\)
+
+fdsdg
+
+
+
+
+
 
 
 
