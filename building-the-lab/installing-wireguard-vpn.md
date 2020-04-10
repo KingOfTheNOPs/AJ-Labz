@@ -55,12 +55,12 @@ The Address field is the range of IPs you will be assigning to the clients. When
 
 Make sure to port forward 51820 UDP on pfSense under Firewall -&gt; NAT 
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2862%29.png)
 
 Allow the server/clients access to the internet  
 Firewall -&gt; Rules
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 ### Start WireGuard Service
 
@@ -80,11 +80,11 @@ On Windows: Open the application, Click the dropdown next to add tunnel and sele
 Add the following contents  
 
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2850%29.png)
 
 You should be able to connect to your home network now.   
 To verify if the connection was successful run `wg show` on the wireguard server and you should see the peer information.   
 
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2845%29.png)
 
