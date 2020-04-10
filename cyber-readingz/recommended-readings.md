@@ -8,5 +8,9 @@
 
 {% file src="../.gitbook/assets/cnmf-ttp-based-hunting-2018.pdf" caption="Threat Based Hunting Methodology" %}
 
-[https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md)
+{% embed url="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md" %}
+
+[https://www.ossblog.org/opensourcebooks/](https://www.ossblog.org/opensourcebooks/)
+
+
 
