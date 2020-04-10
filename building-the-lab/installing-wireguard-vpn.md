@@ -7,11 +7,11 @@ description: >-
 
 # Installing WireGuard VPN
 
-Want to watch YouTube TV but your local channels aren't available? Try WireGuard VPN to bypass their location services.
+Want to watch YouTube TV but your local channels aren't available? Try WireGuard VPN to bypass their location services. They noticed my VPN when using OpenVPN :-\(
 
-Or use it to connect to your home lab with a VPN...
+Or use WireGuard as an alternative way to connect to your home lab with a VPN
 
-## Install Dependancies
+### Install Dependancies
 
 Install Ubuntu Server  
 Install [WireGuard](https://www.wireguard.com/install/) on Ubuntu Server   
