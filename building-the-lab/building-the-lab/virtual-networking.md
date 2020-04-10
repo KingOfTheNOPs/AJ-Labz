@@ -1,6 +1,6 @@
 # Virtual Networking
 
-![](../../.gitbook/assets/image%20%2836%29.png)
+![](../../.gitbook/assets/image%20%2839%29.png)
 
 ## Design
 
@@ -40,5 +40,15 @@ Once we acquire more hardware we can VLAN segment the un-tagged interfaces. Sinc
 
 ## Creating the distributed virtual switch
 
+From the Networking tab, right click on your datacenter and select -&gt; Distributed Switch -&gt; New Distributed Switch
 
+Chose a good name for the switch 
+
+![](../../.gitbook/assets/image%20%287%29.png)
+
+![](../../.gitbook/assets/image%20%2820%29.png)
+
+![](../../.gitbook/assets/image%20%2837%29.png)
+
+Finish
 
