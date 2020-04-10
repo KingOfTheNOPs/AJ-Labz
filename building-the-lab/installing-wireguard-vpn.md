@@ -8,7 +8,8 @@ Or use it to connect to your home lab with a VPN...
 ### Install Dependancies
 
 Install Ubuntu Server  
-Install WireGuard  
+Install [WireGuard] (https://www.wireguard.com/install/) on Ubuntu Server
+Install [WireGuard] (https://www.wireguard.com/install/) on Client 
 
 If Ubuntu &gt;19.10
 
