@@ -2,7 +2,7 @@
 
 .
 
-![Show me what you got!](../.gitbook/assets/image%20%2879%29.png)
+![Show me what you got!](../.gitbook/assets/image%20%2880%29.png)
 
 Created this guide to assist others who may need a way to access to resources remotely when your current environment may either block or restrict what resources you have.
 
@@ -197,7 +197,7 @@ You should now be able to access your guacamole server from your.domain.com
 
 #### Example of Connection
 
-![Guac Connection Snapshot](../.gitbook/assets/image%20%2839%29.png)
+![Guac Connection Snapshot](../.gitbook/assets/image%20%2840%29.png)
 
 I hope this guide helps you and there are more to come.
 
