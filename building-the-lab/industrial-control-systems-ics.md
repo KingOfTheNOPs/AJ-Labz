@@ -1,4 +1,4 @@
 # Industrial Control Systems \(ICS\)
 
-![](../.gitbook/assets/tenor-1.gif)
+![](../.gitbook/assets/ezgif-1-d3acee8c463e.gif)
 
