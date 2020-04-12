@@ -4,7 +4,7 @@ description: Installing ESXi Hyper-visor on top of dell R710
 
 # ESXi
 
-![](../../.gitbook/assets/image%20%2864%29.png)
+![](../../.gitbook/assets/image%20%2865%29.png)
 
 ## Installing ESXi Hyper-visor on top of dell R710
 
@@ -16,7 +16,7 @@ For this both servers we used ESXI 6.7 since it
 >
 > Once Registered Visit: [https://www.vmware.com/products/vsphere-hypervisor.html](https://www.vmware.com/products/vsphere-hypervisor.html)
 
-![](../../.gitbook/assets/image%20%2886%29.png)
+![](../../.gitbook/assets/image%20%2887%29.png)
 
 Click "Download Now." 
 
@@ -106,7 +106,7 @@ Press F2 and Enter Configure Network Management -&gt; IPv4 -&gt; Set Static IPv4
 
 Select -&gt; Configure Management Network -&gt; Network Adapters
 
-![](../../.gitbook/assets/image%20%2852%29.png)
+![](../../.gitbook/assets/image%20%2853%29.png)
 
 
 
