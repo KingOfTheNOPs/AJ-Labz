@@ -80,7 +80,7 @@ Apply Configure the port group settings based on the above table
 
 Click Finish
 
-![](../../.gitbook/assets/image%20%2882%29.png)
+![](../../.gitbook/assets/image%20%2883%29.png)
 
 ### Add the new D-Switch to each ESXi Host
 
@@ -128,7 +128,7 @@ Select all Port Groups
 This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group.** If we we had Physical networking equipment we would put everything in 1 Uplink and tag packets as necessary physically 
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2879%29.png)
+![](../../.gitbook/assets/image%20%2880%29.png)
 
 Change to "Use explicit failover order"
 

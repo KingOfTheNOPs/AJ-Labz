@@ -70,7 +70,7 @@ Creating firewall rules is time consuming because you need to have a deep unders
 
 Here are some windows default domain ports that will need to be open on the client VLAN interfaces: [https://support.microsoft.com/en-us/help/179442/how-to-configure-a-firewall-for-domains-and-trusts](https://support.microsoft.com/en-us/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) [https://isc.sans.edu/diary/Cyber+Security+Awareness+Month+-+Day+27+-+Active+Directory+Ports/7468](https://isc.sans.edu/diary/Cyber+Security+Awareness+Month+-+Day+27+-+Active+Directory+Ports/7468)
 
-![Example restricted rule set for AD enclave](../../.gitbook/assets/image%20%2877%29.png)
+![Example restricted rule set for AD enclave](../../.gitbook/assets/image%20%2878%29.png)
 
 {% hint style="info" %}
 Some standard practice rules you can use, though by no means exhaustive: 
