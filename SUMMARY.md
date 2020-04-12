@@ -20,9 +20,12 @@
 
 ## Defensive Cyberz
 
-* [Creating an SIEM](defensive-cyberz/creating-an-siem/README.md)
-  * [Installing Security Onion \(SO\)](defensive-cyberz/creating-an-siem/installing-security-onion-so.md)
-  * [Installing SPLUNK](defensive-cyberz/creating-an-siem/installing-splunk.md)
+* [Creating an SIEM](creating-an-siem/README.md)
+  * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
+  * [Installing SPLUNK](creating-an-siem/installing-splunk.md)
+* [Zeek \|\| Bro](zeek-or-or-bro/README.md)
+  * [Writing a Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
+  * [Installing Parser](zeek-or-or-bro/installing-parser.md)
 
 ## Offensive Cyberz
 
