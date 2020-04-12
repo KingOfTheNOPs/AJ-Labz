@@ -96,13 +96,13 @@ After the ESXi is installed, you’ll get the following screen where you can con
 
 ![](https://static.thegeekstuff.com/wp-content/uploads/2010/06/10-vmware-esxi-launched1.png)
 
-### 10. Setting ESXi IP Address
+### 11. Setting ESXi IP Address
 
 Press F2 and Enter Configure Network Management -&gt; IPv4 -&gt; Set Static IPv4
 
 ![](../../.gitbook/assets/image%20%2823%29.png)
 
-### 11. Determining VMNetwork \(management\) Physical Adapter
+### 12. Determining VMNetwork \(management\) Physical Adapter
 
 Select -&gt; Configure Management Network -&gt; Network Adapters
 
