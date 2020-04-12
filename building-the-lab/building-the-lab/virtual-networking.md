@@ -1,6 +1,6 @@
 # Virtual Networking
 
-![](../../.gitbook/assets/image%20%2867%29.png)
+![](../../.gitbook/assets/image%20%2868%29.png)
 
 ## Design
 
@@ -12,7 +12,7 @@ Our environment was built with many enclaves throughout and used the pfsense \([
 
 Once you have an idea on paper you can clearly see what you need to do. 
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
 {% hint style="info" %}
 vSphere "distributed switchs" and its networking capabilities is the main reason  for installing VCSA. For simplicity, we will add all port groups to one virtual distributed switch, and segment all traffic through VLAN tagging. When traffic from a virtual machine to another on the same ESXI host the traffic will never exit the physical interface \(or uplink\). However, if the destination is on another host or outside/needs to traverse physical hardware it will exit the physical vnic.  **with the VLAN tag associated on the port group.**
@@ -44,11 +44,11 @@ From the Networking tab, right click on your datacenter and select -&gt; Distrib
 
 Chose a good name for the switch 
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2866%29.png)
 
 Finish
 
@@ -58,7 +58,7 @@ Finish
 
 Right click the new distributed switch you added -&gt; Distributed Port Group -&gt; New port group
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2845%29.png)
 
 Apply Configure the port group settings based on the above table
 
@@ -66,33 +66,33 @@ Apply Configure the port group settings based on the above table
 {% tab title="VLAN Tagged Port Group " %}
 
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/image%20%2813%29.png)
 {% endtab %}
 
 {% tab title="NON VLAN Tagged Port Group " %}
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image%20%285%29.png)
 {% endtab %}
 
 {% tab title="Trunk Port Group" %}
-![Tune the allowed vlans default is allow 0-4094](../../.gitbook/assets/image%20%288%29.png)
+![Tune the allowed vlans default is allow 0-4094](../../.gitbook/assets/image%20%289%29.png)
 {% endtab %}
 {% endtabs %}
 
 Click Finish
 
-![](../../.gitbook/assets/image%20%2883%29.png)
+![](../../.gitbook/assets/image%20%2884%29.png)
 
 ### Add the new D-Switch to each ESXi Host
 
 Click on networking Networking -&gt; your distributed switch -&gt; actions -&gt; add and manage hosts
 
-![](../../.gitbook/assets/image%20%2833%29.png)
+![](../../.gitbook/assets/image%20%2834%29.png)
 
 Chose your ESXi Hosts you would like this D-Switch applied to. 
 
 Now, assign the NIC that your switch is going to use as an uplink. Select the vnmic\#, "Assign Uplink" and then pick the associated uplink on the virtual switch. Repeat as necessary, then click Next
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 {% hint style="info" %}
 You can name your Uplinks to help avoid mis-configuration later  
@@ -112,15 +112,15 @@ Click on the DSwitch you created and Then Topology and you can see all the NICS.
 Due to VCSA only managing 1 ESXi host I created "Uplink 4" as a "null"  which has no physical NIC and I configured explicit fail order for all port groups to start to use Uplink 4
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2872%29.png)
+![](../../.gitbook/assets/image%20%2873%29.png)
 
 Now right click on the DSwitch and "Manage Distribute Port Groups"
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2857%29.png)
 
 Check Teaming and Failover
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 Select all Port Groups 
 
@@ -128,28 +128,28 @@ Select all Port Groups
 This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group.** If we we had Physical networking equipment we would put everything in 1 Uplink and tag packets as necessary physically 
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2880%29.png)
+![](../../.gitbook/assets/image%20%2881%29.png)
 
 Change to "Use explicit failover order"
 
-![](../../.gitbook/assets/image%20%2850%29.png)
+![](../../.gitbook/assets/image%20%2851%29.png)
 
 **Configure individual portgroups to use explicit routing**  
 
 Right click on the port group you want to edit and click edit settings  
 
 
-![](../../.gitbook/assets/image%20%2852%29.png)
+![](../../.gitbook/assets/image%20%2853%29.png)
 
 click Teaming and Failover and change the uplinks   
 
 
-![](../../.gitbook/assets/image%20%2854%29.png)
+![](../../.gitbook/assets/image%20%2855%29.png)
 
 Verify using the topology and clicking on the specific uplink.   
 
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 ## Creating a SPAN 
 
