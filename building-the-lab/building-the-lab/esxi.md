@@ -10,8 +10,6 @@ description: Installing ESXi Hyper-visor on top of dell R710
 
 ### **1. Download ESXi and create B**ootable **media**
 
-### **1. Download ESXi and create B**ootable **media**
-
 For this both servers we used ESXI 6.7 since it 
 
 > Register Here: [https://my.vmware.com/web/vmware/registration](https://my.vmware.com/web/vmware/registration)
