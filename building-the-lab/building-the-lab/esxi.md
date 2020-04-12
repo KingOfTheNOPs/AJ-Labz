@@ -4,7 +4,7 @@ description: Installing ESXi Hyper-visor on top of dell R710
 
 # ESXi
 
-![](../../.gitbook/assets/image%20%2857%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 ## Installing ESXi Hyper-visor on top of dell R710
 
@@ -18,7 +18,7 @@ For this both servers we used ESXI 6.7 since it
 >
 > Once Registered Visit: [https://www.vmware.com/products/vsphere-hypervisor.html](https://www.vmware.com/products/vsphere-hypervisor.html)
 
-![](../../.gitbook/assets/image%20%2877%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
 Click "Download Now." 
 
@@ -26,7 +26,7 @@ Register for the product. Under the License & Download page you now have a licen
 
 Use Rufus bootable media writer ****to load the ESXI hypervisor ISO you just downloaded onto a USB or hard. 
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 Specify an ISO image for that. Click on the browse button next to the option, and use the local file browser to pick an ISO stored on it.
 
@@ -102,11 +102,13 @@ After the ESXi is installed, you’ll get the following screen where you can con
 
 Press F2 and Enter Configure Network Management -&gt; IPv4 -&gt; Set Static IPv4
 
-![](../../.gitbook/assets/image%20%2842%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
-### 11. Determining VMNetwork Physical Adapter
+### 11. Determining VMNetwork \(management\) Physical Adapter
 
-in progress
+Select -&gt; Configure Management Network -&gt; Network Adapters
+
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 
 
