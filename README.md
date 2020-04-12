@@ -6,7 +6,7 @@ description: >-
 
 # whoami
 
-![A couple of Ricks just trying to share what we learned](.gitbook/assets/rick2.png)
+![A couple of Ricks just trying to &quot;Show you what we got&quot;](.gitbook/assets/rick2.png)
 
 ### Who we are
 
