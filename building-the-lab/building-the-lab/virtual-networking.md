@@ -1,6 +1,6 @@
 # Virtual Networking
 
-![](../../.gitbook/assets/image%20%2868%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 ## Design
 
@@ -46,9 +46,9 @@ Chose a good name for the switch
 
 ![](../../.gitbook/assets/image%20%2817%29.png)
 
-![](../../.gitbook/assets/image%20%2836%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
-![](../../.gitbook/assets/image%20%2866%29.png)
+![](../../.gitbook/assets/image%20%2868%29.png)
 
 Finish
 
@@ -58,7 +58,7 @@ Finish
 
 Right click the new distributed switch you added -&gt; Distributed Port Group -&gt; New port group
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 Apply Configure the port group settings based on the above table
 
@@ -80,13 +80,13 @@ Apply Configure the port group settings based on the above table
 
 Click Finish
 
-![](../../.gitbook/assets/image%20%2884%29.png)
+![](../../.gitbook/assets/image%20%2886%29.png)
 
 ### Add the new D-Switch to each ESXi Host
 
 Click on networking Networking -&gt; your distributed switch -&gt; actions -&gt; add and manage hosts
 
-![](../../.gitbook/assets/image%20%2834%29.png)
+![](../../.gitbook/assets/image%20%2835%29.png)
 
 Chose your ESXi Hosts you would like this D-Switch applied to. 
 
@@ -112,15 +112,15 @@ Click on the DSwitch you created and Then Topology and you can see all the NICS.
 Due to VCSA only managing 1 ESXi host I created "Uplink 4" as a "null"  which has no physical NIC and I configured explicit fail order for all port groups to start to use Uplink 4
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2873%29.png)
+![](../../.gitbook/assets/image%20%2875%29.png)
 
 Now right click on the DSwitch and "Manage Distribute Port Groups"
 
-![](../../.gitbook/assets/image%20%2857%29.png)
+![](../../.gitbook/assets/image%20%2858%29.png)
 
 Check Teaming and Failover
 
-![](../../.gitbook/assets/image%20%2848%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 
 Select all Port Groups 
 
@@ -128,28 +128,28 @@ Select all Port Groups
 This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group.** If we we had Physical networking equipment we would put everything in 1 Uplink and tag packets as necessary physically 
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2881%29.png)
+![](../../.gitbook/assets/image%20%2883%29.png)
 
 Change to "Use explicit failover order"
 
-![](../../.gitbook/assets/image%20%2851%29.png)
+![](../../.gitbook/assets/image%20%2852%29.png)
 
 **Configure individual portgroups to use explicit routing**  
 
 Right click on the port group you want to edit and click edit settings  
 
 
-![](../../.gitbook/assets/image%20%2853%29.png)
+![](../../.gitbook/assets/image%20%2854%29.png)
 
 click Teaming and Failover and change the uplinks   
 
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2856%29.png)
 
 Verify using the topology and clicking on the specific uplink.   
 
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ## Creating a SPAN 
 

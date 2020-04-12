@@ -1,6 +1,6 @@
 # Install Virtual Firewall
 
-![](../../.gitbook/assets/image%20%2862%29.png)
+![](../../.gitbook/assets/image%20%2864%29.png)
 
 ## Configuring PFSense W/ a LAN and VMnet 
 
@@ -14,7 +14,7 @@ In order to complete this you will need to know how to add attach port groups to
 
 After attaching your `wan` `LAN` and `VMnet` port groups to your virtual machine you should be able to verify their status via the virtual console of PFsense. If DHCP is enabled, the LAN interface should draw a DHCP lease from your VMnetwork or the MGMT interface. If it does not you may need to statically configure one using option 2 of the pfsense cli.
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2867%29.png)
 
 {% hint style="info" %}
  Most issues are due to improper porgroups tied to the wrong interface on the VM. Verify the interface by checking the MAC address in Vsphere and from the terminal \(option 8 and ifconfig \|less \).
@@ -26,9 +26,9 @@ Add the interfaces and verify the mac address and port groups are what you want 
 
 _Your MAC addresses will be different. This is where a lot of troubleshooting will happen if you select the wrong interface._
 
-![From PFsense interfaces tab. NOTE: WAN MAC](../../.gitbook/assets/image%20%2863%29.png)
+![From PFsense interfaces tab. NOTE: WAN MAC](../../.gitbook/assets/image%20%2865%29.png)
 
-![From the edit settings page of vCenter Notice the WAN Mac Address is the same.](../../.gitbook/assets/image%20%2843%29.png)
+![From the edit settings page of vCenter Notice the WAN Mac Address is the same.](../../.gitbook/assets/image%20%2844%29.png)
 
 {% hint style="info" %}
 On VSphere you may have many port groups that will tag packets with the specific VLANs. Also, do to interface restrictions on PFsense it is recommended to create a Trunk port group and use`VLAN` interfaces \(can be thought of as sub-interfaces\) in pfsense.
@@ -40,7 +40,7 @@ Configure the interfaces to have an IP address on its desired subnet. Set the co
 
 ![](../../.gitbook/assets/image%20%2816%29.png)
 
-![](../../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image%20%2838%29.png)
 
 {% hint style="info" %}
 If you are unable to access this page you will need to use the CLI \(see above\) to configure the interface IP and ensure you are in the same network. Pro Tip: Configure the VMNET interface and put your laptop in vmnet.
@@ -52,13 +52,13 @@ You will need to determine your trunking interface. It will be the mac address o
 
  Go to interfaces -&gt; assignments -&gt; VLANs. Once there click add at the bottom of the page.
 
-![Creating a sub-interface for our Planners Enclave which will pass traffic tagged with VLAN 203](../../.gitbook/assets/image%20%2872%29.png)
+![Creating a sub-interface for our Planners Enclave which will pass traffic tagged with VLAN 203](../../.gitbook/assets/image%20%2874%29.png)
 
 ![These sub-interfaces will be tied to the port groups  ](../../.gitbook/assets/image%20%282%29.png)
 
 Go back to the interfaces page and add the VLAN \(Sub\) interfaces as a network port and assign corresponding ip address Go to interfaces -&gt; assignments. Once there, click the drop down to add each new interface.
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 Change the name, configuration type, and IP address the say way we did before. Keep in mind this will be the default gateway for each specific enclave when assigning the IP address.
 
@@ -70,7 +70,7 @@ Creating firewall rules is time consuming because you need to have a deep unders
 
 Here are some windows default domain ports that will need to be open on the client VLAN interfaces: [https://support.microsoft.com/en-us/help/179442/how-to-configure-a-firewall-for-domains-and-trusts](https://support.microsoft.com/en-us/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) [https://isc.sans.edu/diary/Cyber+Security+Awareness+Month+-+Day+27+-+Active+Directory+Ports/7468](https://isc.sans.edu/diary/Cyber+Security+Awareness+Month+-+Day+27+-+Active+Directory+Ports/7468)
 
-![Example restricted rule set for AD enclave](../../.gitbook/assets/image%20%2879%29.png)
+![Example restricted rule set for AD enclave](../../.gitbook/assets/image%20%2881%29.png)
 
 {% hint style="info" %}
 Some standard practice rules you can use, though by no means exhaustive: 
@@ -89,13 +89,13 @@ Here is an issue I came across. I was attempting to push a GPO across the domain
 
 I added a allow any any rule at the bottom of my rule set so it would be processed last. Then I attempted to connect to sysvol and it worked.
 
-![](../../.gitbook/assets/image%20%2850%29.png)
+![](../../.gitbook/assets/image%20%2851%29.png)
 
 So now I can look at the connection state of the any any rule \(click the blue 9/69kib\) and see if I can determine if there is something I need to change. NOTE: you should probably see more than 0
 
 ![](../../.gitbook/assets/image%20%284%29.png)
 
-![](../../.gitbook/assets/image%20%2833%29.png)
+![](../../.gitbook/assets/image%20%2834%29.png)
 
 This lets me know I should probably add a tcp rule allowing port 88 for Kerberos authentication services.
 
