@@ -57,7 +57,7 @@ The Address field is the range of IPs you will be assigning to the clients. When
 
 Make sure to port forward 51820 UDP on pfSense under Firewall -&gt; NAT 
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 Allow the server/clients access to the internet  
 Firewall -&gt; Rules
