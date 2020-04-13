@@ -48,7 +48,7 @@ Using the latest stable release on [PyPI](https://pypi.python.org/pypi):
 $ pip install zkg
 ```
 
-Using the latest git development version:
+Or using the latest git development version:
 
 ```text
 $ pip install git+git://github.com/zeek/package-manager@master
