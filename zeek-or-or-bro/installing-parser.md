@@ -141,29 +141,6 @@ if [[ -d "$SRC_DIR" ]]; then
     make install
   cd "$CWD"
 fi
-Zeek::AF_Packet configuration
-Of particular mention is J-Gras' Zeek::AF_Packet plugin to allow Zeek to use the Linux kernel's AF_PACKET capabilities natively for packet capture. To determine if your Linux distribution's kernel supports AF_PACKET:
-
-$ grep -x 'CONFIG_PACKET=[ym]' "/boot/config-$(uname -r)"
-CONFIG_PACKET=y
-This plugin must be used with zeekctl. To enable the use of the AF_PACKET plugin, append the following to the zeekctl.cfg file:
-
-# all interfaces using lb_method=custom should use AF_PACKET
-lb_custom.InterfacePrefix=af_packet::
-Then, workers can be created for specific interfaces with further customization in node.cfg, for example:
-
-...
-
-[worker-1]
-type=worker
-host=localhost
-interface=enp8s0
-lb_procs=1
-lb_method=custom
-pin_cpus=0,1,2,3,4,5
-af_packet_fanout_id=1
-af_packet_fanout_mode=AF_Packet::FANOUT_HASH
-af_packet_buffer_size=67108864
 ```
 
 
