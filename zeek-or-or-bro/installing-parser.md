@@ -178,5 +178,7 @@ make && \ make install
 #./configure --bro-dist="zeek_dist" --install-root="plugin_dir"
 ```
 
+![](../.gitbook/assets/image%20%2873%29.png)
+
 
 

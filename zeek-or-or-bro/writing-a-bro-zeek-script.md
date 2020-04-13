@@ -2,7 +2,7 @@
 
 
 
-![JK](../.gitbook/assets/image%20%2877%29.png)
+![JK](../.gitbook/assets/image%20%2878%29.png)
 
 ## Loading **Bro/ZEEK** Script 
 
@@ -157,5 +157,5 @@ event bro_init() {
 }
 ```
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2892%29.png)
 

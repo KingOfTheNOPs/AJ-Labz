@@ -37,7 +37,7 @@ Enter the details for your ESXI host. Notice the FQDN instead of IP address. Thi
 
 Click yes on the certificate warning. Give the virtual machine a name \(this can be changed later\)
 
-![](../../.gitbook/assets/image%20%2883%29.png)
+![](../../.gitbook/assets/image%20%2884%29.png)
 
 Chose the option that best fits your lab \(We both used tiny\)
 
@@ -59,5 +59,5 @@ Here you can create a new single sign on. If you already have one you can join t
 
 After that next, next, finish.. 
 
-![](../../.gitbook/assets/image%20%2897%29.png)
+![](../../.gitbook/assets/image%20%2898%29.png)
 
