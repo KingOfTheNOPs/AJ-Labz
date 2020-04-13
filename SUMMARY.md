@@ -24,8 +24,8 @@
   * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
   * [Installing SPLUNK](creating-an-siem/installing-splunk.md)
 * [Zeek \|\| Bro](zeek-or-or-bro/README.md)
-  * [Writing a Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
-  * [Installing Parser](zeek-or-or-bro/installing-parser.md)
+  * [Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
+  * [Installing Protocol Analyzers](zeek-or-or-bro/installing-parser.md)
 
 ## Offensive Cyberz
 
