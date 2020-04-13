@@ -4,7 +4,7 @@
 
 ICS Plugins: [https://github.com/amzn?q=zeek&type=&language=](https://github.com/amzn?q=zeek&type=&language=)
 
-While not all of the plugins install correctly with zkg, this bash script can be used to install those which can be installed with zkg using that tool, and to manually install the others.
+While not all of the plugins install correctly with `zkg`, this bash script can be used to install those which can be installed with `zkg` using that tool, and to manually install the others.
 
 ```bash
 #!/bin/bash
@@ -143,5 +143,9 @@ if [[ -d "$SRC_DIR" ]]; then
 fi
 ```
 
+{% hint style="info" %}
+Source: [https://github.com/idaholab/Malcolm/blob/master/sensor-iso/docs/Notes.md](https://github.com/idaholab/Malcolm/blob/master/sensor-iso/docs/Notes.md) 
+{% endhint %}
 
+a
 
