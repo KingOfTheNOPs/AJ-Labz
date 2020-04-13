@@ -6,7 +6,27 @@
 
 ## Loading **Bro/ZEEK** Script 
 
-### **producer-consumer-ratio.bro** <a id="blob-path"></a>
+### ZKG Install
+
+Using the latest stable release on PyPI:
+
+```bash
+$ pip install zkg
+```
+
+Using the latest git development version:
+
+```bash
+$ pip install git+git://github.com/zeek/package-manager@master
+```
+
+
+
+{% hint style="info" %}
+We will use the `producer-consumer-ratio.bro` script and load it into security onion for this example. 
+{% endhint %}
+
+#### 
 
 The end goal is to have a `pcr` field added to conn.log. This will enable future analytics be completed easier in splunk. This can be done at time of search, in a constrained environment, but where possible it is recommended to use the method below. 
 
@@ -109,5 +129,5 @@ event bro_init() {
 }
 ```
 
-
+Take the above script
 

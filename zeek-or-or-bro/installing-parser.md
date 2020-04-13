@@ -2,34 +2,109 @@
 
 ![](../.gitbook/assets/parse.png)
 
-ICS Plugins: [https://github.com/amzn?q=zeek&type=&language=](https://github.com/amzn?q=zeek&type=&language=)
+### Security Onion Prerequisites  
 
-While not all of the plugins install correctly with `zkg`, this bash script can be used to install those which can be installed with `zkg` using that tool, and to manually install the others.
+#### Update security onion 
+
+```bash
+sudo soup
+```
+
+#### Install GCC-6
+
+```bash
+sudo apt-get update && \
+sudo apt-get install build-essential software-properties-common -y && \
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-6 g++-6 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6 && \
+gcc -v
+```
+
+#### Install cmake by a PPA \(Upgrade to 3.2\)
+
+```bash
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
+sudo apt-get update
+sudo apt-get install cmake
+```
+
+#### Install Package libpcap0.8-dev package
+
+```bash
+sudo apt-get install libpcap0.8-dev
+```
+
+This should cover any errors you may encounter 
+
+### Install and Configure ZKG Command-Line Utilitiy
+
+Install `zkg`  
+Using the latest stable release on [PyPI](https://pypi.python.org/pypi):
+
+```text
+$ pip install zkg
+```
+
+Using the latest git development version:
+
+```text
+$ pip install git+git://github.com/zeek/package-manager@master
+```
+
+{% hint style="info" %}
+If not using something like **virtualenv** to manage Python environments, the default user script directory is `~/.local/bin` and you may have to modify your `PATH` to search there for **zkg**.
+{% endhint %}
+
+After installing via **pip**, additional configuration is required. First, make sure that the **zeek-config** script that gets installed with **zeek** is in your `PATH`. Then, as the user you want to run **zkg** with, do:
+
+```text
+$ zkg autoconfig
+```
+
+This automatically generates a config file with the following suggested settings that should work for most Zeek deployments:
+
+* script\_dir: set to the location of Zeek's `site` scripts directory \(e.g. _`<zeek_install_prefix>`_`/share/zeek/site`\)
+* plugin\_dir: set to the location of Zeek's default plugin directory \(e.g. _`<zeek_install_prefix>`_`/lib/zeek/plugins`\)
+* zeek\_dist: set to the location of Zeek's source code. If you didn't build/install Zeek from source code, this field will not be set, but it's only needed if you plan on installing packages that have uncompiled Zeek plugins.
+
+{% hint style="info" %}
+ If your Zeek installation is owned by "root" and you intend to run **zkg** as a different user, then you should grant "write" access to the directories specified by script\_dir and plugin\_dir. E.g. you could do something like:
+
+```text
+$ sudo chgrp $USER $(zeek-config --site_dir) $(zeek-config --plugin_dir)
+$ sudo chmod g+rwX $(zeek-config --site_dir) $(zeek-config --plugin_dir)
+```
+{% endhint %}
+
+ The final step is to edit your `site/local.zeek`. If you want to have Zeek automatically load the scripts from all [installed](https://docs.zeek.org/projects/package-manager/en/stable/zkg.html#install-command) packages that are also marked as "[loaded](https://docs.zeek.org/projects/package-manager/en/stable/zkg.html#load-command)" add:
+
+```text
+@load packages
+```
+
+### Install Third-Party Plugin for ZEEK using the ZKG Utility
+
+Start by cloning the git repo of the package you want to install
+
+```bash
+git clone https://github.com/amzn/zeek-plugin-enip
+cd zeek-plugin-enip
+CWD="$(pwd)"
+```
+
+Use the `zkg` tool to install the plugin.
+
+```bash
+zkg install --force --skiptests $CWD
+```
+
+This script will loop through the listed repos and install  install the plugins with `zkg` 
 
 ```bash
 #!/bin/bash
-
-if [ -z "$BASH_VERSION" ]; then
-  echo "Wrong interpreter, please run \"$0\" with bash"
-  exit 1
-fi
-
-# some of the packages will install via zkg, so the zkg config file must be present
-# read Zeek paths out of zkg config file for plugins that must be installed manually
-ZKG_CONFIG_FILE="$HOME/.zkg/config"
-if [[ -f "$ZKG_CONFIG_FILE" ]]; then
-  ZEEK_SCRIPTS_DIR="$(grep -P "^script_dir\s*=\s*" "$ZKG_CONFIG_FILE" | sed 's/^script_dir[[:space:]]*=[[:space:]]*//')"
-  ZEEK_DIST_DIR="$(grep -P "^zeek_dist\s*=\s*" "$ZKG_CONFIG_FILE" | sed 's/^zeek_dist[[:space:]]*=[[:space:]]*//')"
-  ZEEK_PLUGIN_DIR="$(grep -P "^plugin_dir\s*=\s*" "$ZKG_CONFIG_FILE" | sed 's/^plugin_dir[[:space:]]*=[[:space:]]*//')"
-else
-  unset ZEEK_SCRIPTS_DIR
-  unset ZEEK_DIST_DIR
-  unset ZEEK_PLUGIN_DIR
-fi
-if [[ -z $ZEEK_SCRIPTS_DIR ]] || [[ -z $ZEEK_DIST_DIR ]]; then
-  echo "Unable to determine Zeek scripts and/or source directory"
-  exit 1
-fi
 
 # going to clone under /usr/local/src
 SRC_BASE_DIR="/usr/local/src"
@@ -79,73 +154,29 @@ ZKG_GITHUB_URLS=(
   https://github.com/amzn/zeek-plugin-profinet
   https://github.com/amzn/zeek-plugin-s7comm
   https://github.com/amzn/zeek-plugin-tds
-  https://github.com/corelight/bro-community-id
-  https://github.com/corelight/bro-xor-exe-plugin
-  https://github.com/lexibrent/zeek-EternalSafety
-  https://github.com/salesforce/hassh
-  https://github.com/salesforce/ja3
+  #https://github.com/salesforce/ja3
 )
 for i in ${ZKG_GITHUB_URLS[@]}; do
   SRC_DIR="$(clone_github_repo "$i")"
   [[ -d "$SRC_DIR" ]] && zkg install --force --skiptests "$SRC_DIR"
 done
-
-# install Zeek packages that need to be copied manually
-MANUAL_COPY_GITHUB_URLS_AND_SCRIPT_PATHS=(
-  "https://github.com/mitre-attack/car|implementations/bzar/scripts|bzar"
-)
-for i in ${MANUAL_COPY_GITHUB_URLS_AND_SCRIPT_PATHS[@]}; do
-  URL="$(echo "$i" | cut -d'|' -f1)"
-  SCRIPT_SRC_SUBDIR="$(echo "$i" | cut -d'|' -f2)"
-  SCRIPT_DST_SUBDIR="$(echo "$i" | cut -d'|' -f3)"
-  SRC_DIR="$(clone_github_repo "$URL")"
-  if [[ -d "$SRC_DIR" ]] && [[ -d "$SRC_DIR"/"$SCRIPT_SRC_SUBDIR" ]]; then
-    PLUGIN_DIR="$ZEEK_SCRIPTS_DIR"/"$SCRIPT_DST_SUBDIR"
-    mkdir -p "$PLUGIN_DIR"
-    cp -v "$SRC_DIR"/"$SCRIPT_SRC_SUBDIR"/* "$PLUGIN_DIR"/
-  fi
-done
-
-# manual build processes that don't fit the other patterns
-
-SRC_DIR="$(clone_github_repo "https://github.com/salesforce/GQUIC_Protocol_Analyzer")"
-if [[ -d "$SRC_DIR" ]]; then
-  CWD="$(pwd)"
-  cd "$ZEEK_DIST_DIR"/aux/zeek-aux/plugin-support && \
-    ./init-plugin ./zeek-quic Salesforce GQUIC && \
-    cd ./zeek-quic && \
-    rm -rf CMakeLists.txt ./scripts ./src && \
-    cp -vr "$SRC_DIR"/CMakeLists.txt "$SRC_DIR"/scripts "$SRC_DIR"/src ./ && \
-    ./configure --bro-dist="$ZEEK_DIST_DIR" --install-root="$ZEEK_PLUGIN_DIR" && \
-    make && \
-    make install
-  cd "$CWD"
-fi
-
-SRC_DIR="$(clone_github_repo "https://github.com/J-Gras/zeek-af_packet-plugin")"
-if [[ -d "$SRC_DIR" ]]; then
-  CWD="$(pwd)"
-  cd "$SRC_DIR" && \
-    ./configure --with-kernel=/usr --bro-dist="$ZEEK_DIST_DIR" --install-root="$ZEEK_PLUGIN_DIR" && \
-    make && \
-    make install
-  cd "$CWD"
-fi
-
-SRC_DIR="$(clone_github_repo "https://github.com/SoftwareConsultingEmporium/ldap-analyzer")"
-if [[ -d "$SRC_DIR" ]]; then
-  CWD="$(pwd)"
-  cd "$SRC_DIR" && \
-    ./configure --bro-dist="$ZEEK_DIST_DIR" --install-root="$ZEEK_PLUGIN_DIR" && \
-    make && \
-    make install
-  cd "$CWD"
-fi
 ```
 
-{% hint style="info" %}
-Source: [https://github.com/idaholab/Malcolm/blob/master/sensor-iso/docs/Notes.md](https://github.com/idaholab/Malcolm/blob/master/sensor-iso/docs/Notes.md) 
-{% endhint %}
+### Manual Install
 
-a
+Start by cloning the git repo of the package you want to install
+
+Then follow the steps below
+
+```bash
+git clone https://github.com/amzn/zeek-plugin-enip
+cd zeek-plugin-enip
+./configure 
+make && \ make install
+
+# if plugin_dir && zeek_dist are not in path you will need to manually specify them
+#./configure --bro-dist="zeek_dist" --install-root="plugin_dir"
+```
+
+
 
