@@ -2,7 +2,7 @@
 
 .
 
-![Show me what you got!](../.gitbook/assets/image%20%2894%29.png)
+![Show me what you got!](../.gitbook/assets/image%20%2899%29.png)
 
 Created this guide to assist others who may need a way to access to resources remotely when your current environment may either block or restrict what resources you have.
 
@@ -63,7 +63,7 @@ I recommend if you have some time to read [http://guacamole.apache.org/](http://
 
 At this point you should purchase your domain and create an A record for your subdomain; linking the domain to your public IP.  If you're using Google Domains then head on over to the DNS tab and then go to Custom Resource Records. 
 
-![snapshot of DNS record from Google Domain](../.gitbook/assets/image%20%2826%29.png)
+![snapshot of DNS record from Google Domain](../.gitbook/assets/image%20%2828%29.png)
 
 ### 2.A Installing NGINX
 
@@ -197,7 +197,7 @@ You should now be able to access your guacamole server from your.domain.com
 
 #### Example of Connection
 
-![Guac Connection Snapshot](../.gitbook/assets/image%20%2844%29.png)
+![Guac Connection Snapshot](../.gitbook/assets/image%20%2847%29.png)
 
 I hope this guide helps you and there are more to come.
 
