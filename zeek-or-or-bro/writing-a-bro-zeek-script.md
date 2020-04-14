@@ -56,6 +56,24 @@ Check `/nsm/bro/logs/current/reporter.log` for clues if your custom script\(s\) 
 
 --------------------------------------
 
+#### What is PCR
+
+**Purpose**: Find changes in traffic flows that indicate exfil
+
+**Data Required**: session data \(argus, netflow/ipfix, or bro-logs\)
+
+**Collection Considerations**:
+
+**Analysis Techniques**: Identify changes in host roles, and investigate. PCR is a normalized metric of traffic ratios and from a host ranging from -1 to 1.
+
+| PCR | host role |
+| :--- | :--- |
+| 1.0 | pure push - FTP upload, multicast, beaconing |
+| 0.4 | 70:30 export - Sending Email |
+| 0.0 | Balanced Exchange - NTP, ARP probe |
+| -0.5 | 3:1 import - HTTP Browsing |
+| -1.0 | pure pull - HTTP Download |
+
 #### Below is the script that we pulled with the `wget` command above
 
 > This script can be used to implement the Producer Consumer Ratio as described by [http://resources.sei.cmu.edu/asset\_files/Presentation/2014\_017\_001\_90063.pdf](http://resources.sei.cmu.edu/asset_files/Presentation/2014_017_001_90063.pdf)
