@@ -14,3 +14,9 @@ We created this book in an effort to share what we have learned as we continue t
 
 What we setup next is dependent on what we are interested in at they time there is.
 
+### Contact Us
+
+{% embed url="https://discord.gg/zj9Dge" %}
+
+
+
