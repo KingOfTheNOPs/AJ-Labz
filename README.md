@@ -16,7 +16,7 @@ What we setup next is dependent on what we are interested in at they time there 
 
 ### Contact Us
 
-{% embed url="https://discord.gg/zj9Dge" %}
+{% embed url="https://discord.gg/JgzYede" %}
 
 
 
