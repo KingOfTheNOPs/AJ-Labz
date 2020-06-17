@@ -169,7 +169,9 @@ Add the hosts you want to aggregate into the SPAN
 
 ![Add sources](../../.gitbook/assets/image%20%28108%29.png)
 
-In this instance I only added pfSense's LAN interface because I only want to monitor the traffic from my access points. This gives you the flexibility to pick and choose what you're monitoring. 
+In this instance I only added pfSense's LAN interface because I only want to monitor the traffic from my access points. Now take a look at your NSM and you'll notice you're missing some network data that you may or may not want, add additional ports to gain an understanding of how data is flowing through your network.   
+  
+Using this type of Port Mirror gives you the flexibility to pick and choose what you're monitoring. 
 
 ![pfSense LAN added to SPAN](../../.gitbook/assets/image%20%28103%29.png)
 
