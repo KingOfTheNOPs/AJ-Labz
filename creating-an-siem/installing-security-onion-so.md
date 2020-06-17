@@ -68,7 +68,7 @@ The next window is what kind of rulesets do you want. Unfortunately we don't hav
   
 We will then be prompted for Snort or Suricata, we primarily enjoy the multithreading feature of Suricata over Snort so we will select Suricata. For additional details visit [HERE](https://cybersecurity.att.com/blogs/security-essentials/open-source-intrusion-detection-tools-a-quick-overview).   
   
-Next window will ask if you want to enable the Network Sensor. Select Enable. Leave the rest of the windows on default settings as they appear, by going through Production Mode this allows you to gain an idea of what is being installed. Some items we selected No or changed from default are: File extraction and Full Packet Capture \(select No due to Hard Drive limitations\), Elastic Stack \(installing Splunk instead\),   
+Next window will ask if you want to enable the Network Sensor. Select Enable. Leave the rest of the windows on default settings as they appear, by going through Production Mode this allows you to gain an idea of what is being installed. Some items we selected No or changed from default are: File extraction and Full Packet Capture \(select No due to Hard Drive limitations\), and Elastic Stack \(installing Splunk instead\). That's it, Security Onion is installed!  
   
   
   
