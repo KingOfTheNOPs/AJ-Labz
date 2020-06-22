@@ -20,6 +20,8 @@
 
 ## Defensive Cyberz
 
+---
+
 * [Creating an SIEM](creating-an-siem/README.md)
   * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
   * [Installing SPLUNK](creating-an-siem/installing-splunk.md)
@@ -31,6 +33,7 @@
 
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
+* [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 
 ## Cyber Readingz
 
