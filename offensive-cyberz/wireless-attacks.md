@@ -30,5 +30,8 @@ capx.bin capture/-01.cap capture/-01.hccapx
 
 # crack with naive-hashcat
 HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
+
+########## crack password with hashcat ##########
+# hashcat64.exe -m 2500 cap.hccapx rockyou.txt -r rules\<rule> 
 ```
 
