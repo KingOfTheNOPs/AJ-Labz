@@ -162,7 +162,7 @@ aircrack-ng -0 <capture file .cap>
 
 ### Cracking WPA PSK
 
-```text
+```bash
 ########## crack WPA PSK ########## 
 # put your network device into monitor mode
 airmon-ng start wlan0
