@@ -4,6 +4,8 @@ description: Oldie but a goodie
 
 # Wireless Attacks
 
+![](../.gitbook/assets/462fbe.jpg)
+
 ### Cracking WPA2
 
 ```text
