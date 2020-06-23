@@ -4,7 +4,7 @@
 
 ## The Lab <a id="building-the-lab"></a>
 
-* [Building the lab](building-the-lab/building-the-lab/README.md)
+* [Building the Lab](building-the-lab/building-the-lab/README.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
   * [ESXi](building-the-lab/building-the-lab/esxi.md)
   * [vCenter Server Installation](building-the-lab/building-the-lab/vcsa.md)
