@@ -41,7 +41,7 @@ HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
 hashcat64.exe -m 2500 cap.hccapx rockyou.txt -r rules\<rule> 
 ```
 
-### Cracking WEP with Open Authenitcation Clients
+### Cracking WEP with Open Authentication Clients
 
 ```bash
 ########## Cracking WEP With Clients (open authentication) ########## 
