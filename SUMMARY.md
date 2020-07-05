@@ -24,7 +24,7 @@
 
 * [Creating an SIEM](creating-an-siem/README.md)
   * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
-  * [packetiq/SplunkArchitect](creating-an-siem/installing-splunk.md)
+  * [Splunk](creating-an-siem/installing-splunk.md)
 * [Zeek \|\| Bro](zeek-or-or-bro/README.md)
   * [Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
   * [Installing Protocol Analyzers](zeek-or-or-bro/installing-parser.md)

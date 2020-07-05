@@ -62,5 +62,5 @@ Type the IP and Port you configured or will configure on splunk to receive the d
 
 ![](../.gitbook/assets/image%20%28123%29.png)
 
-See the 
+See the the 
 

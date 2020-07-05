@@ -4,7 +4,7 @@ description: >-
   https://github.com/packetiq/SplunkArchitect/blob/master/Install-and-Configure-Splunk-Enterprise-Components.md
 ---
 
-# packetiq/SplunkArchitect
+# Splunk
 
 ## Installing Splunk Enterprise on Linux
 
