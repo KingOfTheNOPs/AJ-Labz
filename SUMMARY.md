@@ -28,6 +28,7 @@
 * [Zeek \|\| Bro](zeek-or-or-bro/README.md)
   * [Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
   * [Installing Protocol Analyzers](zeek-or-or-bro/installing-parser.md)
+* [SCADA Splunk](scada-splunk.md)
 
 ## Offensive Cyberz
 
