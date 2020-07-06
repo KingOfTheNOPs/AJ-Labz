@@ -73,5 +73,5 @@ Type the IP and Port you configured or will configure on splunk to receive the d
 
 See [installing-splunk](creating-an-siem/installing-splunk.md) for help on adding connection in splunk to receive the data you are now forwarding.
 
-
+## Sending SEL Data to Splunk 
 
