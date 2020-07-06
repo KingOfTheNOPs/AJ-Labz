@@ -16,7 +16,7 @@ The process logic on this PLC has changed many many times, but at the time of th
 
 ![](../.gitbook/assets/program.png)
 
-As you can see we make use of Rockwell latching/unlatching \(or set/reset in CCW\) blocks. Since the red button is NC we need to XIO and the other two buttons are NO to we XIC.
+As you can see we make use of Rockwell latching/unlatching \(or set/reset in CCW\) blocks. Since the red button is NC we need to XIO and the other two buttons are NO to we XIC. This can be done in 3 rungs if you are not a lazy copy and paster like us. 
 
 ## Grid Simulation
 
