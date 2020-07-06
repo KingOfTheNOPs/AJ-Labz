@@ -31,5 +31,5 @@ As you can see we make use of Rockwell latching/unlatching \(or set/reset in CCW
 
 ## Splunking with ICS data...  
 
-
+See the [SCADA Splunk](../scada-splunk.md) page 
 
