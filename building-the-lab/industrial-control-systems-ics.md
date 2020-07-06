@@ -33,5 +33,5 @@ We will get that as soon as we can get a working serial to USB cable lol.
 
 ## Splunking with ICS data...  
 
-See the [SCADA Splunk](../scada-splunk.md) page 
+See the [SCADA Splunk](../scada-splunk/) page 
 

@@ -1,12 +1,10 @@
-# SCADA Splunk
+---
+description: >-
+  This page is dedicated to configuring and installing means for getting data to
+  a spunk server.
+---
 
-![](.gitbook/assets/nomoney.jpg)
-
-## Using Splunk as a SCADA
-
-We could continue forwarding process data to our splunk using  KEPServerNX, but where is the fun in that. We want a sustained solution and just bought Splunk \#outofmoney. So we decided to use Python and stream data directly into splunk. 
-
-Splunk has the ability to trigger external events and for purposes that will be a python script. It is can be an API call to something designed to write to a tag like an OPC server... KEPServerNX... Again have you seen my security budget? Actually, didn't buy get splunk the IT department bought it.
+# Getting Data To Splunk
 
 ## SCADA with Python
 
@@ -26,12 +24,12 @@ echo 'You got to trust me on this, I saved the world'
 ## SCADA Using OPC Server 
 
 {% hint style="info" %}
-In this method we will be simulating a data-diode since we dont have one. All traffic to the splunk server will be over UDP. Something that can traverse something like a waterfall with ease.  
+In this method we will be simulating a data-diode since we don't actually have one. All traffic to the splunk server will be over UDP. This protocol is connection-less meaning it can traverse something like a waterfall data-diode with ease.  
 {% endhint %}
 
 ### Overview
 
-KEPServerEX is a very versatile OPC server and has great documentation. The reason it was chosen for this lab is because we are a bit lazy. We started with dev'ing an OPC server in python with FreeOpcUa / python-opcua  locally decided to shift to KEP because the 2 hour trial wasn't and issue for us and we had a windows VM not being used on the server networked and ready to go from another prohect. Did I say we were being a bit lazy...
+KEPServerEX is a very versatile OPC server \(plus lots more\)  and has great documentation. The reason it was chosen for this lab is because we are a bit lazy. We started with dev'ing an OPC server in python with FreeOpcUa / python-opcua  locally decided to shift to KEP because the 2 hour trial wasn't and issue for us and we had a windows VM not being used on the server networked and ready to go from another project. Did I say we were being a bit lazy...
 
 ### Installing KEPServerEX
 
@@ -55,13 +53,13 @@ Richt-click the new channel and add device. Name it and input the IP of the PLC.
 
 Leave the rest default 
 
-![](.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28125%29.png)
 
 #### 3. Add your TAGs
 
 If you remember from the ladder diagram each input and output had a TAG assigned. We want to know the data 
 
-![](.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
 #### 4. Add splunk connection
 
@@ -69,9 +67,9 @@ Click "Add Splunk Connection" on the left menu bar.
 
 Type the IP and Port you configured or will configure on splunk to receive the data.
 
-![](.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
-See [installing-splunk](creating-an-siem/installing-splunk.md) for help on adding connection in splunk to receive the data you are now forwarding.
+See [installing-splunk](../creating-an-siem/installing-splunk.md) for help on adding connection in splunk to receive the data you are now forwarding.
 
 ## Sending SEL Data to Splunk 
 
