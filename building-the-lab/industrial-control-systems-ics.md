@@ -22,7 +22,7 @@ As you can see we make use of Rockwell latching/unlatching \(or set/reset in CCW
 
 ### Overview
 
-KEPServerEX is a very versatile OPC server and has great documentation. The reason it was chosen for this lab is because we are a bit lazy. We started with dev'ing an OPC server in python with FreeOpcUa / python-opcua  locally decided to shift to KEP because the 2 hour trial wasn't and issue for us and we had a windows VM not being used on the server networked and ready to go from another prohect. Did I say we were being a bit lazy...
+KEPServerEX is a very versatile OPC server and has great documentation. The reason it was chosen for some of this lab is because we are a bit lazy. We started with dev'ing an OPC server in python with FreeOpcUa / python-opcua  locally decided to shift to KEP because the 2 hour trial wasn't and issue for us and we had a windows VM not being used on the server networked and ready to go from another prohect. Did I say we were being a bit lazy...
 
 ### Installing KEPServerEX
 
