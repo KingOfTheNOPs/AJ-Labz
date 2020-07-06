@@ -6,6 +6,8 @@ description: >-
 
 # Getting Data To Splunk
 
+![](../.gitbook/assets/image%20%28125%29.png)
+
 ## SCADA with Python
 
 {% hint style="warning" %}
@@ -53,13 +55,13 @@ Richt-click the new channel and add device. Name it and input the IP of the PLC.
 
 Leave the rest default 
 
-![](../.gitbook/assets/image%20%28125%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 #### 3. Add your TAGs
 
 If you remember from the ladder diagram each input and output had a TAG assigned. We want to know the data 
 
-![](../.gitbook/assets/image%20%28127%29.png)
+![](../.gitbook/assets/image%20%28128%29.png)
 
 #### 4. Add splunk connection
 
