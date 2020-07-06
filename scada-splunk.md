@@ -11,7 +11,7 @@ Splunk has the ability to trigger external events and for purposes that will be 
 ## SCADA with Python
 
 {% hint style="warning" %}
-This method is inherently less secure because the splunk server is using ENIP/CIP to poll the Micro850 PLC directly. A "more right" solution would be to have an intermediary server like a historian polling your PLCs and then shipping that data off to splunk through a uni-directional gateway over UDP \(See below for poc **SCADA Using OPC Server** \).
+This method is inherently less secure because the splunk server is using ENIP/CIP to poll the Micro850 PLC directly. A "more right" solution would be to have an intermediary server like a historian polling your PLCs and then shipping that data off to splunk through a uni-directional gateway over UDP \(See below for poc **SCADA Using OPC Server** below\).
 {% endhint %}
 
 Once you're strong enough, save the world:
