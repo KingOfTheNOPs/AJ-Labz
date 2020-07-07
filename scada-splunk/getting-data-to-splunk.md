@@ -14,14 +14,38 @@ description: >-
 This method is inherently less secure because the splunk server is using ENIP/CIP to poll the Micro850 PLC directly. A "more right" solution would be to have an intermediary server like a historian polling your PLCs and then shipping that data off to splunk through a uni-directional gateway over UDP \(See below for poc **SCADA Using OPC Server** below\).
 {% endhint %}
 
-Once you're strong enough, save the world:
+The Python Script:
 
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
+{% code title="read.py" %}
+```python
+comm = PLC()
+comm.IPAddress = '172.24.100.100'
+comm.Micro800 = True
+comm.processorSlot = 1
+
+BB = comm.Read('_IO_EM_DI_10') # This is the boolean address for the Black Button
+RB = comm.Read('_IO_EM_DI_09') # This is the boolean address for the Red Button
+GB = comm.Read('_IO_EM_DI_08') # This is the boolean address for the Green Button
+RL = comm.Read('_IO_EM_DO_03') # This is the boolean address for the Red Light
+GL = comm.Read('_IO_EM_DO_02') # This is the boolean address for the Green Light
+state = 0
+
+sys.stdout.write("Black_Button: "+str(time)+ str(BB)+"\n"+"Green_Button: "+str(time)+str(GB)+"\n"+"Red_Button: "+str(time)+str(RB)+"\n"+"Green_Light: "+str(time)+str(GL)+"\n"+"Red_Light: "+str(time)+str(RL))
+
 ```
 {% endcode %}
+
+There are a few ways to get this data into splunk
+
+1: [https://medium.com/@djsssss/using-python-to-stream-data-into-splunk-ae260177e2a4](https://medium.com/@djsssss/using-python-to-stream-data-into-splunk-ae260177e2a4)
+
+2: Have splunk run the script using the scripts 
+
+![](../.gitbook/assets/image%20%28129%29.png)
+
+3: Write the output of the script to a file and monitor with the files and directories.
+
+![Example data in Splunk from the script above.](../.gitbook/assets/image%20%28130%29.png)
 
 ## SCADA Using OPC Server 
 
