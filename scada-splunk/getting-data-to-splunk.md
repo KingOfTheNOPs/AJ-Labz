@@ -45,7 +45,7 @@ There are a few ways to get this data into splunk
 
 3: Write the output of the script to a file and monitor with the files and directories.
 
-![Example data in Splunk from the script above.](../.gitbook/assets/image%20%28130%29.png)
+![Example data in Splunk from the script above.](../.gitbook/assets/image%20%28131%29.png)
 
 ## SCADA Using OPC Server 
 
