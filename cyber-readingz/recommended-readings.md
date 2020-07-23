@@ -2,6 +2,8 @@
 
 ![I&apos;m gonna need you to take these papers and I&apos;m gonna need you to put &apos;em wayyyyy up](../.gitbook/assets/rick-morty-season-4.jpg)
 
+[https://www.malwarearchaeology.com/cheat-sheets](https://www.malwarearchaeology.com/cheat-sheets)
+
 {% file src="../.gitbook/assets/diamond-model.pdf" caption="Diamond Model" %}
 
 {% file src="../.gitbook/assets/intelligence\_driven\_incident\_response.pdf" caption="Intelligence Drive Incident Response" %}

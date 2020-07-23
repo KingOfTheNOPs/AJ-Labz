@@ -23,6 +23,7 @@
 ---
 
 * [Creating an SIEM](creating-an-siem/README.md)
+  * [Getting the Windows Data You Need](creating-an-siem/getting-the-windows-data-you-need.md)
   * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
   * [Splunk](creating-an-siem/installing-splunk.md)
 * [Zeek \|\| Bro](zeek-or-or-bro/README.md)
