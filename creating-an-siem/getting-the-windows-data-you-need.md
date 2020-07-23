@@ -18,9 +18,9 @@ Step 1. Create a Sysmon Folder under your SYSVOL folder in your DC
 
 Step 2. Download Sysmon from [Microsoft ](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#overview-of-sysmon-capabilities)and place both sysmon.exe and sysmon64.exe in newly created Sysmon folder
 
-Step 3. Download a sample sysmon config from SwiftOnSecurity, rename the file to sysmonConfig.xml and place it within the Sysmon folder
+Step 3. Download a sample sysmon config from [SwiftOnSecurity](https://github.com/SwiftOnSecurity/sysmon-config), rename the file to sysmonConfig.xml and place it within the Sysmon folder
 
-Step 4. Enter the appropriate values for your DC and FQDN below.
+Step 4. Enter the appropriate values for your DC and FQDN in the [batch ](https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971)file.
 
 Step 5. Create a GPO that will launch this batch file on startup.
 
