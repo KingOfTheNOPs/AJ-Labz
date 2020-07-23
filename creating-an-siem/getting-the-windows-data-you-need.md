@@ -14,7 +14,7 @@ We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespa
 
 Step 1. Create a Sysmon Folder under your SYSVOL folder in your DC
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28135%29.png)
 
 Step 2. Download Sysmon from [Microsoft ](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#overview-of-sysmon-capabilities)and place both sysmon.exe and sysmon64.exe in newly created Sysmon folder
 
@@ -22,7 +22,35 @@ Step 3. Download a sample sysmon config from [SwiftOnSecurity](https://github.co
 
 Step 4. Enter the appropriate values for your DC and FQDN in the [batch ](https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971)file.
 
-Step 5. Create a GPO that will launch this batch file on startup.
+Step 5. Create a GPO that will launch this batch file on startup.  
+  
+Navigate to Group Policy Management
+
+![](../.gitbook/assets/image%20%28132%29.png)
+
+Create GPO
+
+![](../.gitbook/assets/image%20%28138%29.png)
+
+Name the GPO 
+
+![](../.gitbook/assets/image%20%28137%29.png)
+
+Edit GPO
+
+![](../.gitbook/assets/image%20%28139%29.png)
+
+Navigate to StartUp Script
+
+![](../.gitbook/assets/image%20%28134%29.png)
+
+Add Batch Script 
+
+![](../.gitbook/assets/image%20%28133%29.png)
+
+Enforce newly created GPO
+
+![](../.gitbook/assets/image%20%28136%29.png)
 
 Step 6. Apply the GPO to your specified OUs. 
 
