@@ -14,7 +14,7 @@ We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespa
 
 Step 1. Create a Sysmon Folder under your SYSVOL folder in your DC
 
-![](../.gitbook/assets/image%20%28135%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 Step 2. Download Sysmon from [Microsoft ](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#overview-of-sysmon-capabilities)and place both sysmon.exe and sysmon64.exe in newly created Sysmon folder
 
@@ -30,27 +30,41 @@ Navigate to Group Policy Management
 
 Create GPO
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 Name the GPO 
 
-![](../.gitbook/assets/image%20%28137%29.png)
+![](../.gitbook/assets/image%20%28141%29.png)
 
 Edit GPO
 
-![](../.gitbook/assets/image%20%28139%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
 Navigate to StartUp Script
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 Add Batch Script 
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28135%29.png)
 
 Enforce newly created GPO
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28140%29.png)
 
-Step 6. Apply the GPO to your specified OUs. 
+Step 6. Apply the GPO to your specified OUs.   
+Step 7. Force GPO Update  
+  
+
+
+![](../.gitbook/assets/image%20%28133%29.png)
+
+If you get the following error:
+
+![](../.gitbook/assets/image%20%28137%29.png)
+
+Make sure you allow the following firewall rules in   
+
+
+![](../.gitbook/assets/image%20%28139%29.png)
 
