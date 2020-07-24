@@ -30,7 +30,7 @@ Navigate to Group Policy Management
 
 Create GPO
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
 Name the GPO 
 
@@ -38,7 +38,7 @@ Name the GPO
 
 Edit GPO
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28144%29.png)
 
 Navigate to StartUp Script
 
@@ -53,9 +53,7 @@ Enforce newly created GPO
 ![](../.gitbook/assets/image%20%28140%29.png)
 
 Step 6. Apply the GPO to your specified OUs.   
-Step 7. Force GPO Update  
-  
-
+Step 7. Force GPO Update
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
@@ -67,4 +65,10 @@ Make sure you allow the following firewall rules in
 
 
 ![](../.gitbook/assets/image%20%28139%29.png)
+
+Another method is running the following commands:
+
+![](../.gitbook/assets/image%20%28142%29.png)
+
+You'll be able to view the group policy update results in the html file
 
