@@ -106,3 +106,7 @@ Go to the Default Domain Policy and update the Audit Policies. We recommend you 
 
 Dont worry about the log size as we will be forwarding these logs to a SIEM. Monitoring files and registry keys will also be done by sysmon. 
 
+## Splunk Forwarder Deployment via GPO
+
+1. Download[ Splunk Windows MSI](https://www.splunk.com/en_us/download/splunk-enterprise.html) and Windows SDK \([Orca](https://docs.microsoft.com/en-us/windows/win32/msi/orca-exe)\)
+
