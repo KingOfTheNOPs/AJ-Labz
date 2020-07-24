@@ -14,7 +14,7 @@ We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespa
 
 Step 1. Create a Sysmon Folder under your SYSVOL folder in your DC
 
-![](../.gitbook/assets/image%20%28141%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 Step 2. Download Sysmon from [Microsoft ](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#overview-of-sysmon-capabilities)and place both sysmon.exe and sysmon64.exe in newly created Sysmon folder
 
@@ -26,49 +26,49 @@ Step 5. Create a GPO that will launch this batch file on startup.
   
 Navigate to Group Policy Management
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28133%29.png)
 
 Create GPO
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28148%29.png)
 
 Name the GPO 
 
-![](../.gitbook/assets/image%20%28145%29.png)
+![](../.gitbook/assets/image%20%28146%29.png)
 
 Edit GPO
 
-![](../.gitbook/assets/image%20%28149%29.png)
+![](../.gitbook/assets/image%20%28150%29.png)
 
 Navigate to StartUp Script
 
-![](../.gitbook/assets/image%20%28139%29.png)
+![](../.gitbook/assets/image%20%28140%29.png)
 
 Add Batch Script 
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28139%29.png)
 
 Enforce newly created GPO
 
-![](../.gitbook/assets/image%20%28144%29.png)
+![](../.gitbook/assets/image%20%28145%29.png)
 
 Step 6. Apply the GPO to your specified OUs.   
 Step 7. Force GPO Update
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28134%29.png)
 
 If you get the following error:
 
-![](../.gitbook/assets/image%20%28140%29.png)
+![](../.gitbook/assets/image%20%28141%29.png)
 
 Make sure you allow the following firewall rules in your Starter GPOs  
 
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
 Another method is running the following commands:
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../.gitbook/assets/image%20%28147%29.png)
 
 You'll be able to view the group policy update results in the html file  
 
@@ -77,19 +77,19 @@ You'll be able to view the group policy update results in the html file
 
 1. Create and link the GPO as mentioned above, but this time you'll be creating a scheduled task
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28144%29.png)
 
 2. Name the task and let it run as System during install 
 
-![](../.gitbook/assets/image%20%28137%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 3. Create Trigger
 
-![](../.gitbook/assets/image%20%28148%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 4. Create Alert
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28137%29.png)
 
 You can browse and add the batch file but if it crashes when the file is selected, manually type in the path to the file \\&lt;DC&gt;\Sysvol\&lt;FQDN&gt;\&lt;Sysmon Folder&gt;\&lt;SysmonInstall.bat&gt;  
   
@@ -102,11 +102,21 @@ After a restart, you should see sysmon.exe or sysmon64.exe running as a service.
 
 Go to the Default Domain Policy and update the Audit Policies. We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/5c586681f4e1fced3ce1308b/1549297281905/Windows+Logging+Cheat+Sheet_ver_Feb_2019.pdf)and tune the audit policy based off of what you need/want.
 
-![](../.gitbook/assets/image%20%28135%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 Dont worry about the log size as we will be forwarding these logs to a SIEM. Monitoring files and registry keys will also be done by sysmon. 
 
 ## Splunk Forwarder Deployment via GPO
 
 1. Download[ Splunk Windows MSI](https://www.splunk.com/en_us/download/splunk-enterprise.html) and Windows SDK \([Orca](https://docs.microsoft.com/en-us/windows/win32/msi/orca-exe)\)
+2. Open the MSI file with Orca, select New transform, and add the Splunk Install Info. 
+
+![](../.gitbook/assets/image%20%28132%29.png)
+
+Change AGREETOLICENSE = Yes  
+Add Row -&gt; SPLUNKUSERNAME, SPLUNKPASSWORD, DEPLOYMENT\_SERVER
+
+3. Generate Transform -&gt; &lt;SplunkForwarder.mst&gt;   
+move file to shared folder for the GPO to access. \(Sysvol\)  
+
 
