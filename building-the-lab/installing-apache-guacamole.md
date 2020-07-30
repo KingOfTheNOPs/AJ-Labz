@@ -6,7 +6,10 @@
 
 Created this guide to assist others who may need a way to access to resources remotely when your current environment may either block or restrict what resources you have.
 
-I personally recommend using [Chrome Remote Desktop](https://remotedesktop.google.com/) as a faster method to gaining access to your home PC but if for some reason this page is blocked by your network here's this guide. I hope it helps :-\)
+I personally recommend using [Chrome Remote Desktop](https://remotedesktop.google.com/) as a faster method to gaining access to your home PC but if for some reason this page is blocked by your network here's this guide. I hope it helps :-\)  
+  
+Categorize Domain:  
+[https://sitereview.bluecoat.com/\#/](https://sitereview.bluecoat.com/#/)
 
 ## End State
 
