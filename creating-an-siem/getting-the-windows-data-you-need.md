@@ -114,7 +114,9 @@ Dont worry about the log size as we will be forwarding these logs to a SIEM. Mon
 ![](../.gitbook/assets/image%20%28133%29.png)
 
 Change AGREETOLICENSE = Yes  
-Add Row -&gt; SPLUNKUSERNAME, SPLUNKPASSWORD, DEPLOYMENT\_SERVER
+Add Row -&gt; SPLUNKUSERNAME, SPLUNKPASSWORD, DEPLOYMENT\_SERVER  
+  
+Additional Rows can be added based off of the flag name in [https://docs.splunk.com/Documentation/Forwarder/8.0.5/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline](https://docs.splunk.com/Documentation/Forwarder/8.0.5/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline)
 
 3. Generate Transform -&gt; &lt;SplunkForwarder.mst&gt;   
 move MST and MSI to shared folder for the GPO to access. 
