@@ -1,5 +1,5 @@
 ---
-description: Phishing with Go Phis
+description: Credential Gathering - Phishing with Go Phish
 ---
 
 # Phishing
@@ -7,7 +7,7 @@ description: Phishing with Go Phis
 ## GoPhish
 
 **Phishing Server Setup Guide:**  
-For our phishing email we will be using Go Phish to create the phishing email with a link to our malicious domain. This method can be used to gain credentials to other accounts, but in an attempt to avoid violating the policy agreements with a company like amazon or google, we are using a local restaurant to spoof our website.
+For our phishing email we will be using Go Phish to create the phishing email with a link to our malicious domain. The method show was to gain sensitive information. This same method can be used to gain credentials to other accounts, but in an attempt to avoid violating the policy agreements with a company like amazon or google, we are using a local restaurant to spoof our website.
 
 ### **Step 1:** Download GoPhish 
 
