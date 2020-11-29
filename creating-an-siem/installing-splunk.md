@@ -6,6 +6,8 @@ description: >-
 
 # Splunk
 
+![](../.gitbook/assets/splunk_2.jpg)
+
 ## Installing Splunk Enterprise on Linux
 
 All Splunk components except a Universal Forwarder \( a separate lightweight package \) are based on an installation of Splunk Enterprise with specific configuration options - so the first step in creating any component in a Splunk solution is installing Splunk Enterprise.
