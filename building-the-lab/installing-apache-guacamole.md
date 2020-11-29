@@ -2,7 +2,7 @@
 
 .
 
-![Show me what you got!](../.gitbook/assets/image%20%2894%29%20%281%29.png)
+![](../.gitbook/assets/guach.jpg)
 
 Created this guide to assist others who may need a way to access to resources remotely when your current environment may either block or restrict what resources you have.
 
