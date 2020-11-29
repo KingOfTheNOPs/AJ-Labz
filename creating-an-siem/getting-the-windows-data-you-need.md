@@ -4,7 +4,7 @@ description: Quick overview of the Windows Data you need
 
 # Getting the Windows Data You Need
 
-![](../.gitbook/assets/windows_data.gif)
+![](../.gitbook/assets/win_data_2.jpg)
 
 ### References:
 
