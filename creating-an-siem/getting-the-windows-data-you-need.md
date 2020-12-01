@@ -4,8 +4,6 @@ description: Quick overview of the Windows Data you need
 
 # Getting the Windows Data You Need
 
-![](../.gitbook/assets/win_data_2.jpg)
-
 ### References:
 
 [https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971](https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971)  
