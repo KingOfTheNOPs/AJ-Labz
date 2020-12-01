@@ -8,7 +8,7 @@ description: Quick overview of the Windows Data you need
 
 [https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971](https://gist.github.com/silentbreaksec/8972f8c9dce151aebbef0a58313f3971)  
 [https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon\#overview-of-sysmon-capabilities](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#overview-of-sysmon-capabilities)  
-We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/5c586681f4e1fced3ce1308b/1549297281905/Windows+Logging+Cheat+Sheet_ver_Feb_2019.pdf)and tune the logs you need as well.
+We recommend you review [Windows Logging Cheat Sheet ](https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/5c586681f4e1fced3ce1308b/1549297281905/Windows+Logging+Cheat+Sheet_ver_Feb_2019.pdf)and tune logs as needed.
 
 ## Sysmon Install through GPO
 
