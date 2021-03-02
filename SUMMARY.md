@@ -22,7 +22,8 @@
 
 ---
 
-* [Analytic Repo](analytic-repo.md)
+* [Analytic Repo](analytic-repo/README.md)
+  * [Beacon Detection](analytic-repo/beacon-detection.md)
 * [Creating an SIEM](creating-an-siem/README.md)
   * [Installing Security Onion \(SO\)](creating-an-siem/installing-security-onion-so.md)
   * [Splunk](creating-an-siem/installing-splunk.md)
