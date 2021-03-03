@@ -40,8 +40,8 @@
 * [AD Enumeration](offensive-cyberz/ad-enumeration.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
-* [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 * [Phishing](offensive-cyberz/phishing.md)
+* [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 
 ## Cyber Readingz
 
