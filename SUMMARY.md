@@ -37,7 +37,8 @@
 
 ## Offensive Cyberz
 
-* [AD Enumeration](offensive-cyberz/ad-enumeration.md)
+* [AD Enumeration](offensive-cyberz/ad-enumeration/README.md)
+  * [AD Tools](offensive-cyberz/ad-enumeration/ad-tools.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
 * [Phishing](offensive-cyberz/phishing.md)
