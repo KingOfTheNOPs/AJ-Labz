@@ -160,3 +160,9 @@ Password Not Required
 Get-ADUser -Filter {PasswordNotRequired -eq $true}
 ```
 
+Nested Groups
+
+```text
+Get-ADGroup -filter * -Properties MemberOf | Where-Object {$_.MemberOf -ne $null} | Select-Object Name,MemberOf
+```
+
