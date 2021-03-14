@@ -154,5 +154,9 @@ UserAccountControl Attributes
 Get-ADUser -Filter {adminCount -gt 0} -Properties admincount,useraccountcontrol | select Name,useraccountcontrol
 ```
 
+Password Not Required
 
+```text
+Get-ADUser -Filter {PasswordNotRequired -eq $true}
+```
 
