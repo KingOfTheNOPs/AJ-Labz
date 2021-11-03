@@ -1,12 +1,12 @@
 # Configure vCenter Datacenter
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 ## Create Datacenter
 
 Right click on the IP or URL of the VCSA and choose new datacenter
 
-![](../../.gitbook/assets/image%20%2876%29.png)
+![](<../../.gitbook/assets/image (76).png>)
 
 Give your new datacenter a name
 
@@ -14,17 +14,15 @@ Give your new datacenter a name
 
 Right click on the new datacenter and "Add Host"
 
-![](../../.gitbook/assets/image%20%2875%29.png)
+![](<../../.gitbook/assets/image (75).png>)
 
 Enter your ESXI username and password.
 
-Select Next-&gt;Next-&gt;Next 
+Select Next->Next->Next&#x20;
 
-5. Lockdown Mode. Select "Disabled"
+5\. Lockdown Mode. Select "Disabled"
 
-click Next -&gt; Next -&gt; Finish.
+click Next -> Next -> Finish.
 
 Repeat for all ESXI hosts you want to manage from this VCSA
-
-
 

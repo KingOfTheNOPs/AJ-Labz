@@ -1,14 +1,14 @@
 # Building a Local DNS Server
 
-![Looking cool because your your shit works... Its always DNS!](../.gitbook/assets/image%20%2837%29.png)
+![Looking cool because your your shit works... Its always DNS!](<../.gitbook/assets/image (37).png>)
 
-In this guide we will be covering building a BIND9 DNS server on Ubuntu 19.10 Server. For more information about Berkeley Internet Named Domain visit: [https://en.wikipedia.org/wiki/BIND](https://en.wikipedia.org/wiki/BIND)  
-We utilized this DNS Server for the installation of VCSA since it requires DNS \(if you want less headaches\).   
+In this guide we will be covering building a BIND9 DNS server on Ubuntu 19.10 Server. For more information about Berkeley Internet Named Domain visit: [https://en.wikipedia.org/wiki/BIND](https://en.wikipedia.org/wiki/BIND)\
+We utilized this DNS Server for the installation of VCSA since it requires DNS (if you want less headaches). \
 
 
-### Step 1: Install BIND9 
+### Step 1: Install BIND9&#x20;
 
-```text
+```
 sudo -i 
 apt-get install bind9
 # verify the service is running once the install is complete
@@ -16,10 +16,10 @@ apt-get install bind9
 
 ### Step 2: Basic Configuration
 
-edit /etc/bind/named.conf.local  
+edit /etc/bind/named.conf.local\
 Replace "domain" with the name of your domain
 
-```text
+```
 //
 // Do any local configuration here
 //
@@ -42,17 +42,17 @@ file "/etc/bind/zones/db.50.24.10";
 
 ```
 
-Now  create the “zones” directory as specified above  
-`mkdir /etc/zones  
-cd /etc/zones`  
-  
-create the files as specified above  
-`touch /etc/zones/db.aj.labz  
-touch /etc/zones/db.50.24.10`  
-  
+Now  create the “zones” directory as specified above\
+`mkdir /etc/zones`\
+`cd /etc/zones`\
+\
+create the files as specified above\
+`touch /etc/zones/db.aj.labz`\
+`touch /etc/zones/db.50.24.10`\
+\
 edit /etc/zones/db.aj.labz
 
-```text
+```
 $TTL 900
 @ IN SOA ns1.aj.labz. admin.aj.labz. (
 1 ;<serial-number>
@@ -72,7 +72,7 @@ ns2.aj.labz. IN A 10.24.50.2
 
 edit /etc/zones/db.50.24.10
 
-```text
+```
 $TTL 900
 @ IN SOA ns1.aj.labz. admin.aj.labz. (
  2 ;<serial-number>
@@ -88,10 +88,9 @@ $TTL 900
 100.50 IN PTR esxi.aj.labz. ; 10.24.50.100
 ```
 
-restart BIND9 to enforce the changes   
+restart BIND9 to enforce the changes \
 `/etc/init.d/bind9 restart`
 
 ### Step 3: Test DNS Server
 
 `nslookup 10.24.50.100 10.24.50.2`
-

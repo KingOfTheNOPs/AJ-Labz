@@ -6,15 +6,16 @@ description: >-
 
 # Splunk
 
-![](../.gitbook/assets/splunk_2.jpg)
+![](../.gitbook/assets/splunk\_2.jpg)
 
 ## Installing Splunk Enterprise on Linux
 
-All Splunk components except a Universal Forwarder \( a separate lightweight package \) are based on an installation of Splunk Enterprise with specific configuration options - so the first step in creating any component in a Splunk solution is installing Splunk Enterprise.
+All Splunk components except a Universal Forwarder ( a separate lightweight package ) are based on an installation of Splunk Enterprise with specific configuration options - so the first step in creating any component in a Splunk solution is installing Splunk Enterprise.
 
 ### Obtain the Splunk installation package
 
-* Access the Splunk website:  [Download Splunk Enterprise RPM for Linux-x86\_64](https://www.splunk.com/en_us/download/sem.html?ac=ga_usa_brand_enterprise_exact_Mar17&_kk=splunk%2520enterprise&gclid=CIvWzN6Hk9MCFQsRgQodK_QARg)
+* Access the Splunk website:\
+  &#x20;[Download Splunk Enterprise RPM for Linux-x86\_64](https://www.splunk.com/en\_us/download/sem.html?ac=ga\_usa\_brand\_enterprise\_exact\_Mar17&\_kk=splunk%2520enterprise\&gclid=CIvWzN6Hk9MCFQsRgQodK\_QARg)
 
 **Note: You will have to create an account and/or login using your Splunk user ID & password.**
 
@@ -22,42 +23,41 @@ To fetch the splunk installable directly from a target server, use wget:
 
 * Select the appropriate Splunk download from the website link above
 * Cancel the download window
-* From the page that appears after the download appears, in the top-right click the link in 'Download via Command Line \(wget\)'
+* From the page that appears after the download appears, in the top-right click the link in 'Download via Command Line (wget)'
 * Copy the wget string and paste it into a command shell
 
-Example wget string:  
- `wget -O splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=6.5.3&product=splunk&filename=splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm&wget=true'`
+Example wget string:\
+&#x20;`wget -O splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=6.5.3&product=splunk&filename=splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm&wget=true'`
 
 or...
 
-* Select and download the appropriate rpm package \(...x86\_64.rpm\)
+* Select and download the appropriate rpm package (...x86\_64.rpm)
 * Use ftp or WinSCP to copy the package to the splunk server.
 
 When you have the installation package on the target server:
 
-* `sudo su` \(root\)
-* Change permissions on the file: previous:  
-   `-rw-------. 1 baxtj018 admin 226438185 Apr 7 15:13 splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm`
+* `sudo su` (root)
+*   Change permissions on the file: previous:\
+    &#x20;`-rw-------. 1 baxtj018 admin 226438185 Apr 7 15:13 splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm`
 
-  `chmod 744 splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm`
+    `chmod 744 splunk-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm`
 
 ### Installing the Splunk package
 
 `rpm -i splunk-6.5.1-f74036626f0c-linux-2.6-x86_64.rpm`
 
-You may see:  
- warning: splunk-6.5.3-36937ad027d4-linux-2.6-x86\_64.rpm: Header V4 DSA/SHA1 Signature, key ID 653fb112: NOKEY  
- then:  
- complete
+You may see:\
+&#x20;warning: splunk-6.5.3-36937ad027d4-linux-2.6-x86\_64.rpm: Header V4 DSA/SHA1 Signature, key ID 653fb112: NOKEY\
+&#x20;then:\
+&#x20;complete
 
-* Start splunk:
+*   Start splunk:
 
-  ```text
-   sudo su
-   cd /opt/splunk/bin  
-   ./splunk start  
-  ```
-
+    ```
+     sudo su
+     cd /opt/splunk/bin  
+     ./splunk start  
+    ```
 * Space-down and answer 'y' to the license question, or use:
 
 `./splunk start --accept-license`
@@ -70,7 +70,7 @@ You'll see a series of startup messages, then:
 
 * Login to Splunk Web: `http://:8000/`
 
-```text
+```
 user: admin
 password: changeme
 (this is the default password upon a new installation)
@@ -94,8 +94,8 @@ These are recommended settings to ensure that Splunk starts automatically after 
 
 `./splunk enable boot-start`
 
-You'll get messages:  
- Init script installed at /etc/init.d/splunk. Init script is configured to run at boot.
+You'll get messages:\
+&#x20;Init script installed at /etc/init.d/splunk. Init script is configured to run at boot.
 
 The enable boot-start exercise above creates a 'splunk' start-up script file in /etc/rc.d/init.d
 
@@ -117,7 +117,7 @@ You can now do
 
 `$SPLUNK_HOME/bin/` or `cd $SPLUNK_HOME`
 
-#### Change the default Splunk Web port from 8000 to 8080 \(Optional\)
+#### Change the default Splunk Web port from 8000 to 8080 (Optional)
 
 For an initial test scenario, you may want to use non-SSL access, on a non-standard port. **See the next section to configure a different port and/or use SSL**
 
@@ -125,20 +125,20 @@ For an initial test scenario, you may want to use non-SSL access, on a non-stand
 
 This adds the following to the **web.conf** file in `opt/splunk/etc/system/local/`:
 
-```text
+```
 [settings]
 httpport = 8080  
 ```
 
-### Configure Splunk Web to use SSL \(Recommended\)
+### Configure Splunk Web to use SSL (Recommended)
 
 From Splunk Web:
 
-Settings &gt; Server settings &gt; General settings Splunk Web
+Settings > Server settings > General settings Splunk Web
 
-Run Splunk Web: Yes \(on by default\) Enable SSL \(HTTPS\) in Splunk Web?: Yes Web port: 8443 Click Save This will modify the **web.conf** file in `/opt/splunk/etc/system/local/` to contain:
+Run Splunk Web: Yes (on by default) Enable SSL (HTTPS) in Splunk Web?: Yes Web port: 8443 Click Save This will modify the **web.conf** file in `/opt/splunk/etc/system/local/` to contain:
 
-```text
+```
 [settings]
 httpport = 8443
 enableSplunkWebSSL = true
@@ -148,18 +148,18 @@ enableSplunkWebSSL = true
 
 Synchronize the system clocks on all machines, virtual or physical, that are running Splunk Enterprise distributed search instances. Specifically, this means your search heads and search peers. In the case of search head pooling or mounted bundles, this also includes the shared storage hardware. Otherwise, various issues can arise, such as bundle replication failures, search failures, or premature expiration of search artifacts.
 
-The synchronization method that you use depends on your specific set of machines. For most environments, Network Time Protocol \(NTP\) is the best approach.
+The synchronization method that you use depends on your specific set of machines. For most environments, Network Time Protocol (NTP) is the best approach.
 
 ### Forwarding internal data to search peers
 
-You will want to forward internal log data \(\_internal, \_audit, etc.\) of any Splunk component in a distributed environment \(except Universal Forwarders\) to the indexer cluster so that this data can be searched, as follows:
+You will want to forward internal log data (\_internal, \_audit, etc.) of any Splunk component in a distributed environment (except Universal Forwarders) to the indexer cluster so that this data can be searched, as follows:
 
-* Create or edit an outputs.conf file in `/opt/splunk/etc/system/local/` that configures the search head for load-balanced forwarding across the set of search peers \(indexers\).
+* Create or edit an outputs.conf file in `/opt/splunk/etc/system/local/` that configures the search head for load-balanced forwarding across the set of search peers (indexers).
 * Turn off indexing on the Splunk component so that it does not both retain the data locally as well as forward it to the search peers.
 
 Here is an example outputs.conf file:
 
-```text
+```
 # Turn off indexing (except on indexers)
 [indexAndForward]
 index = false
@@ -176,9 +176,9 @@ autoLB = true
 
 **You are now ready to customize this instance of Splunk Enterprise for a specific function**
 
-The following sections outline how to configure instances of Splunk Enterprise to perform specific functions \(search head, indexer, etc.\) in a distributed and/or clustered Splunk solution.
+The following sections outline how to configure instances of Splunk Enterprise to perform specific functions (search head, indexer, etc.) in a distributed and/or clustered Splunk solution.
 
-It may be helpful to read the section '[Overview of a Clustered Splunk Environment]()' below before progressing to specific component configuration.
+It may be helpful to read the section '[Overview of a Clustered Splunk Environment](broken-reference)' below before progressing to specific component configuration.
 
 If you are using a standalone instance of Splunk Enterprise you may want to apply some of the function-specific settings outlined in the following sections. Generic settings that may be applied to any Splunk solution will be indicated.
 
@@ -188,7 +188,7 @@ If you are using a standalone instance of Splunk Enterprise you may want to appl
 
 `splunk stop`
 
-To permanently remove event data from all indexes \(**why?**\), type: `splunk clean eventdata` To permanently remove event data from a single index, type: `splunk clean eventdata -index yourindex`
+To permanently remove event data from all indexes (**why?**), type: `splunk clean eventdata` To permanently remove event data from a single index, type: `splunk clean eventdata -index yourindex`
 
 `splunk start`
 
@@ -196,7 +196,7 @@ To permanently remove event data from all indexes \(**why?**\), type: `splunk cl
 
 The `/opt/splunk/etc/system/README` directory of any Splunk installation contains a complete set of text documents for all of the Splunk .conf files. There are two files for each configuration:
 
-```text
+```
 .conf.example - annotated examples
 .conf.spec - detailed description of options
 ```
@@ -205,20 +205,20 @@ A copy of the README files for Splunk 6.5 are in the README directory of this re
 
 The more useful of these may include:
 
-[distsearch.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/distsearch.conf.example)  
- [distsearch.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/distsearch.conf.spec)  
- [indexes.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/indexes.conf.example)  
- [indexes.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/indexes.conf.spec)  
- [inputs.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/inputs.conf.example)  
- [inputs.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/inputs.conf.spec)  
- [outputs.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/outputs.conf.example)  
- [outputs.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/outputs.conf.spec)  
- [props.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.example)  
- [props.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.spec)  
- [serverclass.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/serverclass.conf.example)  
- [serverclass.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/serverclass.conf.spec)  
- [transforms.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.example)  
- [transforms.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.spec)
+[distsearch.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/distsearch.conf.example)\
+&#x20;[distsearch.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/distsearch.conf.spec)\
+&#x20;[indexes.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/indexes.conf.example)\
+&#x20;[indexes.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/indexes.conf.spec)\
+&#x20;[inputs.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/inputs.conf.example)\
+&#x20;[inputs.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/inputs.conf.spec)\
+&#x20;[outputs.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/outputs.conf.example)\
+&#x20;[outputs.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/outputs.conf.spec)\
+&#x20;[props.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.example)\
+&#x20;[props.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.spec)\
+&#x20;[serverclass.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/serverclass.conf.example)\
+&#x20;[serverclass.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/serverclass.conf.spec)\
+&#x20;[transforms.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.example)\
+&#x20;[transforms.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.spec)
 
 ## Uninstalling Splunk Enterprise on Linux
 
@@ -230,7 +230,7 @@ Uninstall: `rpm -e` Example: `rpm -e splunk-6.5.3-36937ad027d4.x86_64`
 
 Clean up remaining files/directory: `cd /opt` `rm -rf ./splunk`
 
-[top]()
+[top](broken-reference)
 
 ## Overview of a Clustered Splunk Solution
 
@@ -243,7 +243,7 @@ The image below depicts a simple clustered indexer solution:
 There are two types of nodes in an indexer cluster:
 
 * A single Cluster Master to manage the cluster. This 'master node' is a specialized type of indexer that, while it doesn't participate in any data streaming, coordinates a range of activities involving the search peers and the search head, including coordinating which 'buckets' are replicated across the peer nodes for redundancy.
-* Several 'peer nodes' \(indexers\) that handle the indexing function for the cluster, indexing and maintaining multiple copies of the rawdata and index files, and running searches across the data.
+* Several 'peer nodes' (indexers) that handle the indexing function for the cluster, indexing and maintaining multiple copies of the rawdata and index files, and running searches across the data.
 
 #### Index Time vs Search Time Processing
 
@@ -253,9 +253,9 @@ It is better to perform most knowledge-building activities, such as field extrac
 
 Index-time processes take place between the point when the data is consumed and the point when it is written to disk.
 
-The following processes occur during index time \(controlled by **props.conf** on an indexer\):
+The following processes occur during index time (controlled by **props.conf** on an indexer):
 
-* Default field extraction \(such as host, source, sourcetype, and timestamp\)
+* Default field extraction (such as host, source, sourcetype, and timestamp)
 * Static or dynamic host assignment for specific inputs
 * Default host assignment overrides
 * Source type customization
@@ -263,19 +263,19 @@ The following processes occur during index time \(controlled by **props.conf** o
 * Structured data field extraction
 * Event timestamping
 * Event linebreaking
-* Event segmentation \(also happens at search time\)
+* Event segmentation (also happens at search time)
 
 Search-time processes take place while a search is run, as events are collected by the search. The following processes occur at search time:
 
-* Event segmentation \(also happens at index time\)
+* Event segmentation (also happens at index time)
 * Event type matching
-* Search-time field extraction \(automatic and custom field extractions, including multivalue fields and calculated fields\)
+* Search-time field extraction (automatic and custom field extractions, including multivalue fields and calculated fields)
 * Field aliasing
 * Addition of fields from lookups
 * Source type renaming
 * Tagging
 
-[top]()
+[top](broken-reference)
 
 ## Create a Splunk Indexer
 
@@ -297,7 +297,7 @@ Splunk Enterprise comes with a number of preconfigured indexes, including:
 4. Select Peer node and click Next.
 5. There are a few fields to fill out:
 
-* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089/).
+* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089).
 * Peer replication port. This is the port on which the peer receives replicated data streamed from the other peers. You can specify any available, unused port for this purpose. This port must be different from the management or receiving ports.
 * Security key. This is the key that authenticates communication between the master and the peers and search heads. The key must be the same across all cluster nodes. Set the same value here that you previously set on the master node.
 
@@ -308,13 +308,13 @@ The message appears, "You must restart Splunk for the peer node to become active
 1. Click Go to Server Controls. This takes you to the Settings page where you can initiate the restart.
 2. Repeat this process for all the cluster's peer nodes.
 
-When you have enabled the 'replication factor' number of peers, the cluster can start indexing and replicating data \(it will be blocked by the master node until the RF number of peers is enabled\).
+When you have enabled the 'replication factor' number of peers, the cluster can start indexing and replicating data (it will be blocked by the master node until the RF number of peers is enabled).
 
 **Configure peer nodes with server.conf**
 
 You can also configure an indexer / peer node my editing the server.conf file in `/opt/splunk/etc/system/local/`; note the 'mode = slave' entry:
 
-```text
+```
 [replication_port://9887]
 
 [clustering]
@@ -327,29 +327,29 @@ This example specifies that:
 
 * the peer will use port 9887 to listen for replicated data streamed from the other peers. You can specify any available, unused port as the replication port. Do not re-use the management or receiving ports.
 * the peer's cluster master resides at 10.152.31.202:8089.
-* the instance is a cluster peer \("slave"\) node.
+* the instance is a cluster peer ("slave") node.
 * the security key is "whatever".
 
 ### Configure inputs on the peers
 
 If you decide not to use forwarders to handle your data inputs, you can set up inputs on each peer in the usual way; for example, by editing inputs.conf on the peers.
 
-In Splunk Web: Settings &gt; Forwarding and receiving &gt; Configure Receiving &gt; New Listen on this port: 9997
+In Splunk Web: Settings > Forwarding and receiving > Configure Receiving > New Listen on this port: 9997
 
 When you add an input through Splunk Web, Splunk Enterprise adds that input to a copy of inputs.conf. The app context, that is, the Splunk app you are currently in when you configure the input, determines where Splunk Enterprise writes the inputs.conf file.
 
 For example, if you navigated to the Settings page directly from the Search page and then added an input, Splunk Enterprise adds the input to `op/splunk/etc/apps/search/local/inputs.conf`:
 
-```text
+```
 [splunktcp://9997]
 connection_host = ip
 ```
 
-[top]()
+[top](broken-reference)
 
 ## Create a Cluster Master
 
-If you are going to create a indexer cluster, you must also create a 'master node' \(Splunk nomenclature\) - aka a Cluster Master - to manage the cluster.
+If you are going to create a indexer cluster, you must also create a 'master node' (Splunk nomenclature) - aka a Cluster Master - to manage the cluster.
 
 **To configure a Splunk Enterprise instance as the Cluster Master / master node:**
 
@@ -365,21 +365,19 @@ If you are going to create a indexer cluster, you must also create a 'master nod
 * Cluster Label. You can label the cluster here. The label is useful for identifying the cluster in the monitoring console. See Set cluster labels in Monitoring Splunk Enterprise.
 
 1. Click Enable master node. The message appears, "You must restart Splunk for the master node to become active. You can restart Splunk from Server Controls."
-2. Create an outputs.conf file in `/opt/splunk/etc/system/local/` on the master node that configures it for load-balanced forwarding of its internal log files across the set of peer nodes. You must also turn off indexing on the master, so that the master does not both retain the data locally as well as forward it to the peers.
+2.  Create an outputs.conf file in `/opt/splunk/etc/system/local/` on the master node that configures it for load-balanced forwarding of its internal log files across the set of peer nodes. You must also turn off indexing on the master, so that the master does not both retain the data locally as well as forward it to the peers.
 
-   [Forward internal data to search peers]()
+    [Forward internal data to search peers](broken-reference)
+3.  Click Go to Server Controls. This takes you to the Settings page where you can initiate the restart.
 
-3. Click Go to Server Controls. This takes you to the Settings page where you can initiate the restart.
-
-   Important: When the master starts up for the first time, it will block indexing on the peers until you enable and restart the full replication factor number of peers. Do not restart the master while it is waiting for the peers to join the cluster. If you do, you will need to restart the peers a second time.
-
-4. After the restart, log back into the master and return to the Clustering page in Splunk Web \(Settings &gt; Indexer Clustering&gt;\). You will see the master clustering dashboard.
+    Important: When the master starts up for the first time, it will block indexing on the peers until you enable and restart the full replication factor number of peers. Do not restart the master while it is waiting for the peers to join the cluster. If you do, you will need to restart the peers a second time.
+4. After the restart, log back into the master and return to the Clustering page in Splunk Web (Settings > Indexer Clustering>). You will see the master clustering dashboard.
 
 **Configuring a Cluster Master using server.conf**
 
 Enabling a Cluster Master or editing its configuration can also be done in `/opt/splunk/etc/system/local/server.conf`:
 
-```text
+```
 [clustering]
 mode = master
 replication_factor = 4
@@ -392,13 +390,13 @@ cluster_label = cluster1
 
 Multisite indexer clusters allow you to maintain complete copies of your indexed data in multiple locations. This offers the advantages of enhanced disaster recovery and search affinity. You can specify the number of copies of data on each site. Multisite clusters are similar in most respects to basic, single-site clusters, with some differences in configuration and behavior.
 
-For multisite clusters, you must also take into account the search head and peer node requirements of each site, as determined by your search affinity and disaster recovery needs. At a minimum, you will need \(replication factor + 2\) instances.
+For multisite clusters, you must also take into account the search head and peer node requirements of each site, as determined by your search affinity and disaster recovery needs. At a minimum, you will need (replication factor + 2) instances.
 
 **Configure the master node**
 
 You configure the key attributes for the entire cluster on the master node in `/opt/splunk/etc/system/local/server.conf`. Here is an example of a multisite configuration for a master node:
 
-```text
+```
 [general]
 site = site1
 
@@ -425,8 +423,8 @@ This example specifies that:
 
 Note the following:
 
-* You specify the site attribute in the \[general\] stanza.
-* You specify all other multisite attributes in the \[clustering\] stanza.
+* You specify the site attribute in the \[general] stanza.
+* You specify all other multisite attributes in the \[clustering] stanza.
 * You can locate the master on any site in the cluster, but each cluster has only one master.
 * You must set multisite=true.
 * You must list all cluster sites in the available\_sites attribute.
@@ -446,7 +444,7 @@ To distribute new or edited configuration files or apps across all the peers, yo
 
 On the master, the configuration bundle resides under the $SPLUNK\_HOME/etc/master-apps directory. The set of files under that directory constitute the configuration bundle. They are always distributed as a group to all the peers. The directory has this structure:
 
-```text
+```
 $SPLUNK_HOME/etc/master-apps/
      _cluster/
           default/
@@ -464,7 +462,7 @@ The /\_cluster directory is a special location for configuration files that need
 * The `/` subdirectories are optional. They provide a way to distribute any app to the peer nodes. Create and populate them as needed. For example, to distribute "appBestEver" to the peer nodes, place a copy of that app in its own subdirectory: `$SPLUNK_HOME/etc/master-apps/appBestEver`.
 * To delete an app that you previously distributed to the peers, remove its directory from the configuration bundle. When you next push the bundle, the app will be deleted from each peer.
 * Note: The master only pushes the contents of subdirectories under master-apps. It will not push any standalone files directly under master-apps.
-* You explicitly tell the master when you want it to distribute the latest configuration bundle to the peers. In addition, when a peer registers with the master \(for example, when the peer joins the cluster\), the master distributes the current configuration bundle to it.
+* You explicitly tell the master when you want it to distribute the latest configuration bundle to the peers. In addition, when a peer registers with the master (for example, when the peer joins the cluster), the master distributes the current configuration bundle to it.
 
 Caution: When the master distributes the bundle to the peers, it distributes the entire bundle, overwriting the entire contents of any configuration bundle previously distributed to the peers.
 
@@ -480,7 +478,7 @@ If you set the coldToFrozenDir attribute in indexes.conf, the indexer will autom
 
 The following is an example of typical custom index entries in an indexes.conf file:
 
-```text
+```
 []
 homePath   = volume:primary/index_name/db
 coldPath   = volume:primary/index_name/colddb
@@ -499,13 +497,13 @@ frozenTimePeriodInSecs = 2592000
 
 ### Configuring props.conf files
 
-The props.conf \(and transforms.conf, if applicable\) file is distributed across the indexers \('search peers'\) to tell Splunk how to parse incoming data. You configure props.conf & transforms.conf in the `/opt/splunk/etc/master-apps//local/` directories.
+The props.conf (and transforms.conf, if applicable) file is distributed across the indexers ('search peers') to tell Splunk how to parse incoming data. You configure props.conf & transforms.conf in the `/opt/splunk/etc/master-apps//local/` directories.
 
-When the cluster bundle is applied \(distributed to the indexers / search peers\) these same files will be located in `/opt/splunk/etc/apps//local/` directories on each indexer.
+When the cluster bundle is applied (distributed to the indexers / search peers) these same files will be located in `/opt/splunk/etc/apps//local/` directories on each indexer.
 
 Here is an assorted example of some props.conf entries; check the options for each of these entries in the [props.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.example) or [props.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/props.conf.spec) files:
 
-```text
+```
 BREAK_ONLY_BEFORE = ([\r\n]+)
 DATETIME_CONFIG = 
 MAX_TIMESTAMP_LOOKAHEAD = 30
@@ -531,7 +529,7 @@ The transforms.conf file is used to
 
 Here are some assorted samples of transforms.conf entires; check the options for each of these entries in the [transforms.conf.example](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.example) or [transforms.conf.spec](https://github.com/packetiq/SplunkArchitect/blob/master/README/transforms.conf.spec) files:
 
-```text
+```
 # Used with the props.conf file in the previous example
 # [db_host] matches with `TRANSFORMS-DBHost = db_host' in props.conf
 [db_host]
@@ -565,8 +563,8 @@ REGEX = \?([^\s]+)
 
 You can also distribute a new configuration bundle from the GUI on the Cluster Master:
 
-* Settings &gt; Indexer clustering
-* Click Edit &gt; Distribute Configuration Bundle A dashboard appears with information on the last successful push.
+* Settings > Indexer clustering
+* Click Edit > Distribute Configuration Bundle A dashboard appears with information on the last successful push.
 * Click the Distribute Configuration Bundle button. A pop-up window warns you that the distribution might, under certain circumstances, initiate a restart of all the peer nodes. For information on which configuration changes cause a peer restart, see Restart or reload after configuration bundle changes?.
 * Push Changes
 
@@ -602,16 +600,16 @@ If, for any reason, you do need to restart both the master and the peer nodes:
 
 You might occasionally have need to restart a single peer; for example, if you change certain configurations on only that peer. There are two ways that you can safely restart a single peer:
 
-* Use Splunk Web \(Settings&gt;Server Controls\).
+* Use Splunk Web (Settings>Server Controls).
 * Run the command **'splunk offline'**, followed by **'splunk start'**.
 
-When you use Splunk Web or the splunk offline/splunk start commands to restart a peer, the master waits 60 seconds \(by default\) before assuming that the peer has gone down for good. This allows sufficient time for the peer to come back on-line and prevents the cluster from performing unnecessary remedial activities.
+When you use Splunk Web or the splunk offline/splunk start commands to restart a peer, the master waits 60 seconds (by default) before assuming that the peer has gone down for good. This allows sufficient time for the peer to come back on-line and prevents the cluster from performing unnecessary remedial activities.
 
 **Cluster Master failure**
 
 If a master node goes down, peer nodes can continue to index and replicate data, and the search head can continue to search across the data, for some period of time. Problems eventually will arise, however, particularly if one of the peers goes down. There is no way to recover from peer loss without the master, and the search head will then be searching across an incomplete set of data. Generally speaking, the cluster continues as best it can without the master, but the system is in an inconsistent state and results cannot be guaranteed.
 
-[top]()
+[top](broken-reference)
 
 ## Create a Splunk Search Head
 
@@ -633,24 +631,23 @@ In either case, you must set the initial configuration to create a search head:
 4. Select Search head node and click Next.
 5. There are a few fields to fill out:
 
-* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089/).
+* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089).
 * Security key. This is the key that authenticates communication between the master and the peers and search heads. The key must be the same across all cluster nodes. Set the same value here that you previously set on the master node. An example of a security key is `MyS3cur1tyk3y`
 
-1. Click Enable search head node.
+1.  Click Enable search head node.
 
-   The message appears, "You must restart Splunk for the search node to become active. You can restart Splunk from Server Controls."
-
+    The message appears, "You must restart Splunk for the search node to become active. You can restart Splunk from Server Controls."
 2. Click Go to Server Controls. This takes you to the Settings page where you can initiate the restart.
 3. After the restart, log back into the search head and return to the Clustering page in Splunk Web. This time, you see the search head's clustering dashboard.
-4. Create an outputs.conf file on the search head that configures the search head for load-balanced forwarding across the set of search peers \(indexers\). You must also turn off indexing on the search head, so that the search head does not both retain the data locally as well as forward it to the search peers.
+4.  Create an outputs.conf file on the search head that configures the search head for load-balanced forwarding across the set of search peers (indexers). You must also turn off indexing on the search head, so that the search head does not both retain the data locally as well as forward it to the search peers.
 
-   [Forward internal data to search peers]()
+    [Forward internal data to search peers](broken-reference)
 
 **Creating a search head by editing server.conf:**
 
 You can also create a search head by editing the **server.conf** file in `/opt/splunk/etc/system/local`; note the 'mode = searchhead' entry:
 
-```text
+```
 [clustering]
 master_uri = https://10.152.31.202:8089
 mode = searchhead
@@ -668,11 +665,11 @@ This example specifies that:
 This is a configuration with a single dedicated search head connected to an indexer cluster.
 
 1. Designate a Splunk Enterprise instance as the search head. Since distributed search is enabled automatically on every full Splunk Enterprise instance, you do not actually perform any action in this step, aside from choosing the instance that you want to be your search head.
-2. Establish connections from the search head to all the search peers that you want it to search across. This is the key step in the procedure:
+2.  Establish connections from the search head to all the search peers that you want it to search across. This is the key step in the procedure:
 
-   To activate distributed search, you add search peers, or indexers, to a Splunk Enterprise instance that you designate as a search head. You do this by specifying each search peer manually:
+    To activate distributed search, you add search peers, or indexers, to a Splunk Enterprise instance that you designate as a search head. You do this by specifying each search peer manually:
 
-* Settings &gt; Distributed search &gt; Search peers &gt; New
+* Settings > Distributed search > Search peers > New
 * Specify the search peer, along with any authentication settings Note: You must precede the search peer's host name or IP address with the URI scheme, either "http" or "https".
 * Save
 * Repeat for each of the search head's search peers.
@@ -687,13 +684,13 @@ A search head cluster is a group of search heads that work together to provide s
 
 The search heads in a cluster are, for most purposes, interchangeable. All search heads have access to the same set of search peers. They can also run or access the same searches, dashboards, knowledge objects, and so on.
 
-In each case, the search heads perform only the search management and presentation functions. They connect to search peers \(indexers\) that index data and search across the indexed data.
+In each case, the search heads perform only the search management and presentation functions. They connect to search peers (indexers) that index data and search across the indexed data.
 
 This configuration is depicted in the following image:
 
-When initiating a distributed search, the search head replicates and distributes its knowledge objects to its search peers \(indexers\) so that they can properly execute queries on its behalf. Knowledge objects include saved searches, event types, and other entities used in searching across indexes; this set of knowledge objects is called the knowledge bundle.
+When initiating a distributed search, the search head replicates and distributes its knowledge objects to its search peers (indexers) so that they can properly execute queries on its behalf. Knowledge objects include saved searches, event types, and other entities used in searching across indexes; this set of knowledge objects is called the knowledge bundle.
 
-Bundles typically contain a subset of files \(configuration files and assets\) from `$SPLUNK_HOME/etc/system`, `$SPLUNK_HOME/etc/apps`, and `$SPLUNK_HOME/etc/users`.
+Bundles typically contain a subset of files (configuration files and assets) from `$SPLUNK_HOME/etc/system`, `$SPLUNK_HOME/etc/apps`, and `$SPLUNK_HOME/etc/users`.
 
 The process of distributing knowledge bundles means that peers by default receive nearly the entire contents of the search head's apps. If an app contains large binaries that do not need to be shared with the peers, you can eliminate them from the bundle and thus reduce the bundle size.
 
@@ -701,24 +698,24 @@ On the search head, the knowledge bundles resides under the `$SPLUNK_HOME/var/ru
 
 The knowledge bundle gets distributed to the `$SPLUNK_HOME/var/run/searchpeers` directory on each search peer.
 
-On a search head cluster, you can view replication status from the search head cluster captain:  
- Settings &gt; Distributed Search &gt; Search Peers
+On a search head cluster, you can view replication status from the search head cluster captain:\
+&#x20;Settings > Distributed Search > Search Peers
 
 **1. Create a Deployer first**
 
-To update member configurations of a search head cluster, you need a Splunk Enterprise instance that functions as the deployer. See: [Create a Deployer]()
+To update member configurations of a search head cluster, you need a Splunk Enterprise instance that functions as the deployer. See: [Create a Deployer](broken-reference)
 
 #### Configure the Search Head cluster members
 
 For each instance that you want to include in the search head cluster, run the `splunk init shcluster-config` command and restart the instance:
 
-```text
+```
 splunk init shcluster-config -auth : -mgmt_uri : -replication_port  -replication_factor  -conf_deploy_fetch_url : -secret  -shcluster_label 
 ```
 
 For example:
 
-```text
+```
 splunk init shcluster-config -auth admin:changed -mgmt_uri https://sh1.example.com:8089 -replication_port 34567 -replication_factor 2 -conf_deploy_fetch_url https://10.160.31.200:8089 -secret mykey -shcluster_label shcluster1
 
 splunk restart 
@@ -747,9 +744,9 @@ You can optionally add more members to boost search and user capacity. Search he
 
 These ports must be available on each member:
 
-* The management port \(by default, 8089\) must be available to all other members.
-* The http port \(by default, 8000\) must be available to any browsers accessing data from the member.
-* The KV store port \(by default, 8191\) must be available to all other members. You can use the CLI command `splunk show kvstore-port` to identify the port number.
+* The management port (by default, 8089) must be available to all other members.
+* The http port (by default, 8000) must be available to any browsers accessing data from the member.
+* The KV store port (by default, 8191) must be available to all other members. You can use the CLI command `splunk show kvstore-port` to identify the port number.
 * The replication port must be available to all other members.
 
 These ports must be in your firewall's list of allowed ports.
@@ -770,7 +767,7 @@ Note the following:
 
 Here is an example of the bootstrap command:
 
-```text
+```
 splunk bootstrap shcluster-captain -servers_list "https://sh1.example.com:8089,https://sh2.example.com:8089,https://sh3.example.com:8089,https://sh4.exam
 ```
 
@@ -783,25 +780,23 @@ The settings available through Splunk Web provide sufficient options for most co
 **Add the search peers**
 
 1. On the search head, create or edit a distsearch.conf file in `$SPLUNK_HOME/etc/system/local`.
-2. Add the search peers to the servers setting under the \[distributedSearch\] stanza. Specify the peers as a set of comma-separated values \(host names or IP addresses with management ports\). For example:
+2.  Add the search peers to the servers setting under the \[distributedSearch] stanza. Specify the peers as a set of comma-separated values (host names or IP addresses with management ports). For example:
 
-   ```text
-   [distributedSearch]
-   servers = https://192.168.1.1:8089,https://192.168.1.2:8089
-   ```
+    ```
+    [distributedSearch]
+    servers = https://192.168.1.1:8089,https://192.168.1.2:8089
+    ```
 
-   Note: You must precede the host name or IP address with the URI scheme, either "http" or "https".
-
+    Note: You must precede the host name or IP address with the URI scheme, either "http" or "https".
 3. Restart the search head.
 
 **Distributing key files**
 
 If you add search peers via Splunk Web or the CLI, Splunk Enterprise automatically configures authentication. However, if you add peers by editing distsearch.conf, you must distribute the key files manually. After adding the search peers and restarting the search head, as described above:
 
-* Copy the file ```$SPLUNK_HOME/etc/auth/distServerKeys/trusted.pem`` from the search head to``` $SPLUNK\_HOME/etc/auth/distServerKeys//trusted.pem\`\`\` on each search peer.
+*   Copy the file `$SPLUNK_HOME/etc/auth/distServerKeys/trusted.pem`` from the search head to` $SPLUNK\_HOME/etc/auth/distServerKeys//trusted.pem\`\`\` on each search peer.
 
-  The is the search head's serverName, specified in server.conf.
-
+    The is the search head's serverName, specified in server.conf.
 * Restart each search peer.
 
 **Authentication of multiple search heads from a single peer**
@@ -818,9 +813,9 @@ For example, if you have two search heads, named A and B, and they both need to 
 
 **Forward internal logs to the search peers**
 
-Create an outputs.conf file that configures the search heads for load-balanced forwarding across the set of search peers \(indexers\). You must also turn off indexing so they do not both retain the data locally as well as forward it to the search peers.
+Create an outputs.conf file that configures the search heads for load-balanced forwarding across the set of search peers (indexers). You must also turn off indexing so they do not both retain the data locally as well as forward it to the search peers.
 
-[Forward internal data to search peers]()
+[Forward internal data to search peers](broken-reference)
 
 Note: You perform the same configuration steps to forward data from search head cluster members to their set of search peers. _However, you must ensure that all members use the same outputs.conf file_. To do so, do not edit the file on the individual search heads. Instead, _use a deployer to propagate the file across the search head cluster_.
 
@@ -850,7 +845,7 @@ To integrate search head cluster members with a multisite indexer cluster, confi
 
 `splunk restart`
 
-```text
+```
 [shclustering]
 conf_deploy_fetch_url = https://:8089
 disabled = 0
@@ -872,15 +867,15 @@ pass4SymmKey =
 * Install a load balancer in front of the search heads. This step is optional. See "Use a load balancer with search head clustering."
 * Use the deployer to distribute apps and configuration updates to the search heads.
 
-[top]()
+[top](broken-reference)
 
 ## Create a Deployment Server
 
 To set up a deployment server, you need to configure both the deployment server and the deployment clients, although most configuration occurs on the deployment server side. The main actions you need to perform are these:
 
-* Configure the deployment clients to connect to a deployment server \(Universal Forwarders, etc.\)
-* Create directories on the deployment server to hold the deployment apps and populate them with content \(inputs.conf, etc.\)
-* Create mappings between deployment clients and app directories \(the server classes\)\(serverclass.conf\)
+* Configure the deployment clients to connect to a deployment server (Universal Forwarders, etc.)
+* Create directories on the deployment server to hold the deployment apps and populate them with content (inputs.conf, etc.)
+* Create mappings between deployment clients and app directories (the server classes)(serverclass.conf)
 
 Notes: You can use a deployment server to distribute updates to search heads in indexer clusters, as long as they are standalone search heads. You cannot use the deployment server to distribute updates to members of a search head cluster - you must use a Deployer.
 
@@ -890,7 +885,7 @@ Because of high CPU and memory usage during app downloads, it is recommended tha
 
 A deployment app consists of any arbitrary content that you want to download to a set of deployment clients. The content can include:
 
-* A Splunk Enterprise app \(such as those on Splunkbase\)
+* A Splunk Enterprise app (such as those on Splunkbase)
 * A set of Splunk Enterprise configurations
 * Other content, such as scripts, images, and supporting files
 
@@ -910,7 +905,7 @@ An example of how to create an app and its settings that can be deployed from a 
 
 For example, `/opt/splunk/etc/deployment-apps/MyApp/local/inputs.conf` might contain:
 
-```text
+```
 [monitor:///var/log/nodejs*/*/error*.log]
 index = myapp
 sourcetype = app_err
@@ -941,7 +936,7 @@ A **server class** is a mapping between deployment clients and apps. It tells th
 
 This info gets saved in a serverclass.conf file in `/opt/splunk/etc/system/local/`, although you could also have: `/opt/splunk/etc/apps/SomeApp/local/serverclass.conf` in which case the settings would be merged by standard Splunk precedence.
 
-```text
+```
 [serverClass:app_name]
 # Set the attribute to ipAddress, hostname, DNSname, or clientName
 whitelist.0 = servername(0001|0002|0003).yourfqdn.com
@@ -965,10 +960,11 @@ restartSplunkd = true
 
 You can configure the serverclass.conf file directly, or use Splunk Web:
 
-* Settings &gt; Forwarder management
-* Server Classes \(tab\) &gt; New Server class  Note: Server class names must be unique.
-* Add Apps \(tab\)
-* Add Clients \(tab\)
+* Settings > Forwarder management
+* Server Classes (tab) > New Server class\
+  &#x20;Note: Server class names must be unique.
+* Add Apps (tab)
+* Add Clients (tab)
 
 **Deploy Apps**
 
@@ -980,9 +976,9 @@ To reload the deployment server, use the CLI `reload deploy-server`
 
 ### Configure the deployment client
 
-The deployment client \(such as Universal Forwarders\)
+The deployment client (such as Universal Forwarders)
 
-On the deployment client \(such as a Universal Forwarder\), run these CLI commands:
+On the deployment client (such as a Universal Forwarder), run these CLI commands:
 
 `splunk set deploy-poll:` `splunk restart`
 
@@ -992,11 +988,11 @@ You can also directly create and edit a `deploymentclient.conf` file in `$SPLUNK
 
 The deploymentclient.conf file requires two stanzas:
 
-\[deployment-client\] Configures a number of attributes, including where to find new or updated content. You do not usually need to change the default values for this stanza.
+\[deployment-client] Configures a number of attributes, including where to find new or updated content. You do not usually need to change the default values for this stanza.
 
-\[target-broker:deploymentServer\] Specifies the location of this client's deployment server. deploymentServer is the default name for a deployment server. You must specify the deployment server under this stanza.
+\[target-broker:deploymentServer] Specifies the location of this client's deployment server. deploymentServer is the default name for a deployment server. You must specify the deployment server under this stanza.
 
-```text
+```
 [deployment-client]
 # Set the phoneHome period to 10 minutes (default is 30 seconds)
 phoneHomeIntervalInSecs = 600
@@ -1012,20 +1008,20 @@ targetUri = :8089
 
 You can find information about the deployment client from two locations:
 
-* On the deployment client itself: Settings &gt; Server settings &gt; Deployment client settings
-* On the deployment server: Settings &gt; Forwarder management
+* On the deployment client itself: Settings > Server settings > Deployment client settings
+* On the deployment server: Settings > Forwarder management
 
 To disable a deployment client: `splunk disable deploy-client`
 
-[Forward internal data to search peers]()
+[Forward internal data to search peers](broken-reference)
 
-[top]()
+[top](broken-reference)
 
 ## Create a Deployer
 
 Deployer functionality is only for use with search head clustering, but it is built into all Splunk Enterprise instances running version 6.2 or above. The processing requirements for a deployer are fairly light, so you can usually co-locate deployer functionality on an instance performing some other function. You have several options as to the instance on which you run the deployer:
 
-* If you have a deployment server that is servicing only a small number of deployment clients \(no more than 50\), you can run the deployer on the same instance as the deployment server. The deployer and deployment server functionalities can interfere with each other at larger client counts. See Deployment server provisioning in Updating Splunk Enterprise Instances.
+* If you have a deployment server that is servicing only a small number of deployment clients (no more than 50), you can run the deployer on the same instance as the deployment server. The deployer and deployment server functionalities can interfere with each other at larger client counts. See Deployment server provisioning in Updating Splunk Enterprise Instances.
 * If you are running an indexer cluster, you might be able to run the deployer on the same instance as the indexer cluster master node. Whether this option is available to you depends on the master's load. See Additional roles for the master node in Managing Indexers and Clusters of Indexers for information on cluster master load limits.
 * If you have a monitoring console, you can run the deployer on the same instance as the console. See Which instance should host the console? in Monitoring Splunk Enteprise.
 * If none of the instance types enumerated above are available, run the deployer on a dedicated Splunk Enterprise instance.
@@ -1045,9 +1041,9 @@ _**Deployer functionality is automatically enabled on all Splunk Enterprise inst
 
 The deployer uses the security key to authenticate communication with the cluster members. The cluster members also use it to authenticate with each other. You must set the key to the same value on all cluster members and the deployer. You set the key on the cluster members when you initialize them.
 
-To set the key on the deployer, specify the pass4SymmKey attribute in either the \[general\] or the \[shclustering\] stanza of the deployer's server.conf file. For example:
+To set the key on the deployer, specify the pass4SymmKey attribute in either the \[general] or the \[shclustering] stanza of the deployer's server.conf file. For example:
 
-```text
+```
 [shclustering]
 pass4SymmKey = yoursecuritykey
 ```
@@ -1056,9 +1052,9 @@ pass4SymmKey = yoursecuritykey
 
 The search head cluster label is useful for identifying the cluster in the monitoring console. This parameter is optional, but if you configure it on one member, you must configure it with the same value on all members, as well as on the deployer.
 
-To set the label, specify the shcluster\_label attribute in the \[shclustering\] stanza of the deployer's server.conf file. For example:
+To set the label, specify the shcluster\_label attribute in the \[shclustering] stanza of the deployer's server.conf file. For example:
 
-```text
+```
 [shclustering]
 shcluster_label = shcluster1
 ```
@@ -1069,21 +1065,21 @@ To be completed...
 * Directories on the Deployer to put apps & knowledge objects in
 * Where those apps & knowlege objects end up on the search heads
 
-[Forward internal data to search peers]()
+[Forward internal data to search peers](broken-reference)
 
-[top]()
+[top](broken-reference)
 
 ## Create a License Server
 
 To be completed...
 
-[Forward internal data to search peers]()
+[Forward internal data to search peers](broken-reference)
 
 #### Licenses for distributed search
 
 Each instance in a distributed search deployment must have access to a license pool. This is true for both search heads and search peers. See Licenses for search heads in Admin Manual.
 
-[top]()
+[top](broken-reference)
 
 ## Install and Configure a Universal Forwarder
 
@@ -1100,21 +1096,22 @@ Forwarders allow you to use resources efficiently when processing large quantiti
 
 **Manual Installation**
 
-* Access the Splunk website:  [Download Splunk Universal Forwarder](https://www.splunk.com/en_us/download/universal-forwarder.html#tabs/linux)
+* Access the Splunk website:\
+  &#x20;[Download Splunk Universal Forwarder](https://www.splunk.com/en\_us/download/universal-forwarder.html#tabs/linux)
 
 **Note: You will have to create an account and/or login using your Splunk user ID & password.**
 
-* Select and download the appropriate rpm package \(linux &gt; 64-bit &gt; .rpm\)
-* On the next Splunk web page \(that shows up after you select a download\), click the 'Download via Command Line \(wget\)' link and copy the string - for example:
+* Select and download the appropriate rpm package (linux > 64-bit > .rpm)
+* On the next Splunk web page (that shows up after you select a download), click the 'Download via Command Line (wget)' link and copy the string - for example:
 
-```text
+```
 wget -O splunkforwarder-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=6.5.3&product=universalforwarder&filename=splunkforwarder-6.5.3-36937ad027d4-linux-2.6-x86_64.rpm&wget=true'
 ```
 
 Or...
 
 * Use ftp or WinSCP to copy the package to the splunk server.
-* `sudo su` \(root\)
+* `sudo su` (root)
 * Install the package `rpm -i splunkforwarder-<…>-linux-2.6-x86_64.rpm`
 * Start the Forwarder: `cd /opt/splunkforwarder/bin/` `./splunk start`
 
@@ -1137,7 +1134,7 @@ The universal forwarder ships with these default versions of outputs.conf:
 
 The default version in the SplunkUniversalForwarder app has precedence over the version under /etc/system/default. Do not edit default versions of any configuration files.
 
-[top]()
+[top](broken-reference)
 
 ## Splunk Common Network Ports
 
@@ -1145,7 +1142,6 @@ The image above was obtained from [Job Jordan's Blog:](http://jordan2000.com/spl
 
 Other images in this document were obtained and/or modified from images copied from Splunk documentation. Splunk is not responsible for any inaccuracies introduced by my modifications.
 
-[top]()
+[top](broken-reference)
 
-> Written with [StackEdit](https://stackedit.io/).
-
+> Written with [StackEdit](https://stackedit.io).

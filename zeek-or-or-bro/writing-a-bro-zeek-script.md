@@ -2,25 +2,25 @@
 
 
 
-![JK](../.gitbook/assets/image%20%2878%29.png)
+![JK](<../.gitbook/assets/image (78).png>)
 
-## Loading **Bro/ZEEK** Script 
+## Loading **Bro/ZEEK **Script&#x20;
 
 ### Custom-Scripts for security onion
 
 {% hint style="info" %}
-We will use the `producer-consumer-ratio.zeek` script and load it into security onion for this example. 
+We will use the `producer-consumer-ratio.zeek` script and load it into security onion for this example.&#x20;
 {% endhint %}
 
-The end goal is to have a `pcr` field added to conn.log. This will enable future analytics be completed easier in splunk. This can be done at time of search, in a constrained environment, but where possible it is recommended to use the method below. 
+The end goal is to have a `pcr` field added to conn.log. This will enable future analytics be completed easier in splunk. This can be done at time of search, in a constrained environment, but where possible it is recommended to use the method below.&#x20;
 
-####  Create a new directory under `/opt/bro/share/bro/policy/`
+#### &#x20;Create a new directory under `/opt/bro/share/bro/policy/`
 
 ```python
 sudo mkdir /opt/bro/share/bro/policy/custom-scripts
 ```
 
-####  Add your custom script\(s\) and `__load__.zeek` to this directory.
+#### &#x20;Add your custom script(s) and `__load__.zeek` to this directory.
 
 ```python
 sudo wget https://raw.githubusercontent.com/reservoirlabs/bro-producer-consumer-ratio/master/producer-consumer-ratio.bro
@@ -34,7 +34,7 @@ sudo touch __load__.zeek
 @load ./producer-consumer-ratio.zeek
 ```
 
-####  Edit `/opt/bro/share/bro/site/local.zeek` 
+#### &#x20;Edit `/opt/bro/share/bro/site/local.zeek`&#x20;
 
 We want zeek to load the new scripts in `/opt/bro/share/bro/policy/custom-scripts` So we will be adding `@load custom-scripts` at the bottom of the file and saving the file.
 
@@ -50,33 +50,33 @@ sudo nsm_sensor_ps-restart --only-bro
 
 #### Check for initial errors
 
-Check `/nsm/bro/logs/current/loaded_scripts.log` to see if your custom script\(s\) has/have been loaded.
+Check `/nsm/bro/logs/current/loaded_scripts.log` to see if your custom script(s) has/have been loaded.
 
-Check `/nsm/bro/logs/current/reporter.log` for clues if your custom script\(s\) is/are not working as desired.
+Check `/nsm/bro/logs/current/reporter.log` for clues if your custom script(s) is/are not working as desired.
 
---------------------------------------
+\--------------------------------------
 
 #### What is PCR
 
 **Purpose**: Find changes in traffic flows that indicate exfil
 
-**Data Required**: session data \(argus, netflow/ipfix, or bro-logs\)
+**Data Required**: session data (argus, netflow/ipfix, or bro-logs)
 
 **Collection Considerations**:
 
 **Analysis Techniques**: Identify changes in host roles, and investigate. PCR is a normalized metric of traffic ratios and from a host ranging from -1 to 1.
 
-| PCR | host role |
-| :--- | :--- |
-| 1.0 | pure push - FTP upload, multicast, beaconing |
-| 0.4 | 70:30 export - Sending Email |
-| 0.0 | Balanced Exchange - NTP, ARP probe |
-| -0.5 | 3:1 import - HTTP Browsing |
-| -1.0 | pure pull - HTTP Download |
+| PCR  | host role                                    |
+| ---- | -------------------------------------------- |
+| 1.0  | pure push - FTP upload, multicast, beaconing |
+| 0.4  | 70:30 export - Sending Email                 |
+| 0.0  | Balanced Exchange - NTP, ARP probe           |
+| -0.5 | 3:1 import - HTTP Browsing                   |
+| -1.0 | pure pull - HTTP Download                    |
 
 #### Below is the script that we pulled with the `wget` command above
 
-> This script can be used to implement the Producer Consumer Ratio as described by [http://resources.sei.cmu.edu/asset\_files/Presentation/2014\_017\_001\_90063.pdf](http://resources.sei.cmu.edu/asset_files/Presentation/2014_017_001_90063.pdf)
+> This script can be used to implement the Producer Consumer Ratio as described by [http://resources.sei.cmu.edu/asset\_files/Presentation/2014\_017\_001\_90063.pdf](http://resources.sei.cmu.edu/asset\_files/Presentation/2014\_017\_001\_90063.pdf)
 
 ```python
 # Copyright 2013 Reservoir Labs, Inc.
@@ -175,5 +175,4 @@ event bro_init() {
 }
 ```
 
-![Multicast messaging from Rockwell Rslogix/Rslinks software  ](../.gitbook/assets/image%20%2892%29.png)
-
+![Multicast messaging from Rockwell Rslogix/Rslinks software  ](<../.gitbook/assets/image (92).png>)
