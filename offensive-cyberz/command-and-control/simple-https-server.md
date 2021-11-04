@@ -1,5 +1,5 @@
 ---
-description: Reference for Simple HTTP Server
+description: Reference for Simple HTTPS Server
 ---
 
 # Simple HTTPS Server
@@ -16,7 +16,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 import ssl
 import socketserver
 
-httpd = socketserver.TCPServer(('PUBLIC IP', 443), SimpleHTTPRequestHandler)
+httpd = socketserver.TCPServer(('INSERT IP', 443), SimpleHTTPRequestHandler)
 
 httpd.socket = ssl.wrap_socket(httpd.socket, 
         keyfile="key.pem", 

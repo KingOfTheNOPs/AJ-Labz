@@ -38,6 +38,7 @@
 ## Offensive Cyberz
 
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
+  * [Linux Shellcode Encoders](offensive-cyberz/defense-evasion/linux-shellcode-encoders.md)
   * [AppLocker Bypass](offensive-cyberz/defense-evasion/applocker-bypass.md)
 * [AD Enumeration](offensive-cyberz/ad-enumeration/README.md)
   * [AD Tools](offensive-cyberz/ad-enumeration/ad-tools.md)
