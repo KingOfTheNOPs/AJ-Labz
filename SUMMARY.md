@@ -5,6 +5,7 @@
 ## The Lab <a href="building-the-lab" id="building-the-lab"></a>
 
 * [Building the Lab](building-the-lab/building-the-lab/README.md)
+  * [Increasing VM Harddrive size](building-the-lab/building-the-lab/increasing-vm-harddrive-size.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
   * [ESXi](building-the-lab/building-the-lab/esxi.md)
   * [vCenter Server Installation](building-the-lab/building-the-lab/vcsa.md)
