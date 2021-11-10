@@ -5,7 +5,6 @@
 ## The Lab <a href="building-the-lab" id="building-the-lab"></a>
 
 * [Building the Lab](building-the-lab/building-the-lab/README.md)
-  * [Increasing VM Harddrive size](building-the-lab/building-the-lab/increasing-vm-harddrive-size.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
   * [ESXi](building-the-lab/building-the-lab/esxi.md)
   * [vCenter Server Installation](building-the-lab/building-the-lab/vcsa.md)
@@ -13,6 +12,7 @@
   * [Virtual Networking](building-the-lab/building-the-lab/virtual-networking.md)
   * [Install Virtual Machine](building-the-lab/building-the-lab/install-virtual-machine.md)
   * [Install Virtual Firewall](building-the-lab/building-the-lab/install-virtual-firewall.md)
+  * [Increasing VM Harddrive size](building-the-lab/building-the-lab/increasing-vm-harddrive-size.md)
 * [Building the Windows Domain](building-the-lab/building-the-windows-domain.md)
 * [Building a Local DNS Server](building-the-lab/building-a-local-dns-server.md)
 * [Installing Apache Guacamole](building-the-lab/installing-apache-guacamole.md)
