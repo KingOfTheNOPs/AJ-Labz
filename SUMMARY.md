@@ -2,7 +2,7 @@
 
 * [whoami](README.md)
 
-## The Lab <a href="building-the-lab" id="building-the-lab"></a>
+## The Lab <a href="#building-the-lab" id="building-the-lab"></a>
 
 * [Building the Lab](building-the-lab/building-the-lab/README.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
@@ -42,6 +42,7 @@
   * [Linux Shellcode Encoders](offensive-cyberz/defense-evasion/linux-shellcode-encoders.md)
   * [AppLocker Bypass](offensive-cyberz/defense-evasion/applocker-bypass.md)
 * [AD Enumeration](offensive-cyberz/ad-enumeration/README.md)
+  * [Enumeration Commands](offensive-cyberz/ad-enumeration/enumeration-commands.md)
   * [AD Tools](offensive-cyberz/ad-enumeration/ad-tools.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
