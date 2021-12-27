@@ -39,6 +39,7 @@
 ## Offensive Cyberz
 
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
+  * [AMSI Bypass](offensive-cyberz/defense-evasion/amsi-bypass.md)
   * [Evade Heuristic Behaviors](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/README.md)
     * [Process Injection](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/process-injection.md)
     * [Process Hollowing](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/process-hollowing.md)
