@@ -57,6 +57,8 @@
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
   * [Simple HTTPS Server](offensive-cyberz/command-and-control/simple-https-server.md)
 * [Linux](offensive-cyberz/linux/README.md)
+  * [SSH](offensive-cyberz/linux/ssh.md)
+  * [Kerberos Cache File](offensive-cyberz/linux/kerberos-cache-file.md)
   * [Ansible](offensive-cyberz/linux/ansible.md)
   * [Privilege Escalation](offensive-cyberz/linux/privilege-escalation.md)
 * [Phishing](offensive-cyberz/phishing.md)
