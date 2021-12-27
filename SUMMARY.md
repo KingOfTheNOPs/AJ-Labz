@@ -39,12 +39,12 @@
 ## Offensive Cyberz
 
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
-  * [Process Hollowing](offensive-cyberz/defense-evasion/process-hollowing.md)
-  * [Process Injection](offensive-cyberz/defense-evasion/process-injection.md)
-  * [Evade Heuristic Behaviors](offensive-cyberz/defense-evasion/evade-heuristic-behaviors.md)
-  * [Process Injection](<offensive-cyberz/defense-evasion/process-injection (1).md>)
+  * [Evade Heuristic Behaviors](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/README.md)
+    * [Powershell CLM Bypass](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/powershell-clm-bypass.md)
+    * [AppLocker Bypass](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/applocker-bypass.md)
+    * [Process Injection](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/process-injection.md)
+    * [Process Hollowing](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/process-hollowing.md)
   * [Linux Shellcode Encoders](offensive-cyberz/defense-evasion/linux-shellcode-encoders.md)
-  * [AppLocker Bypass](offensive-cyberz/defense-evasion/applocker-bypass.md)
 * [AD Enumeration](offensive-cyberz/ad-enumeration/README.md)
   * [AD Tools](offensive-cyberz/ad-enumeration/ad-tools.md)
   * [PowerView](offensive-cyberz/ad-enumeration/powerview.md)
