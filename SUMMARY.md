@@ -40,6 +40,7 @@
 
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
   * [Evade Heuristic Behaviors](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/README.md)
+    * [Reflection](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/reflection.md)
     * [Powershell CLM Bypass](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/powershell-clm-bypass.md)
     * [AppLocker Bypass](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/applocker-bypass.md)
     * [Process Injection](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/process-injection.md)
