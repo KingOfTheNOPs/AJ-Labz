@@ -2,6 +2,8 @@
 
 Most AV products implement heuristic detection that simulates the execution of a file. This behavior analysis can be evaded by determining if the file is being ran by a simulation or by a user.&#x20;
 
+Examples from: [https://github.com/chvancooten/OSEP-Code-Snippets](https://github.com/chvancooten/OSEP-Code-Snippets)
+
 Below is an example of a C Sharp Program that uses basic heuristic evasion
 
 #### Basic Heuristic Evasion
