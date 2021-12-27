@@ -57,6 +57,7 @@
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
   * [Simple HTTPS Server](offensive-cyberz/command-and-control/simple-https-server.md)
 * [Linux](offensive-cyberz/linux.md)
+* [Privilege Escalation](offensive-cyberz/privilege-escalation.md)
 * [Phishing](offensive-cyberz/phishing.md)
 * [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 
