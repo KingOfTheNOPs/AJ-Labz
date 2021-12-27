@@ -151,7 +151,7 @@ End Sub
 
 When file upload is availble&#x20;
 
-```
+```aspnet
 <%@ Page Language="C#" AutoEventWireup="true" %>
 <%@ Import Namespace="System.IO" %>
 <script runat="server">
