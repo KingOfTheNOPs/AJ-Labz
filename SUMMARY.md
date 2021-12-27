@@ -53,6 +53,8 @@
   * [BloodHound](offensive-cyberz/ad-enumeration/bloodhound.md)
   * [DAFT Commands](offensive-cyberz/ad-enumeration/daft-commands.md)
   * [Enumeration Commands](offensive-cyberz/ad-enumeration/enumeration-commands.md)
+* [AD Attack](offensive-cyberz/ad-attack/README.md)
+  * [Abusing ACLs](offensive-cyberz/ad-attack/abusing-acls.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
   * [Simple HTTPS Server](offensive-cyberz/command-and-control/simple-https-server.md)
