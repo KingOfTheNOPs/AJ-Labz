@@ -15,7 +15,7 @@ Once you have an idea on paper you can clearly see what you need to do.&#x20;
 ![](<../../.gitbook/assets/image (3).png>)
 
 {% hint style="info" %}
-vSphere "distributed switchs" and its networking capabilities is the main reason  for installing VCSA. For simplicity, we will add all port groups to one virtual distributed switch, and segment all traffic through VLAN tagging. When traffic from a virtual machine to another on the same ESXI host the traffic will never exit the physical interface (or uplink). However, if the destination is on another host or outside/needs to traverse physical hardware it will exit the physical vnic.**  with the VLAN tag associated on the port group.**
+vSphere "distributed switchs" and its networking capabilities is the main reason  for installing VCSA. For simplicity, we will add all port groups to one virtual distributed switch, and segment all traffic through VLAN tagging. When traffic from a virtual machine to another on the same ESXI host the traffic will never exit the physical interface (or uplink). However, if the destination is on another host or outside/needs to traverse physical hardware it will exit the physical vnic.  **with the VLAN tag associated on the port group.**
 
 As you get more money or if you have a lot of NICs on the back of your server you should consider segmenting traffic to multiple dvswitches&#x20;
 {% endhint %}
@@ -125,7 +125,7 @@ Check Teaming and Failover
 Select all Port Groups&#x20;
 
 {% hint style="danger" %}
-This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group. **If we we had Physical networking equipment we would put everything in 1 Uplink and tag packets as necessary physically&#x20;
+This is for first time configuration only. **Do not do this every time you want to change the fail order over a port group.** If we we had Physical networking equipment we would put everything in 1 Uplink and tag packets as necessary physically&#x20;
 {% endhint %}
 
 ![](<../../.gitbook/assets/image (88).png>)
@@ -134,7 +134,7 @@ Change to "Use explicit failover order"
 
 ![](<../../.gitbook/assets/image (55).png>)
 
-**Configure individual portgroups to use explicit routing  **
+**Configure individual portgroups to use explicit routing** &#x20;
 
 Right click on the port group you want to edit and click edit settings\
 

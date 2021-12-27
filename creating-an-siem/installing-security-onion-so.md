@@ -4,7 +4,7 @@
 
 ### Step 1 Import ISO & Deploy VM
 
-Download the ISO and verify the hash [_HERE_](https://github.com/Security-Onion-Solutions/security-onion)_. _Then import the ISO into your datastore under the ISOs folder \
+Download the ISO and verify the hash [_HERE_](https://github.com/Security-Onion-Solutions/security-onion)_._ Then import the ISO into your datastore under the ISOs folder \
 \
 Go to Hosts and Clusters and deploy a new VM.&#x20;
 
@@ -38,7 +38,7 @@ If you forget which interface is assigned to recieve the SPAN then run the follo
 `#view the interfaces`\
 `ip a`\
 `#view incoming traffic, if none comes in then its not the SPAN interface`\
-`sudo tcpdump -i <interface> `\
+`sudo tcpdump -i <interface>` \
 
 {% endhint %}
 

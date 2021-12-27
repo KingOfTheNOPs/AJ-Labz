@@ -6,7 +6,7 @@ description: Installing ESXi Hyper-visor on top of dell R710
 
 ## Installing ESXi Hyper-visor on top of dell R710
 
-### **1. Download ESXi and create B**ootable** media**
+### **1. Download ESXi and create B**ootable **media**
 
 For this both servers we used ESXI 6.7 since it&#x20;
 
@@ -20,7 +20,7 @@ Click "Download Now."&#x20;
 
 Register for the product. Under the License & Download page you now have a license key for our ESXI install.&#x20;
 
-Use Rufus bootable media writer** **to load the ESXI hypervisor ISO you just downloaded onto a USB or hard.&#x20;
+Use Rufus bootable media writer **** to load the ESXI hypervisor ISO you just downloaded onto a USB or hard.&#x20;
 
 ![](<../../.gitbook/assets/image (30).png>)
 

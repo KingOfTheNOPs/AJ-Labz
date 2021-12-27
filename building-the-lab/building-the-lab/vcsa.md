@@ -45,7 +45,7 @@ Chose the option that best fits your lab (We both used tiny)
 
 Select the Datastore you want the VM to be stored on.
 
-**This is where the FQDN is important. **If you chose to only use IP address then there is a good chance you will have plenty of trouble getting through Phase 2, as well as, the web interface for VCSA (specifically VXPD) not starting due to not being able to preform a reverse lookup among other things.&#x20;
+**This is where the FQDN is important.** If you chose to only use IP address then there is a good chance you will have plenty of trouble getting through Phase 2, as well as, the web interface for VCSA (specifically VXPD) not starting due to not being able to preform a reverse lookup among other things.&#x20;
 
 ![](<../../.gitbook/assets/image (72).png>)
 

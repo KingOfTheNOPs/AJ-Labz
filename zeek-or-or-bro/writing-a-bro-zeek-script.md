@@ -4,7 +4,7 @@
 
 ![JK](<../.gitbook/assets/image (78).png>)
 
-## Loading **Bro/ZEEK **Script&#x20;
+## Loading **Bro/ZEEK** Script&#x20;
 
 ### Custom-Scripts for security onion
 

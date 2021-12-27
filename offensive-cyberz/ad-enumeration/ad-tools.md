@@ -6,9 +6,15 @@ description: Just some neat tools
 
 ### BloodHound
 
+Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory environment
+
 {% embed url="https://github.com/BloodHoundAD/BloodHound" %}
 
 ### Impacket
+
+Impacket is a collection of Python classes for working with network protocols. Impacket is focused on providing low-level programmatic access to the packets and for some protocols (e.g. SMB1-3 and MSRPC) the protocol implementation itself.
+
+A description of some of the tools can be found at: [https://www.secureauth.com/labs/open-source-tools/impacket](https://www.secureauth.com/labs/open-source-tools/impacket)
 
 {% embed url="https://github.com/SecureAuthCorp/impacket" %}
 
