@@ -42,6 +42,7 @@
   * [Linux Shellcode Encoders](offensive-cyberz/defense-evasion/linux-shellcode-encoders.md)
   * [AppLocker Bypass](offensive-cyberz/defense-evasion/applocker-bypass.md)
 * [AD Enumeration](offensive-cyberz/ad-enumeration/README.md)
+  * [DAFT Commands](offensive-cyberz/ad-enumeration/daft-commands.md)
   * [Enumeration Commands](offensive-cyberz/ad-enumeration/enumeration-commands.md)
   * [AD Tools](offensive-cyberz/ad-enumeration/ad-tools.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
