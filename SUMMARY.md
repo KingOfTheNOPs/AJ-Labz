@@ -56,6 +56,7 @@
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
   * [Covenant Framework](offensive-cyberz/command-and-control/covenant-framework.md)
   * [Simple HTTPS Server](offensive-cyberz/command-and-control/simple-https-server.md)
+* [Linux](offensive-cyberz/linux.md)
 * [Phishing](offensive-cyberz/phishing.md)
 * [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 
