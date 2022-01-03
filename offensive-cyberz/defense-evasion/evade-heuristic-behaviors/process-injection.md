@@ -5,6 +5,13 @@ There are a few reasons you may want to inject your shellcode into another proce
 &#x20;• Extend the life of a beacon into a process that is unlikely to terminate\
 &#x20;• Live in a process that isn't blocked by host firewall rules
 
+General Process injection steps:\
+&#x20;• Dropper with Shellcode\
+&#x20;• Allocate memory in target process\
+&#x20;• Copy shellcode onto target \
+&#x20;• Execute shellcode\
+
+
 ```csharp
 ﻿using System;
 using System.Diagnostics;
