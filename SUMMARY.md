@@ -67,7 +67,7 @@
   * [Privilege Escalation](offensive-cyberz/linux/privilege-escalation.md)
 * [Phishing](offensive-cyberz/phishing.md)
 * [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
-* [Trojans](offensive-cyberz/trojans.md)
+* [Create a Trojan](offensive-cyberz/create-a-trojan.md)
 
 ## Cyber Readingz
 

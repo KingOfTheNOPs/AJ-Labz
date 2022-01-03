@@ -1,4 +1,4 @@
-# Trojans
+# Create a Trojan
 
 ## Backdooring a code cave with Putty POC
 
@@ -14,7 +14,9 @@ We’ll be focused on creating a backdoor in the code cave for this example.
 
 Download Putty and x32Dbg [https://x64dbg.com/](https://x64dbg.com/#)
 
-### Open Putty with debugger
+### Find Code Cave
+
+Open Putty with debugger
 
 You’ll notice the first breakpoint is set before the process is initialized.
 
@@ -35,6 +37,8 @@ Code Cave Start Address 0045C961
 Set a break point at this address so it can be referenced for later in the breakpoints tab.
 
 ![](<../.gitbook/assets/image (170).png>)
+
+### Adding shellcode
 
 Head on back to the entry point and add a jmp call to your code cave where the shellcode will reside. Before adding the jmp call, copy the first few calls since they are about to be overwritten and you’ll need to maintain the functionality of putty.
 
@@ -59,6 +63,8 @@ Now you can add your shellcode by highlighting a section large enough to fit you
 You now have shellcode inserted into putty and if this was saved and ran, the shellcode would run but putty would not be initialized so we will have to identify which instruction in the shellcode terminates the process and overwrite that with a jmp call back to the start of putty. You can confirm that your shellcode is running by either saving the patches made and running the new PE or running through each breakpoint. At the end you should notice the shellcode run (calc opens in this case) and the debugger is blank (the process terminated), if you ran through each breakpoint.
 
 ![](<../.gitbook/assets/image (176).png>)
+
+### Jmp back to Putty
 
 To find the instruction that exits the process, set a breakpoint on every call instruction in the shellcode. You will then need to step through each breakpoint to see which one terminates the process.
 
