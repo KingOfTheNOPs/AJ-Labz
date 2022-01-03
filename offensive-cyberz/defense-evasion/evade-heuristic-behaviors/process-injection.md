@@ -1,7 +1,6 @@
 # Process Injection
 
-There are a few reasons you may want to inject your shellcode into another process. &#x20;
-
+There are a few reasons you may want to inject your shellcode into another process.  \
 &#x20;• Extend the life of a beacon into a process that is unlikely to terminate\
 &#x20;• Live in a process that isn't blocked by host firewall rules
 
@@ -11,6 +10,8 @@ General Process injection steps:\
 &#x20;• Copy shellcode onto target \
 &#x20;• Execute shellcode\
 
+
+Templates from: [https://github.com/chvancooten/OSEP-Code-Snippets](https://github.com/chvancooten/OSEP-Code-Snippets)&#x20;
 
 ```csharp
 ﻿using System;
