@@ -1,6 +1,9 @@
 # Process Injection
 
-In an attempt to extend the life of a beacon, inject into a process that is unlikely to terminate.
+There are a few reasons you may want to inject your shellcode into another process. &#x20;
+
+&#x20;• Extend the life of a beacon into a process that is unlikely to terminate\
+&#x20;• Live in a process that isn't blocked by host firewall rules
 
 ```csharp
 ﻿using System;
