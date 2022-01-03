@@ -8,7 +8,7 @@
 4. Boot VM on and run as root
 5. Take snapshot (just in case)
 6. Identify device name (by default /dev/sda) and confirm the new size
-   1. `fdisk -l `![](<../../.gitbook/assets/image (169).png>)``
+   1. `fdisk -l` ![](<../../.gitbook/assets/image (169) (1).png>)``
 7. Create a new primary partition:
    1. fdisk /dev/sda (depending on device name)
    2. Press p to print the partition table to identify the number of partitions.&#x20;
@@ -29,7 +29,7 @@
 
     1. `vgdisplay`
 
-    ``![](<../../.gitbook/assets/image (171).png>)``
+    ``![](<../../.gitbook/assets/image (171) (1).png>)``
 12. Extend the physical volume
     1. `vgextend kali-vg /dev/sda3`
 13. Verify how many physical extents are available
@@ -38,7 +38,7 @@
 
     1. `lvdisplay`
 
-    ``![](<../../.gitbook/assets/image (170).png>)``
+    ``![](<../../.gitbook/assets/image (170) (1).png>)``
 15. Extend the Logical Volume
     1. `lvextend -L+#G /dev/kali-vg/root`
     2. \# is the number of free space in GB
@@ -47,4 +47,4 @@
     2. Use resize2fs instead of ext2online for non-Red Hat virtual machines.
     3. Use xfs\_growfs for Red Hat, CentOS 7 and other VM Guest OS types that use the XFS file system
 17. Verify that the filesystem has the new space
-    1. `  df -h  `
+    1. &#x20;`df -h`&#x20;

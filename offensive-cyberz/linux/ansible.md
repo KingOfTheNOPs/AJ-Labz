@@ -142,7 +142,7 @@ ansible-playbook [playbookname.yml]
 
 * Copy encrypted password
 
-![](<../../.gitbook/assets/image (172).png>)
+![](<../../.gitbook/assets/image (172) (1).png>)
 
 * use ansible2john.py
 * returns string for hashcat to use
