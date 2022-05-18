@@ -38,6 +38,7 @@
 
 ## Offensive Cyberz
 
+* [Cobalt Strike Red Team Cheat Sheet](offensive-cyberz/cobalt-strike-red-team-cheat-sheet.md)
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
   * [Disable AV](offensive-cyberz/defense-evasion/disable-av.md)
   * [AMSI Bypass](offensive-cyberz/defense-evasion/amsi-bypass.md)
