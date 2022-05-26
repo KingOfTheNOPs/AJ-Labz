@@ -8,7 +8,7 @@
 4. Boot VM on and run as root
 5. Take snapshot (just in case)
 6. Identify device name (by default /dev/sda) and confirm the new size
-   1. `fdisk -l` ![](<../../.gitbook/assets/image (169) (1).png>)``
+   1. `fdisk -l` <img src="../../.gitbook/assets/image (169) (1).png" alt="" data-size="original">``
 7. Create a new primary partition:
    1. fdisk /dev/sda (depending on device name)
    2. Press p to print the partition table to identify the number of partitions.&#x20;

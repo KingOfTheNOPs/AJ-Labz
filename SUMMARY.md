@@ -40,6 +40,7 @@
 
 * [Cobalt Strike Red Team Cheat Sheet](offensive-cyberz/cobalt-strike-red-team-cheat-sheet.md)
 * [Defense Evasion](offensive-cyberz/defense-evasion/README.md)
+  * [Evading Defender with CobaltStrike](offensive-cyberz/defense-evasion/evading-defender-with-cobaltstrike.md)
   * [Disable AV](offensive-cyberz/defense-evasion/disable-av.md)
   * [AMSI Bypass](offensive-cyberz/defense-evasion/amsi-bypass.md)
   * [Evade Heuristic Behaviors](offensive-cyberz/defense-evasion/evade-heuristic-behaviors/README.md)
