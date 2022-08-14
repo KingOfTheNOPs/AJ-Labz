@@ -57,6 +57,7 @@
   * [DAFT Commands](offensive-cyberz/ad-enumeration/daft-commands.md)
   * [Enumeration Commands](offensive-cyberz/ad-enumeration/enumeration-commands.md)
 * [AD Attack](offensive-cyberz/ad-attack/README.md)
+  * [Prompt for Credentials](offensive-cyberz/ad-attack/prompt-for-credentials.md)
   * [LAPS Reader](offensive-cyberz/ad-attack/laps-reader.md)
   * [Abusing ACLs](offensive-cyberz/ad-attack/abusing-acls.md)
 * [Command and Control](offensive-cyberz/command-and-control/README.md)
@@ -69,7 +70,8 @@
   * [Kerberos Cache File](offensive-cyberz/linux/kerberos-cache-file.md)
   * [Ansible](offensive-cyberz/linux/ansible.md)
   * [Privilege Escalation](offensive-cyberz/linux/privilege-escalation.md)
-* [Phishing](offensive-cyberz/phishing.md)
+* [Phishing](offensive-cyberz/phishing/README.md)
+  * [LNK Script](offensive-cyberz/phishing/lnk-script.md)
 * [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 * [Create a Trojan](offensive-cyberz/create-a-trojan.md)
 
