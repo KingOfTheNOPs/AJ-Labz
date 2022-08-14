@@ -70,7 +70,7 @@
   * [Kerberos Cache File](offensive-cyberz/linux/kerberos-cache-file.md)
   * [Ansible](offensive-cyberz/linux/ansible.md)
   * [Privilege Escalation](offensive-cyberz/linux/privilege-escalation.md)
-* [Phishing](offensive-cyberz/phishing/README.md)
+* [Phishing](offensive-cyberz/phishing.md)
   * [LNK Script](offensive-cyberz/phishing/lnk-script.md)
 * [Wireless Attacks](offensive-cyberz/wireless-attacks.md)
 * [Create a Trojan](offensive-cyberz/create-a-trojan.md)

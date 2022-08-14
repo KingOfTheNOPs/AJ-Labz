@@ -28,7 +28,7 @@ Unzip the file and modify the file gophish to be an executable\
 
 Add an A record to your public IP&#x20;
 
-![](<../../.gitbook/assets/image (167).png>)
+![](<../.gitbook/assets/image (167).png>)
 
 ### **Step 4: Generate TLS Certificate for the site**
 
@@ -40,9 +40,9 @@ Install certbot and generate cert
 Add TXT record with challenge information to your domain.\
 Verify that the TXT record was updated and then press enter.
 
-![Certbot cert](<../../.gitbook/assets/image (160).png>)
+![Certbot cert](<../.gitbook/assets/image (160).png>)
 
-![verify the TXT record](<../../.gitbook/assets/image (161).png>)
+![verify the TXT record](<../.gitbook/assets/image (161).png>)
 
 Replace the default certificates with the newly generated ones\
 First, move the new certificates to the gophish directory (optional)
@@ -51,7 +51,7 @@ First, move the new certificates to the gophish directory (optional)
 
 Second update the config.json with the new certificate names and the IP of the VM.&#x20;
 
-![config.json](<../../.gitbook/assets/image (165).png>)
+![config.json](<../.gitbook/assets/image (165).png>)
 
 Stop ./gophish and start it back up to enable the new certificates\
 This will make the website look a little bit more legit. \
@@ -76,16 +76,16 @@ Import the site and then add your form to capture their input
 
 Add email that the phishing emails will send from:
 
-![](<../../.gitbook/assets/image (162).png>)
+![](<../.gitbook/assets/image (162).png>)
 
 **Enabling Gmail Account for SMTP Relay:**\
 ****Go to myaccount.google.com and select the Security tab. From there allow less secure application access
 
-![](<../../.gitbook/assets/image (158).png>)
+![](<../.gitbook/assets/image (158).png>)
 
 Test email credentials by using the Test Email button at the bottom:
 
-![](<../../.gitbook/assets/image (159).png>)
+![](<../.gitbook/assets/image (159).png>)
 
 Check your email for the test email from the phishing account. Once that is verified you’re redy for the final step
 
@@ -93,7 +93,7 @@ Check your email for the test email from the phishing account. Once that is veri
 
 Head on over to the Campaign tab and fill out the campaign information.
 
-![](<../../.gitbook/assets/image (163).png>)
+![](<../.gitbook/assets/image (163).png>)
 
 Key thing is to add the URL of the domain you’re trying to impersonate. aka the domain you purchased\
 
