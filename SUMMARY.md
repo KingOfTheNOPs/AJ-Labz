@@ -17,7 +17,6 @@
 * [Building a Local DNS Server](building-the-lab/building-a-local-dns-server.md)
 * [Installing Apache Guacamole](building-the-lab/installing-apache-guacamole.md)
 * [Installing WireGuard VPN](building-the-lab/installing-wireguard-vpn.md)
-* [Industrial Control Systems (ICS)](building-the-lab/industrial-control-systems-ics.md)
 
 ## Defensive Cyberz
 
@@ -32,9 +31,6 @@
 * [Zeek || Bro](zeek-or-or-bro/README.md)
   * [Bro/Zeek Script](zeek-or-or-bro/writing-a-bro-zeek-script.md)
   * [Installing Protocol Analyzers](zeek-or-or-bro/installing-parser.md)
-* [SCADA Splunk](scada-splunk/README.md)
-  * [Getting Data To Splunk](scada-splunk/getting-data-to-splunk.md)
-  * [ICS Splunk Analytics](scada-splunk/ics-splunk-analytics.md)
 
 ## Offensive Cyberz
 

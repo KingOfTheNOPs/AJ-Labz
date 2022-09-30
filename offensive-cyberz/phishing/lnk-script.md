@@ -1,7 +1,3 @@
----
-description: Powershell Script to Generate a LNK file
----
-
 # LNK Script
 
 Powershell script to generate an LNK file that looks like a PDF
