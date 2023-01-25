@@ -12,7 +12,7 @@ There are 3 areas a PE can be backdoored:
 
 We’ll be focused on creating a backdoor in the code cave for this example.
 
-Download Putty and x32Dbg [https://x64dbg.com/](https://x64dbg.com)
+Download Putty and x32Dbg [https://x64dbg.com/](https://x64dbg.com/#)
 
 ### Find Code Cave
 
@@ -20,7 +20,7 @@ Open Putty with debugger
 
 You’ll notice the first breakpoint is set before the process is initialized.
 
-<img src="../.gitbook/assets/image (181) (1).png" alt="" data-size="original">
+![](<../.gitbook/assets/image (181).png>)
 
 ![](<../.gitbook/assets/image (182).png>)
 
@@ -46,7 +46,7 @@ Head on back to the entry point and add a jmp call to your code cave where the s
 
 &#x20;Add jmp call where the entry point is.
 
-![](<../.gitbook/assets/image (180) (1).png>)
+![](<../.gitbook/assets/image (180).png>)
 
 ![](<../.gitbook/assets/image (178).png>)
 
@@ -76,9 +76,9 @@ In this case, the call instruction at 0045C9FA opens calc and the call instructi
 
 &#x20;The final step will be to skip the final call instruction and jump back to the original putty. To do this, replace the push 0 instruction before the final call instruction with a jmp instruction to an address in the code cave with room to modify it’s contents. In this section we will add the registers and flags that were saved and some of the code that was overwritten by the first jump instruction.
 
-![](<../.gitbook/assets/image (179) (1).png>)
+![](<../.gitbook/assets/image (179).png>)
 
-![](<../.gitbook/assets/image (184) (1).png>)
+![](<../.gitbook/assets/image (184).png>)
 
 In the screenshot above, you’ll see that the registers and flags were added back, and then the instructions that were overwritten were added back before jumping back to the original putty code. Now patch the file and run it. You’ll see the putty and calc.exe.
 

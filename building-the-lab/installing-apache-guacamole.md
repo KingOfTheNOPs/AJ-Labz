@@ -6,7 +6,7 @@
 
 Created this guide to assist others who may need a way to access to resources remotely when your current environment may either block or restrict what resources you have.
 
-I personally recommend using [Chrome Remote Desktop](https://remotedesktop.google.com/) as a faster method to gaining access to your home PC but if for some reason this page is blocked by your network here's this guide. I hope it helps :-)\
+I personally recommend using [Chrome Remote Desktop](https://remotedesktop.google.com) as a faster method to gaining access to your home PC but if for some reason this page is blocked by your network here's this guide. I hope it helps :-)\
 \
 Categorize Domain:\
 [https://sitereview.bluecoat.com/#/](https://sitereview.bluecoat.com/#/)
@@ -60,7 +60,7 @@ Log in and create a new user. Log in with the new user and delete the default cr
 
 Next step will be to install NGINX & LetsEncrypt SSL Certificate. I recommend saving the VM's state now so you can revert back in the future if needed.
 
-I recommend if you have some time to read [http://guacamole.apache.org/](http://guacamole.apache.org/) for a better understanding of how Guacamole works and how to trouble shoot any issues you may run into.
+I recommend if you have some time to read [http://guacamole.apache.org/](http://guacamole.apache.org) for a better understanding of how Guacamole works and how to trouble shoot any issues you may run into.
 
 ## STEP 2 - NGINX/LetsEncrypt Setup
 

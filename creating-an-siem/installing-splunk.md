@@ -297,7 +297,7 @@ Splunk Enterprise comes with a number of preconfigured indexes, including:
 4. Select Peer node and click Next.
 5. There are a few fields to fill out:
 
-* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089/).
+* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089).
 * Peer replication port. This is the port on which the peer receives replicated data streamed from the other peers. You can specify any available, unused port for this purpose. This port must be different from the management or receiving ports.
 * Security key. This is the key that authenticates communication between the master and the peers and search heads. The key must be the same across all cluster nodes. Set the same value here that you previously set on the master node.
 
@@ -631,7 +631,7 @@ In either case, you must set the initial configuration to create a search head:
 4. Select Search head node and click Next.
 5. There are a few fields to fill out:
 
-* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089/).
+* Master URI. Enter the master's URI, including its management port. For example: [https://10.152.31.202:8089](https://10.152.31.202:8089).
 * Security key. This is the key that authenticates communication between the master and the peers and search heads. The key must be the same across all cluster nodes. Set the same value here that you previously set on the master node. An example of a security key is `MyS3cur1tyk3y`
 
 1.  Click Enable search head node.
@@ -1144,4 +1144,4 @@ Other images in this document were obtained and/or modified from images copied f
 
 [top](broken-reference)
 
-> Written with [StackEdit](https://stackedit.io/).
+> Written with [StackEdit](https://stackedit.io).
