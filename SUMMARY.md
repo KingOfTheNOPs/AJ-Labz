@@ -17,6 +17,7 @@
 * [Building a Local DNS Server](building-the-lab/building-a-local-dns-server.md)
 * [Installing Apache Guacamole](building-the-lab/installing-apache-guacamole.md)
 * [Installing WireGuard VPN](building-the-lab/installing-wireguard-vpn.md)
+* [Industrial Control Systems (ICS)](building-the-lab/industrial-control-systems-ics.md)
 
 ## Defensive Cyberz
 
