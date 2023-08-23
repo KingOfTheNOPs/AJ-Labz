@@ -7,7 +7,7 @@ description: Credential Gathering - Phishing with Go Phish
 ## GoPhish
 
 **Phishing Server Setup Guide:**\
-****For our phishing email we will be using Go Phish to create the phishing email with a link to our malicious domain. The method show was to gain sensitive information. This same method can be used to gain credentials to other accounts, but in an attempt to avoid violating the policy agreements with a company like amazon or google, we are using a local restaurant to spoof our website.
+For our phishing email we will be using Go Phish to create the phishing email with a link to our malicious domain. The method show was to gain sensitive information. This same method can be used to gain credentials to other accounts, but in an attempt to avoid violating the policy agreements with a company like amazon or google, we are using a local restaurant to spoof our website.
 
 ### **Step 1:** Download GoPhish&#x20;
 
@@ -55,18 +55,18 @@ Second update the config.json with the new certificate names and the IP of the V
 
 Stop ./gophish and start it back up to enable the new certificates\
 This will make the website look a little bit more legit. \
-****
 
-### Step 5: Configure phishing attack. ****&#x20;
+
+### Step 5: Configure phishing attack.&#x20;
 
 **Add the targeted users:**\
-Go to Users & Groups; add the targeted user and email address. ****&#x20;
+Go to Users & Groups; add the targeted user and email address.&#x20;
 
 ![](https://lh3.googleusercontent.com/bYulbqiVEdnFaxiv4IesPlyQCn5KeZ3Dr-O7qWjZ8bOq9Rq9Rrw1YssQg4eH4jDJSzu0kXNI4vJnnne7FMEPhvYsWL9I5b95ZAqwelMezJZIIB81w4RqPLZUlz0sKRcwm6\_o9BZG)
 
 **Create Email Template:**\
 Go to Email Templates.\
-****It’s important to add the embedded URL into your email to make it look slightly more legit. Add photos and signatures as needed to make the phishing email more believable! ****&#x20;
+It’s important to add the embedded URL into your email to make it look slightly more legit. Add photos and signatures as needed to make the phishing email more believable! &#x20;
 
 ![](https://lh4.googleusercontent.com/cjCTwc7QuH\_\_\_qnVg7LIF7d2kS0Yh7gxmIQCh071h1lwADqhXWBimaw-VvE7rXvO74mnAGUbKbm3uS9XiYUJKq1-euuyhkaI263vuFzzEB5G8L5hr4b-RVpsGZFCulRXDh8mn-xN)
 
@@ -79,7 +79,7 @@ Add email that the phishing emails will send from:
 ![](<../.gitbook/assets/image (162).png>)
 
 **Enabling Gmail Account for SMTP Relay:**\
-****Go to myaccount.google.com and select the Security tab. From there allow less secure application access
+Go to myaccount.google.com and select the Security tab. From there allow less secure application access
 
 ![](<../.gitbook/assets/image (158).png>)
 

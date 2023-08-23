@@ -8,7 +8,7 @@
 4. Boot VM on and run as root
 5. Take snapshot (just in case)
 6. Identify device name (by default /dev/sda) and confirm the new size
-   1. `fdisk -l` ![](<../../.gitbook/assets/image (169) (1).png>)``
+   1. `fdisk -l` <img src="../../.gitbook/assets/image (169) (1).png" alt="" data-size="original">
 7. Create a new primary partition:
    1. fdisk /dev/sda (depending on device name)
    2. Press p to print the partition table to identify the number of partitions.&#x20;
@@ -29,7 +29,7 @@
 
     1. `vgdisplay`
 
-    ``![](<../../.gitbook/assets/image (171) (1).png>)``
+    ![](<../../.gitbook/assets/image (171) (1).png>)
 12. Extend the physical volume
     1. `vgextend kali-vg /dev/sda3`
 13. Verify how many physical extents are available
@@ -38,7 +38,7 @@
 
     1. `lvdisplay`
 
-    ``![](<../../.gitbook/assets/image (170) (1).png>)``
+    ![](<../../.gitbook/assets/image (170) (1).png>)
 15. Extend the Logical Volume
     1. `lvextend -L+#G /dev/kali-vg/root`
     2. \# is the number of free space in GB

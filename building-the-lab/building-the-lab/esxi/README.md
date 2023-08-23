@@ -14,15 +14,15 @@ For this both servers we used ESXI 6.7 since it&#x20;
 >
 > Once Registered Visit: [https://www.vmware.com/products/vsphere-hypervisor.html](https://www.vmware.com/products/vsphere-hypervisor.html)
 
-![](<../../.gitbook/assets/image (89).png>)
+![](<../../../.gitbook/assets/image (89).png>)
 
 Click "Download Now."&#x20;
 
 Register for the product. Under the License & Download page you now have a license key for our ESXI install.&#x20;
 
-Use Rufus bootable media writer **** to load the ESXI hypervisor ISO you just downloaded onto a USB or hard.&#x20;
+Use Rufus bootable media writer to load the ESXI hypervisor ISO you just downloaded onto a USB or hard.&#x20;
 
-![](<../../.gitbook/assets/image (30).png>)
+![](<../../../.gitbook/assets/image (30).png>)
 
 Specify an ISO image for that. Click on the browse button next to the option, and use the local file browser to pick an ISO stored on it.
 
@@ -98,13 +98,13 @@ After the ESXi is installed, you’ll get the following screen where you can con
 
 Press F2 and Enter Configure Network Management -> IPv4 -> Set Static IPv4
 
-![](<../../.gitbook/assets/image (23).png>)
+![](<../../../.gitbook/assets/image (23).png>)
 
 ### 12. Determining VMNetwork (management) Physical Adapter
 
 Select -> Configure Management Network -> Network Adapters
 
-![](<../../.gitbook/assets/image (53).png>)
+![](<../../../.gitbook/assets/image (53).png>)
 
 
 

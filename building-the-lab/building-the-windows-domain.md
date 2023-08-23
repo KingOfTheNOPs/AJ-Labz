@@ -66,7 +66,7 @@ Inside of the Server Manger Window -> Configure this local server -> select Comp
 
 #### Step 4a: Add Roles
 
-****Server Manager -> Dashboard -> Manage -> Add roles and features wizard\
+Server Manager -> Dashboard -> Manage -> Add roles and features wizard\
 Installation type: Role-Based or feature-based installation\
 Server Selection: select your DC.\
 Server Roles: Select the following roles: Active Directory Domain Services and DNS Server. (you can always repeat this step if you want additional services hosted by the DC)\

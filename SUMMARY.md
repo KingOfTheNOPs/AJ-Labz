@@ -6,7 +6,8 @@
 
 * [Building the Lab](building-the-lab/building-the-lab/README.md)
   * [Physical Hardware](building-the-lab/building-the-lab/physical-hardware.md)
-  * [ESXi](building-the-lab/building-the-lab/esxi.md)
+  * [ESXi](building-the-lab/building-the-lab/esxi/README.md)
+    * [Install ESXi without a keyboard](building-the-lab/building-the-lab/esxi/install-esxi-without-a-keyboard.md)
   * [vCenter Server Installation](building-the-lab/building-the-lab/vcsa.md)
   * [Configure vCenter Datacenter](building-the-lab/building-the-lab/configure-vcenter-datacenter.md)
   * [Virtual Networking](building-the-lab/building-the-lab/virtual-networking.md)
